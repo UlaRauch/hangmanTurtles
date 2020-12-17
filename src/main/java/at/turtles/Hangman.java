@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Hangman {
 
     final char[] WORDTOGUESS;
-    HashSet<Character> alreadyGuessed = new HashSet<>();
+    HashSet<Character> alreadyGuessed = new HashSet<>(); //umbenennen in already used?
     final int MAXNUMBEROFGUESSES = 6;
     int wrongGuesses = 0;
     char[] wordInProgress;
@@ -38,8 +38,8 @@ public class Hangman {
     }
 
     public boolean checkIfAlreadyTyped (char letter) {
-        return false;
-        //todo Ula: implement
+        return alreadyGuessed.contains(letter);
+        //todo Ula OK: implement
     }
 
     public boolean existsInTheWord (char letter) {
@@ -57,7 +57,12 @@ public class Hangman {
     }
 
     public void reaction(boolean won){
-        //todo Ula: implement
+        if (won) {
+            System.out.println("Congratulations! It was hard brain work, but in the end you did it! The turtle lives!");
+        } else {
+            System.out.println("Oh no! You couldn't save the Frog from it's destiny. Maybe try a different strategy next time?");
+        }
+        //todo Ula OK: implement
     }
 
     public void game() {
@@ -76,7 +81,11 @@ public class Hangman {
             if(correctGuess){
                 updateProgress(letter);
             }else{
-                //todo Ula: Ausgabe + update counter wrongGuesses
+                alreadyGuessed.add(letter); //add letter to already used letters
+                wrongGuesses += 1;
+                System.out.println("Wrong, try again!");
+                //todo Ula OK: Ausgabe + update counter wrongGuesses + update alreadyGuessed
+                //Kann nur getestet werden, wenn existsInTheWord = false!
             }
 
             weWon = checkIfWon();
