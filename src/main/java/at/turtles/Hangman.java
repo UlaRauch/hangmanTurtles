@@ -19,7 +19,7 @@ public class Hangman {
     }
 
     //returns random word
-    //todo: add method with parameter - later
+    //todo Lukas bereitet vor (: add method with parameter - later
     public String getRandomWordFromFile() {
         return "test word";
     }
@@ -29,35 +29,35 @@ public class Hangman {
         Scanner scanner = new Scanner(System.in);
         String line = scanner.nextLine();
         return line.toUpperCase().charAt(0);
-        //todo: für später Eingabe auf Sonderzeichen überprüfen und Loop einbauen
+        //todo Kayla: für später Eingabe auf Sonderzeichen überprüfen und Loop einbauen
     }
 
     public void printCurrentGameState() {
         System.out.println("Game state: ");
-        //todo: print all the fun stuff
+        //todo Jess: print all the fun stuff
     }
 
     public boolean checkIfAlreadyTyped (char letter) {
         return false;
-        //todo: implement
+        //todo Ula: implement
     }
 
     public boolean existsInTheWord (char letter) {
         return true;
-        //todo: implement
+        //todo Lukas: implement
     }
 
     public void updateProgress(char letter){
-        //todo: implement
+        //todo Kayla: implement
     }
 
     public boolean checkIfWon(){
-        //todo: implement
+        //todo Jess: implement
         return false;
     }
 
     public void reaction(boolean won){
-        //todo: implement
+        //todo Ula: implement
     }
 
     public void game() {
@@ -68,14 +68,15 @@ public class Hangman {
             char letter = takeLetter();
             boolean alreadyTyped = checkIfAlreadyTyped(letter);
             if (alreadyTyped) {
-                continue; //todo: print Hinweis/Info
+                continue;
+                //todo Jess: print Hinweis/Info
             }
 
             boolean correctGuess = existsInTheWord(letter);
             if(correctGuess){
                 updateProgress(letter);
             }else{
-                //todo: Ausgabe + update counter wrongGuesses
+                //todo Ula: Ausgabe + update counter wrongGuesses
             }
 
             weWon = checkIfWon();
