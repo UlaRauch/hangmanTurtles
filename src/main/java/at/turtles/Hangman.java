@@ -27,7 +27,8 @@ public class Hangman {
     public char takeLetter() {
         System.out.println("Enter letter: ");
         Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine().toUpperCase().charAt(0);
+        String line = scanner.nextLine();
+        return line.toUpperCase().charAt(0);
         //todo: für später Eingabe auf Sonderzeichen überprüfen und Loop einbauen
     }
 
@@ -46,6 +47,19 @@ public class Hangman {
         //todo: implement
     }
 
+    public void updateProgress(char letter){
+        //todo: implement
+    }
+
+    public boolean checkIfWon(){
+        //todo: implement
+        return false;
+    }
+
+    public void reaction(boolean won){
+        //todo: implement
+    }
+
     public void game() {
         // Willkommen zum Spiel!;
         boolean weWon = false;
@@ -57,10 +71,18 @@ public class Hangman {
                 continue; //todo: print Hinweis/Info
             }
 
+            boolean correctGuess = existsInTheWord(letter);
+            if(correctGuess){
+                updateProgress(letter);
+            }else{
+                //todo: Ausgabe + update counter wrongGuesses
+            }
 
-
+            weWon = checkIfWon();
 
         }
+
+        reaction(weWon);
     }
 
 }
