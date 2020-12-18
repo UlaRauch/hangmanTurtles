@@ -1,0 +1,4 @@
+test word
+hangman
+beispiel
+einlesetest

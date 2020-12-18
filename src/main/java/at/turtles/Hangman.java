@@ -1,7 +1,9 @@
 package at.turtles;
 
-import java.util.HashSet;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
 
 public class Hangman {
 
@@ -13,15 +15,29 @@ public class Hangman {
 
     //default constructor
     public Hangman() {
-        String word = getRandomWordFromFile().toUpperCase();
+        this("build/resources/main/testWords.txt");
+    }
+
+    public Hangman(String filename) {
+        String word = getRandomWordFromFile(filename).toUpperCase();
         WORDTOGUESS = word.toCharArray();
-        wordInProgress = word.replaceAll("[A-Z]", "_").toCharArray();   //turns letter to _
+        wordInProgress = word.replaceAll("[A-Z]", "_").toCharArray(); //turns letter to _
     }
 
     //returns random word
-    //todo Lukas bereitet vor (: add method with parameter - later
-    public String getRandomWordFromFile() {
-        return "test word";
+    //done todo Lukas bereitet vor (: add method with parameter - later
+    public String getRandomWordFromFile(String filename) {
+        ArrayList<String> wordList = new ArrayList<>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(filename));
+            String line;
+            while ((line = br.readLine()) != null) {
+                wordList.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return wordList.get(new Random().nextInt(wordList.size()));
     }
 
     public char takeLetter() {
@@ -43,8 +59,13 @@ public class Hangman {
     }
 
     public boolean existsInTheWord (char letter) {
-        return true;
-        //todo Lukas: implement
+        for (char c : WORDTOGUESS) {
+            if (c == letter) {
+                return true;
+            }
+        }
+        return false;
+        //done todo Lukas: implement
     }
 
     public void updateProgress(char letter){
