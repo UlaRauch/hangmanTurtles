@@ -94,7 +94,7 @@ public class Hangman {
             }else{
                 wrongGuesses--; //if guess is correct, frog/turtle can take step back
             }
-        }while(wrongGuesses != MAXNUMBEROFGUESSES);
+        }while(wrongGuesses <= MAXNUMBEROFGUESSES);
 
         //done todo Kayla: implement
     }
