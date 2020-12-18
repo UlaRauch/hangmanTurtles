@@ -73,7 +73,7 @@ public class Hangman {
 
     public boolean checkIfAlreadyTyped (char letter) {
         return alreadyGuessed.contains(letter);
-        //todo Ula OK: implement
+        //done todo Ula: implement
     }
 
     public boolean existsInTheWord (char letter) {
@@ -110,7 +110,7 @@ public class Hangman {
         } else {
             System.out.println("Oh no! You couldn't save the Frog from it's destiny. Maybe try a different strategy next time?");
         }
-        //todo Ula OK: implement
+        //done todo Ula: implement
     }
 
     public void game() {
@@ -132,7 +132,7 @@ public class Hangman {
                 alreadyGuessed.add(letter); //add letter to already used letters
                 wrongGuesses += 1;
                 System.out.println("Wrong, try again!");
-                //todo Ula OK: Ausgabe + update counter wrongGuesses + update alreadyGuessed
+                //done todo Ula: Ausgabe + update counter wrongGuesses + update alreadyGuessed
                 //Kann nur getestet werden, wenn existsInTheWord = false!
             }
 
