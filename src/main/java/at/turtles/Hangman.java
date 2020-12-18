@@ -56,10 +56,10 @@ public class Hangman {
                 return line.toUpperCase().charAt(0);
 
             }else{ //if entry = character
-                do{
+                while(i < MAXNUMBEROFGUESSES){
                     System.out.println("Your entry was not a letter! ");
                     return 0;
-                } while(i < MAXNUMBEROFGUESSES);
+                }
             }
         }
         return 0;
@@ -87,14 +87,8 @@ public class Hangman {
     }
 
     public void updateProgress(char letter){
-
-        do {
-            if (!existsInTheWord(letter)) {
-                wrongGuesses++; //frog or turtle takes a step
-            }else{
-                wrongGuesses--; //if guess is correct, frog/turtle can take step back
-            }
-        }while(wrongGuesses <= MAXNUMBEROFGUESSES);
+        alreadyGuessed.add(letter);
+        String.valueOf(WORDTOGUESS).replaceAll(String.valueOf(letter), "");
 
         //done todo Kayla: implement
     }
