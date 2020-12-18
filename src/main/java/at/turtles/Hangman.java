@@ -3,6 +3,7 @@ package at.turtles;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Hangman {
@@ -41,10 +42,31 @@ public class Hangman {
     }
 
     public char takeLetter() {
-        System.out.println("Enter letter: ");
-        Scanner scanner = new Scanner(System.in);
-        String line = scanner.nextLine();
-        return line.toUpperCase().charAt(0);
+
+        for(int i = 0; i < MAXNUMBEROFGUESSES;){
+
+            System.out.println("Enter letter: ");
+            Scanner scanner = new Scanner(System.in);
+            String line = scanner.nextLine(); //scan entered letter
+
+            if(line.charAt(0) >= 64){ // (ASCII) check if entry = letter (not character)
+                checkIfAlreadyTyped(line.charAt(0));
+                existsInTheWord(line.charAt(0));
+                checkIfWon();
+                i++;
+
+                return line.toUpperCase().charAt(0);
+
+            }else{ //if entry = character
+                do{
+                    System.out.println("Your entry was not a letter! ");
+                    return 0;
+                }
+                while(i < MAXNUMBEROFGUESSES);
+            }
+        }
+
+        return 0;
         //todo Kayla: für später Eingabe auf Sonderzeichen überprüfen und Loop einbauen
     }
 
@@ -69,6 +91,8 @@ public class Hangman {
     }
 
     public void updateProgress(char letter){
+
+
         //todo Kayla: implement
     }
 
