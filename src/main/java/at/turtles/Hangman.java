@@ -44,7 +44,6 @@ public class Hangman {
     public char takeLetter() {
 
         for(int i = 0; i < MAXNUMBEROFGUESSES;){
-
             System.out.println("Enter letter: ");
             Scanner scanner = new Scanner(System.in);
             String line = scanner.nextLine(); //scan entered letter
@@ -54,20 +53,17 @@ public class Hangman {
                 existsInTheWord(line.charAt(0));
                 checkIfWon();
                 i++;
-
                 return line.toUpperCase().charAt(0);
 
             }else{ //if entry = character
                 do{
                     System.out.println("Your entry was not a letter! ");
                     return 0;
-                }
-                while(i < MAXNUMBEROFGUESSES);
+                } while(i < MAXNUMBEROFGUESSES);
             }
         }
-
         return 0;
-        //todo Kayla: für später Eingabe auf Sonderzeichen überprüfen und Loop einbauen
+        //done todo Kayla: für später Eingabe auf Sonderzeichen überprüfen und Loop einbauen
     }
 
     public void printCurrentGameState() {
@@ -92,8 +88,15 @@ public class Hangman {
 
     public void updateProgress(char letter){
 
+        do {
+            if (!existsInTheWord(letter)) {
+                wrongGuesses++; //frog or turtle takes a step
+            }else{
+                wrongGuesses--; //if guess is correct, frog/turtle can take step back
+            }
+        }while(wrongGuesses != MAXNUMBEROFGUESSES);
 
-        //todo Kayla: implement
+        //done todo Kayla: implement
     }
 
     public boolean checkIfWon(){
