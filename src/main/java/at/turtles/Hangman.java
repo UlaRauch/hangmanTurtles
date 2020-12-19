@@ -67,8 +67,9 @@ public class Hangman {
     }
 
     public void printCurrentGameState() {
-        System.out.println("Game state: ");
-        //todo Jess: print all the fun stuff
+        System.out.println(wordInProgress);
+        System.out.println("You have " + (MAXNUMBEROFGUESSES - wrongGuesses) + " guesses left");
+        //done todo Jess: print all the fun stuff
     }
 
     public boolean checkIfAlreadyTyped (char letter) {
@@ -93,10 +94,16 @@ public class Hangman {
         //done todo Kayla: implement
     }
 
-    public boolean checkIfWon(){
-        //todo Jess: implement
-        return false;
+    public boolean checkIfWon() {
+        for (int i = 0; i < MAXNUMBEROFGUESSES; i++) {
+            if (WORDTOGUESS == wordInProgress)
+
+                return false;
+        }
+        return true;
     }
+        //done - I hope todo Jess: implement
+
 
     public void reaction(boolean won){
         if (won) {
@@ -115,8 +122,9 @@ public class Hangman {
             char letter = takeLetter();
             boolean alreadyTyped = checkIfAlreadyTyped(letter);
             if (alreadyTyped) {
+                System.out.println("You've ALREADY typed this.");
                 continue;
-                //todo Jess: print Hinweis/Info
+               //done todo Jess: print Hinweis/Info
             }
 
             boolean correctGuess = existsInTheWord(letter);
