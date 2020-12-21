@@ -26,7 +26,6 @@ public class Hangman {
     }
 
     //returns random word
-    //done todo Lukas bereitet vor (: add method with parameter - later
     public String getRandomWordFromFile(String filename) {
         ArrayList<String> wordList = new ArrayList<>();
         try {
@@ -43,75 +42,71 @@ public class Hangman {
 
     public char takeLetter() {
 
-        for(int i = 0; i < MAXNUMBEROFGUESSES;){
+        for (int i = 0; i < MAXNUMBEROFGUESSES; ) {
             System.out.println("Enter letter: ");
             Scanner scanner = new Scanner(System.in);
             String line = scanner.nextLine(); //scan entered letter
 
-            if(line.charAt(0) >= 64){ // (ASCII) check if entry = letter (not character)
+            if (line.charAt(0) >= 64) { // (ASCII) check if entry = letter (not character)
                 checkIfAlreadyTyped(line.charAt(0));
                 existsInTheWord(line.charAt(0));
                 checkIfWon();
                 i++;
                 return line.toUpperCase().charAt(0);
 
-            }else{ //if entry = character
-                while(i < MAXNUMBEROFGUESSES){
+            } else { //if entry = character
+                while (i < MAXNUMBEROFGUESSES) {
                     System.out.println("Your entry was not a letter! ");
                     return 0;
                 }
             }
         }
         return 0;
-        //done todo Kayla: für später Eingabe auf Sonderzeichen überprüfen und Loop einbauen
     }
 
     public void printCurrentGameState() {
         System.out.println(wordInProgress);
         System.out.println("You have " + (MAXNUMBEROFGUESSES - wrongGuesses) + " guesses left");
-        //done todo Jess: print all the fun stuff
     }
 
-    public boolean checkIfAlreadyTyped (char letter) {
+    public boolean checkIfAlreadyTyped(char letter) {
         return alreadyGuessed.contains(letter);
-        //done todo Ula: implement
     }
 
-    public boolean existsInTheWord (char letter) {
+    public boolean existsInTheWord(char letter) {
         for (char c : WORDTOGUESS) {
             if (c == letter) {
                 return true;
             }
         }
         return false;
-        //done todo Lukas: implement
     }
 
-    public void updateProgress(char letter){
-        alreadyGuessed.add(letter);
-        String.valueOf(WORDTOGUESS).replaceAll(String.valueOf(letter), "");
-
-        //done todo Kayla: implement
+    public void updateProgress(char letter) {
+        for (int i = 0; i < WORDTOGUESS.length; i++) {
+            if (WORDTOGUESS[i] == letter) {
+                wordInProgress[i] = letter;
+            }
+        }
     }
 
     public boolean checkIfWon() {
-        for (int i = 0; i < MAXNUMBEROFGUESSES; i++) {
-            if (WORDTOGUESS == wordInProgress)
+        for (int i = 0; i < WORDTOGUESS.length; i++) {
+            if (WORDTOGUESS[i] != wordInProgress[i])
 
                 return false;
         }
         return true;
     }
-        //done - I hope todo Jess: implement
 
 
-    public void reaction(boolean won){
+    public void reaction(boolean won) {
+        System.out.println(WORDTOGUESS);
         if (won) {
             System.out.println("Congratulations! It was hard brain work, but in the end you did it! The turtle lives!");
         } else {
             System.out.println("Oh no! You couldn't save the Frog from it's destiny. Maybe try a different strategy next time?");
         }
-        //done todo Ula: implement
     }
 
     public void game() {
@@ -124,18 +119,17 @@ public class Hangman {
             if (alreadyTyped) {
                 System.out.println("You've ALREADY typed this.");
                 continue;
-               //done todo Jess: print Hinweis/Info
             }
 
             boolean correctGuess = existsInTheWord(letter);
-            if(correctGuess){
+            if (correctGuess) {
                 updateProgress(letter);
-            }else{
+            } else {
                 alreadyGuessed.add(letter); //add letter to already used letters
                 wrongGuesses += 1;
-                System.out.println("Wrong, try again!");
-                //done todo Ula: Ausgabe + update counter wrongGuesses + update alreadyGuessed
-                //Kann nur getestet werden, wenn existsInTheWord = false!
+                if (wrongGuesses < MAXNUMBEROFGUESSES) {
+                    System.out.println("Wrong, try again!");
+                }
             }
 
             weWon = checkIfWon();
