@@ -33,6 +33,11 @@ public class Hangman {
         listPathOfChoice = path;
     }
 
+    //neu von Lukas
+    public static String getListPathOfChoice() {
+        return listPathOfChoice;
+    }
+
     //returns random word
     public String getRandomWordFromFile(String filename) {
         ArrayList<String> wordList = new ArrayList<>();
