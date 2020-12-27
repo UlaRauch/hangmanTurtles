@@ -14,15 +14,23 @@ public class Hangman {
     int wrongGuesses = 0;
     char[] wordInProgress;
 
+    private static String listPathOfChoice; //neu von Ula
+
     //default constructor
     public Hangman() {
-        this("build/resources/main/testWords.txt");
+        this("C:\\Users\\urauc\\Documents\\Ausbildung\\FH\\Programmieren\\testList.txt");//wenn das auf git landet, hat Ula was falsch gemacht, sorry!
     }
 
     public Hangman(String filename) {
         String word = getRandomWordFromFile(filename).toUpperCase();
         WORDTOGUESS = word.toCharArray();
         wordInProgress = word.replaceAll("[A-Z]", "_").toCharArray(); //turns letter to _
+    }
+
+    //neu von Ula
+    //set listPathOfChoice after List choice by User
+    public static void setListPathOfChoice(String path) {
+        listPathOfChoice = path;
     }
 
     //returns random word

@@ -13,17 +13,47 @@ public class ChooseList {
     private Label titleLabel;
 
     @FXML
-    private Button list1Button;
+    private Button turtleNamesButton;
 
     @FXML
-    private Button list2Button;
+    private Button frogNamesButton;
+
+    @FXML
+    private Button thirdListButton;
+
+    @FXML
+    private Button userListButton;
+
+    @FXML
+    private Button backButton;
 
 
-    public void list1chosen(ActionEvent actionEvent) {
-        System.out.println("Clicked List1");
+    public void loadTurtleNames(ActionEvent actionEvent) {
+        System.out.println("Clicked Turtle names");
+        Hangman.setListPathOfChoice("build/resources/main/turtleNames.txt");
+        //ULA TODO: set path
     }
 
-    public void list2chosen(ActionEvent actionEvent) {
-        System.out.println("Clicked List2");
+    public void loadFrogNames(ActionEvent actionEvent) {
+        System.out.println("Clicked Frog names");
+        Hangman.setListPathOfChoice("build/resources/main/frogNames.txt");
+        //Ula TODO: set path
+    }
+
+    public void loadThirdList(ActionEvent actionEvent) {
+        System.out.println("Clicked Third list");
+        //Hangman.setListPathOfChoice();
+        //Ula TODO: create List, change button label, id & method name, set path
+    }
+
+    public void loadUserList(ActionEvent actionEvent) {
+        System.out.println("Clicked Use your own List");
+        //Hangman.setListPathOfChoice();
+        //Ula TODO: create File chooser
+    }
+
+    public void goBack(ActionEvent actionEvent) {
+        System.out.println("Clicked back");
+        //TODO: go back to previous scene
     }
 }
