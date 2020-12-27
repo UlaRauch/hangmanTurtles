@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<GridPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="at.turtles.ChooseList"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <gridLinesVisible>true</gridLinesVisible>
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+
+    <!-- TODO: Design -->
+    <Label text="Choose your words wisely!" fx:id="titleLabel" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+    <Button text="List1" fx:id="list1Button"  GridPane.rowIndex="3" GridPane.columnIndex="2" styleClass="button1"/>
+    <Button text="List2" fx:id="list2Button" onAction="#list2chosen" styleClass="button2"
+            GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+
+</GridPane>
