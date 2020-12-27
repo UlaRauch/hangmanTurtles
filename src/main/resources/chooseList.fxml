@@ -17,18 +17,31 @@
         <URL value="@style.css"/>
     </stylesheets>
 
-    <!-- TODO: Design + Reihenfolge der Eigenschaften vereinheitlicen -->
+    <!-- TODO: Design -->
+    <!-- Title -->
     <Label text="Choose your preferred word list!" fx:id="titleLabel"
            GridPane.rowIndex="2" GridPane.columnIndex="3" />
-    <Button text="Turtle names" fx:id="turtleNamesButton" onAction="#loadTurtleNames"
-            GridPane.rowIndex="4" GridPane.columnIndex="2" styleClass="button1"/>
-    <!-- Froschnamen sind leichter -> Reihenfolge ändern und Hinweis implementieren -->
-    <Button text="Frog names" fx:id="frogNamesButton" onAction="#loadFrogNames"
+
+    <!-- Button for Frog names -->
+    <Button text="Frog names (easy)" fx:id="frogNamesButton" onAction="#loadFrogNames"
             GridPane.rowIndex="4" GridPane.columnIndex="4" styleClass="button1"/>
+
+    <!-- Button for Turtle names -->
+    <Button text="Turtle names (hard)" fx:id="turtleNamesButton" onAction="#loadTurtleNames"
+            GridPane.rowIndex="4" GridPane.columnIndex="2" styleClass="button1"/>
+
+    <!-- Button for other Word list-->
+    <!-- TODO: implement third list-->
     <Button text="EDIT THIRD LIST" fx:id="thirdListButton" onAction="#loadThirdList"
             GridPane.rowIndex="6" GridPane.columnIndex="2" styleClass="button1"/>
+
+    <!-- Button for Users own list-->
     <Button text="Use your own words" fx:id="userListButton" onAction="#loadUserList"
             GridPane.rowIndex="6" GridPane.columnIndex="4" styleClass="button1"/>
+
+    <!-- Buttons for back and continue -->
     <Button text="Back" fx:id="backButton" onAction="#goBack"
-            GridPane.rowIndex="8" GridPane.columnIndex="3" styleClass="button2"/>
+            GridPane.rowIndex="8" GridPane.columnIndex="5" styleClass="button2"/>
+    <Button text="Continue" fx:id="continueButton" onAction="#goToNextScene"
+            GridPane.rowIndex="8" GridPane.columnIndex="1" styleClass="button2"/>
 </GridPane>

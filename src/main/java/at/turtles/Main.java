@@ -25,8 +25,8 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/game.fxml"));
-        Scene scene = new Scene(root, 1000, 500);
+        Parent root = FXMLLoader.load(getClass().getResource("/chooseList.fxml"));
+        Scene scene = new Scene(root, 400, 500);
         primaryStage.setTitle("Save the Animals");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -43,9 +43,16 @@ Anleitung für neues Fenster:
 - bei offenen Punkten todos einfügen
 
 TODO Jess: Choose your Fighter - Auswahl in Variable speichern
-TODO Ula: Wortliste auswählen
+TODO Ula: Textmessage in continue,
+ wenn keine Liste ausgewählt wurde; Buttonreihenfolge ändern,
+ easy-kommentar dazu.
+ Wortliste auswählen -Done.
 TODO Lukas: Main Game Window
 TODO Kayla: Finish Window
 
+Quellen:
+turtle names:
+https://www.schildkroetenwelt.com/schildkroeten-arten/frog names:
+http://www.lexikon-froesche.de/froesche_z.shtml
 
  */
