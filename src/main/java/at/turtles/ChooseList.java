@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
@@ -14,6 +15,10 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class ChooseList {
+
+
+    @FXML
+    public Text textMessage;
 
     @FXML
     private Label titleLabel;
@@ -31,24 +36,23 @@ public class ChooseList {
     private Button userListButton;
 
     @FXML
-    public Button continueButton;
+    public Button backButton;
 
     @FXML
-    private Button backButton;
+    public Button continueButton;
 
-    private File file;
 
 
     public void loadTurtleNames(ActionEvent actionEvent) {
         System.out.println("Clicked Turtle names");
         Hangman.setListPathOfChoice("build/resources/main/turtleNames.txt");
-        //ULA TODO: set path
+        System.out.println(Hangman.getListPathOfChoice());
     }
 
     public void loadFrogNames(ActionEvent actionEvent) {
         System.out.println("Clicked Frog names");
         Hangman.setListPathOfChoice("build/resources/main/frogNames.txt");
-        //Ula TODO: set path
+        System.out.println(Hangman.getListPathOfChoice());
     }
 
     public void loadThirdList(ActionEvent actionEvent) {
@@ -65,7 +69,7 @@ public class ChooseList {
         fileChooser.setTitle("Do you have words?");
         fileChooser.getExtensionFilters()
                     .add(new ExtensionFilter("Text Files", "*.txt"));
-        file = fileChooser.showOpenDialog(stage);
+        File file = fileChooser.showOpenDialog(stage);
         //check if file is chosen, to avoid NullpointerException.
         if (file != null) {
             //set private path variable in Hangman class
@@ -83,8 +87,8 @@ public class ChooseList {
             //Parent root = FXMLLoader.load(getClass().getResource("/choosefighters.fxml"));
             //TODO: fix scene switching
         } else {
+            textMessage.setText("You are without words! Choose a List, then continue.");
             System.out.println("No words defined, refuses to continue");
-            //Ula TODO: implement Error message "you can't play without words"
         }
     }
 

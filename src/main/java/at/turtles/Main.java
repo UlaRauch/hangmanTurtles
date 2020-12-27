@@ -26,7 +26,7 @@ public class Main extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/chooseList.fxml"));
-        Scene scene = new Scene(root, 400, 500);
+        Scene scene = new Scene(root, 500, 500);
         primaryStage.setTitle("Save the Animals");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -43,10 +43,7 @@ Anleitung für neues Fenster:
 - bei offenen Punkten todos einfügen
 
 TODO Jess: Choose your Fighter - Auswahl in Variable speichern
-TODO Ula: Textmessage in continue,
- wenn keine Liste ausgewählt wurde; Buttonreihenfolge ändern,
- easy-kommentar dazu.
- Wortliste auswählen -Done.
+TODO Ula: Done - Wortliste auswählen
 TODO Lukas: Main Game Window
 TODO Kayla: Finish Window
 
