@@ -1,43 +1,42 @@
-Großkopfschildkröte
-Sizilianische Sumpfschildkröte
-Tropfenschildkröte
-Waldbachschildkröte
-Moorschildkröte
-Schmuck-Dosenschildkröte
-Falsche Landkarten-Höckerschildkröte
-Schwarzknopf-Höckerschildkröte
-Diamantschildkröte
-Halbinsel-Schmuckschildkröte
-Nordamerikanische Buchstaben-Schmuckschildkröte
-Goldkopf-Scharnierschildkröte
-Chinesische Dreistreifen-Scharnierschildkröte
-Japanische Zacken-Erdschildkröte
-Tempelschildkröte
-Flache Erdschildkröte
-Ostmediterrane Bachschildkröte
-Diadem-Erdschildkröte
-Strahlenschildkröte
-Afrikanische Schnabelbrustschildkröte
-Indische Sternschildkröte
-Gesägte Flachschildkröte
-Stachelrand-Gelenkschildkröte
-Spaltenschildkröte
-Geometrische Landschildkröte
-Zeltschildkröte
-Pantherschildkröte
-Vierzehenschildkröte
-Tabascoschildkröte
-Großkopfschlammschildkröte
-Knorpel-Weichschildkröte
-Pfauenaugen-Weichschildkröte
-Oliv-Bastardschildkröte
-Suppenschildkröte
-Lederschildkröte
-Glattrückige Schlangenhalsschildkröte
-Rotbauch-Spitzkopfschildkröte
-Gewöhnliche Froschkopf-Schildkröte
-Fransenschildkröte
-Buckelschildkröte
-Dunkle Krötenkopf-Schildkröte
-Höcker-Schienenschildkröte
-
+Großkopfschildkroete
+Sizilianische Sumpfschildkroete
+Tropfenschildkroete
+Waldbachschildkroete
+Moorschildkroete
+Schmuck-Dosenschildkroete
+Falsche Landkarten-Hoeckerschildkroete
+Schwarzknopf-Hoeckerschildkroete
+Diamantschildkroete
+Halbinsel-Schmuckschildkroete
+Nordamerikanische Buchstaben-Schmuckschildkroete
+Goldkopf-Scharnierschildkroete
+Chinesische Dreistreifen-Scharnierschildkroete
+Japanische Zacken-Erdschildkroete
+Tempelschildkroete
+Flache Erdschildkroete
+Ostmediterrane Bachschildkroete
+Diadem-Erdschildkroete
+Strahlenschildkroete
+Afrikanische Schnabelbrustschildkroete
+Indische Sternschildkroete
+Gesaegte Flachschildkroete
+Stachelrand-Gelenkschildkroete
+Spaltenschildkroete
+Geometrische Landschildkroete
+Zeltschildkroete
+Pantherschildkroete
+Vierzehenschildkroete
+Tabascoschildkroete
+Großkopfschlammschildkroete
+Knorpel-Weichschildkroete
+Pfauenaugen-Weichschildkroete
+Oliv-Bastardschildkroete
+Suppenschildkroete
+Lederschildkroete
+Glattrueckige Schlangenhalsschildkroete
+Rotbauch-Spitzkopfschildkroete
+Gewoehnliche Froschkopf-Schildkroete
+Fransenschildkroete
+Buckelschildkroete
+Dunkle Kroetenkopf-Schildkroete
+Hoecker-Schienenschildkroete
