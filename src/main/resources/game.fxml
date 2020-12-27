@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.shape.Box?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="at.turtles.GameController"
+          prefHeight="400.0" prefWidth="600.0"
+          hgap="10" vgap="10">
+
+    <gridLinesVisible>false</gridLinesVisible>
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+    <Label text="Fehlversuche: " fx:id="triesLabel" styleClass="triesLabel"
+            GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="6"/>
+    <Label text="" fx:id="wordLabel" styleClass="wordLabel"
+           GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="26"/>
+    <Box height="250" width="400" GridPane.rowIndex="2" GridPane.columnSpan="26"/>
+    <Button text="A" fx:id="aButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Button text="B" fx:id="bButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+    <Button text="C" fx:id="cButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+    <Button text="D" fx:id="dButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="4"/>
+    <Button text="E" fx:id="eButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="5"/>
+    <Button text="F" fx:id="fButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="6"/>
+    <Button text="G" fx:id="gButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="7"/>
+    <Button text="H" fx:id="hButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="8"/>
+    <Button text="I" fx:id="iButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="9"/>
+    <Button text="J" fx:id="jButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="10"/>
+    <Button text="K" fx:id="kButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="11"/>
+    <Button text="L" fx:id="lButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="12"/>
+    <Button text="M" fx:id="mButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="13"/>
+    <Button text="N" fx:id="nButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="14"/>
+    <Button text="O" fx:id="oButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="15"/>
+    <Button text="P" fx:id="pButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="16"/>
+    <Button text="Q" fx:id="qButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="17"/>
+    <Button text="R" fx:id="rButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="18"/>
+    <Button text="S" fx:id="sButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="19"/>
+    <Button text="T" fx:id="tButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="20"/>
+    <Button text="U" fx:id="uButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="21"/>
+    <Button text="V" fx:id="vButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="22"/>
+    <Button text="W" fx:id="wButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="23"/>
+    <Button text="X" fx:id="xButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="24"/>
+    <Button text="Y" fx:id="yButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="25"/>
+    <Button text="Z" fx:id="zButton" onAction="#letterButtonClicked" styleClass="letterButton"
+            GridPane.rowIndex="3" GridPane.columnIndex="26"/>
+</GridPane>

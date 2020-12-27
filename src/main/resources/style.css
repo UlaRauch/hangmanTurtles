@@ -5,3 +5,14 @@
 .button2:hover {
     -fx-background-color: red;
 }
+
+.wordLabel {
+    -fx-font-size: 35px;
+}
+
+.letterButton {
+}
+
+.triesLabel {
+    -fx-font-size: 15px;
+}
