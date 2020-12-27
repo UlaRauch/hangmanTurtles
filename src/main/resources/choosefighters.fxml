@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="at.turtles.ChooseFighters"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <Label text = "Choose your fighter" fx:id="chooseTurtleOrFrog" GridPane.rowIndex="3" GridPane.columnIndex="8" />
+    <Button text = "TurtlePicture" fx:id = "turtleButton" onAction = "#chooseTurtle" GridPane.rowIndex="7" GridPane.columnIndex="2" />
+    <Button text = "FrogPicture" fx:id = "frogButton" onAction="#chooseFrog" GridPane.rowIndex="7" GridPane.columnIndex="20" />
+
+
+</GridPane>
