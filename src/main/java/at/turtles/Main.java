@@ -19,7 +19,7 @@ public class Main extends Application{
 //
 //        testMan.game();
 
-       // Platform.exit();
+        //Platform.exit();
     }
 
 
@@ -30,7 +30,14 @@ public class Main extends Application{
         primaryStage.setTitle("Save the Animals");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+
+      Scene scene2 = new Scene(root, 400, 500);
+        primaryStage.setTitle("Choose your Fighter");
+        primaryStage.setScene(scene2);
+        primaryStage.show();
     }
+
 }
 
 /*
