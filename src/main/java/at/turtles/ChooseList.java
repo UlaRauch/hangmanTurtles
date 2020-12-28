@@ -77,7 +77,7 @@ public class ChooseList {
             //checks if file is .txt
             if (!file.getAbsolutePath().endsWith(".txt")) {
                 //set private path variable in Hangman class
-                GameSettings.listPathOfChoice = file.getAbsolutePath();//TODO: set GameSettings.listPathofChoice
+                GameSettings.listPathOfChoice = file.getAbsolutePath();
                 System.out.println("File chosen:" + file.getAbsolutePath());
             } else {
                 System.out.println("Wrong filetype!");
@@ -86,14 +86,12 @@ public class ChooseList {
         }
     }
 
-    public void goToNextScene(ActionEvent actionEvent) throws Exception {
+    public void goToNextScene(ActionEvent actionEvent){
         System.out.println("Clicked continue");
         //check if path variable for word list is already set
         if (GameSettings.listPathOfChoice != null) {
             System.out.println("continues");
-            //Stage stage = (Stage) titleLabel.getScene().getWindow();
-            //Parent root = FXMLLoader.load(getClass().getResource("/choosefighters.fxml"));
-            //TODO: fix scene switching
+            //TODO: Lukas fix scene switching --> Game
         } else {
             //TODO: Info in Popup (Information dialog) ändern
             textMessage.setText("You are without words! Choose a List, then continue.");
@@ -101,11 +99,9 @@ public class ChooseList {
         }
     }
 
-    public void goBack(ActionEvent actionEvent) throws Exception {
+    public void goBack(ActionEvent actionEvent) {
         System.out.println("Clicked back");
-        //Stage stage = (Stage) titleLabel.getScene().getWindow();
-        //Parent root = FXMLLoader.load(getClass().getResource("/start.fxml"));
-        //TODO: fix scene switching
+        //TODO Jess: fix scene switching -> chooseFighter
     }
 
 }
