@@ -16,7 +16,7 @@ public class GameSettings {
     public static Stage stage;
 
     public static void showWindow(String filename, int width, int height, String windowTitle) throws IOException {
-        Parent root = FXMLLoader.load(GameController.class.getResource(filename));
+        Parent root = FXMLLoader.load(GameSettings.class.getResource(filename));
         Scene scene = new Scene(root, width, height);
         GameSettings.stage.setScene(scene);
         GameSettings.stage.setTitle(windowTitle);
