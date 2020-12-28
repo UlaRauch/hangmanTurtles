@@ -39,14 +39,7 @@ public class Finish {
 //https://edencoding.com/javafx-scene/#change-close-clear
     public void tryAgain(ActionEvent actionEvent) throws IOException {
     //go back to game.fxml
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/game.fxml"));
-        Parent root = fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.show();
-       //Finish.stage.close();
-
+        GameSettings.showWindow("/game.fxml", GameController.WIDTH, GameController.HEIGHT, GameController.WINDOWTITLE);
     }
 
 
