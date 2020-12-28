@@ -15,12 +15,13 @@ import javafx.stage.Stage;
 import javafx.scene.control.Alert.AlertType;
 
 import java.io.File;
+import java.io.IOException;
 
 public class ChooseList {
 
-
-    @FXML
-    public Text textMessage;
+    public final static int WIDTH = 700;
+    public final static int HEIGHT = 500;
+    public final static String WINDOWTITLE = "Choose List";
 
     @FXML
     private Label titleLabel;
@@ -94,23 +95,36 @@ public class ChooseList {
             } else {
                 System.out.println("Wrong filetype!");
                 Alert wrongFileAlert = new Alert(AlertType.ERROR);
-                alert.setTitle("Sorry, not this file!");
-                alert.setHeaderText("Please choose a file that ends with .txt to continue!");
-                alert.setContentText("If you don't have a list that fits the requirements, choose one from our fine selections of frog names and turtle names.");
-                alert.showAndWait();
+                wrongFileAlert.setTitle("Sorry, not this file!");
+                wrongFileAlert.setHeaderText("Please choose a file that ends with .txt to continue!");
+                wrongFileAlert.setContentText("If you don't have a list that fits the requirements, choose one from our fine selections of frog names and turtle names.");
+                wrongFileAlert.showAndWait();
             }
         }
     }
 
-    public void goToNextScene(ActionEvent actionEvent){
+    public void goToNextScene(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked continue");
+
         //check if path variable for word list is already set
         if (GameSettings.listPathOfChoice != null) {
             System.out.println("continues");
+            GameSettings.showWindow("/game.fxml", GameController.WIDTH, GameController.HEIGHT, GameController.WINDOWTITLE);
             //TODO: Lukas fix scene switching --> Game
         } else {
-            //TODO: Info in Popup (Information dialog) ändern
-            textMessage.setText("You are without words! Choose a List, then continue.");
+            Alert noListAlert = new Alert(AlertType.ERROR);
+            noListAlert.setResizable(true);
+            noListAlert.setWidth(800);
+            noListAlert.setHeight(400);
+            noListAlert.setTitle("No game without words!");
+            noListAlert.setHeaderText("Please choose a list first!");
+            noListAlert.setContentText
+                    ("We regret to inform you, that it is not possible at this moment to offer " +
+                            "the standard quality game experience without any word to play with. \n\n" +
+                            "We offer a choice of the most beautiful turtle names and frog names. " +
+                            "If this doesn't satisfy your wishes, you can also upload your own list.\n\n" +
+                            "Thank you for understanding."); //;-) ormalerweise würde hier natürlich kein Roman stehen.
+            noListAlert.showAndWait();
             System.out.println("No words defined, refuses to continue");
         }
     }

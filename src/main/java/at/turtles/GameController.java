@@ -34,7 +34,7 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        game = new Hangman("build/resources/main/testWords.txt"); //TODO: set GameSettings.wordToGuess
+        game = new Hangman(GameSettings.listPathOfChoice); //TODO: set GameSettings.wordToGuess
         updateLabels();
     }
 
@@ -60,15 +60,8 @@ public class GameController implements Initializable {
         updateLabels();
     }
 
-    public void backButtonClicked(ActionEvent actionEvent) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/chooseList.fxml"));
-            Scene scene = new Scene(root, 500, 500);
-            GameSettings.stage.setTitle("Save the Animals");
-            GameSettings.stage.setScene(scene);
-            GameSettings.stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void backButtonClicked(ActionEvent actionEvent) throws IOException{
+        //go back to chooseList.fxml
+        GameSettings.showWindow("/chooseList.fxml", ChooseList.WIDTH, ChooseList.HEIGHT, ChooseList.WINDOWTITLE);
     }
 }
