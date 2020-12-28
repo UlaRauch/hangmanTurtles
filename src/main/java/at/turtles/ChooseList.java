@@ -45,14 +45,14 @@ public class ChooseList {
 
     public void loadTurtleNames(ActionEvent actionEvent) {
         System.out.println("Clicked Turtle names");
-        Hangman.setListPathOfChoice("build/resources/main/turtleNames.txt");
-        System.out.println(Hangman.getListPathOfChoice());
+        GameSettings.listPathOfChoice = "build/resources/main/turtleNames.txt";
+        System.out.println(GameSettings.listPathOfChoice);
     }
 
     public void loadFrogNames(ActionEvent actionEvent) {
         System.out.println("Clicked Frog names");
-        Hangman.setListPathOfChoice("build/resources/main/frogNames.txt");
-        System.out.println(Hangman.getListPathOfChoice());
+        GameSettings.listPathOfChoice= "build/resources/main/frogNames.txt";
+        System.out.println(GameSettings.listPathOfChoice);
     }
 
     public void loadThirdList(ActionEvent actionEvent) {
@@ -63,18 +63,21 @@ public class ChooseList {
 
     public void loadUserList(ActionEvent actionEvent) {
         System.out.println("Clicked Use your own List");
-        //choose external wordlist from directory
+        //offne Browser für Fileauswahl
         Stage stage = (Stage) titleLabel.getScene().getWindow();
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Do you have words?");
+        fileChooser.setTitle("Where are your words?");
+        //nur files mit Dateiendung ".txt" werden angezeigt
         fileChooser.getExtensionFilters()
                     .add(new ExtensionFilter("Text Files", "*.txt"));
         File file = fileChooser.showOpenDialog(stage);
-        //check if file is chosen, to avoid NullpointerException.
+
+        //check if file is chosen to avoid NullpointerException
         if (file != null) {
+            //checks if file is .txt
             if (!file.getAbsolutePath().endsWith(".txt")) {
                 //set private path variable in Hangman class
-                Hangman.setListPathOfChoice(file.getAbsolutePath());//TODO: set GameSettings.listPathofChoice
+                GameSettings.listPathOfChoice = file.getAbsolutePath();//TODO: set GameSettings.listPathofChoice
                 System.out.println("File chosen:" + file.getAbsolutePath());
             } else {
                 System.out.println("Wrong filetype!");
@@ -86,7 +89,7 @@ public class ChooseList {
     public void goToNextScene(ActionEvent actionEvent) throws Exception {
         System.out.println("Clicked continue");
         //check if path variable for word list is already set
-        if (Hangman.getListPathOfChoice() != null) {
+        if (GameSettings.listPathOfChoice != null) {
             System.out.println("continues");
             //Stage stage = (Stage) titleLabel.getScene().getWindow();
             //Parent root = FXMLLoader.load(getClass().getResource("/choosefighters.fxml"));

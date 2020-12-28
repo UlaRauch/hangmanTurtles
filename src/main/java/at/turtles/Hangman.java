@@ -14,8 +14,6 @@ public class Hangman {
     int wrongGuesses = 0;
     char[] wordInProgress;
 
-    private static String listPathOfChoice; //neu von Ula
-
     //default constructor
     public Hangman() {
         this("C:\\Users\\urauc\\Documents\\Ausbildung\\FH\\Programmieren\\testList.txt");//wenn das auf git landet, hat Ula was falsch gemacht, sorry!
@@ -26,17 +24,6 @@ public class Hangman {
                 .replaceAll("Ö", "OE").replaceAll("Ü", "UE");
         WORDTOGUESS = word.toCharArray();
         wordInProgress = word.replaceAll("[A-Z]", "_").toCharArray(); //turns letter to _
-    }
-
-    //neu von Ula
-    //set listPathOfChoice after List choice by User
-    public static void setListPathOfChoice(String path) {
-        listPathOfChoice = path;
-    }
-
-    //neu von Lukas
-    public static String getListPathOfChoice() {
-        return listPathOfChoice;
     }
 
     //returns random word
