@@ -15,7 +15,7 @@
 
     <Text fx:id = "status" GridPane.rowIndex="3" GridPane.columnIndex="2" />
 
-//nur eines von beiden sollte auftauchen --> status: won/lost
+<!--//nur eines von beiden sollte auftauchen -> status: won/lost-->
     <Label text = "Congratulations, you saved the animal!" fx:id="won" GridPane.rowIndex="3" GridPane.columnIndex="2" />
     <Label text = "You couldn't save the animal. Better luck next time!" fx:id="lost" GridPane.rowIndex="3" GridPane.columnIndex="2" />
 

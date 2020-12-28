@@ -40,7 +40,7 @@ public class Finish {
     public void tryAgain(ActionEvent actionEvent) throws IOException {
     //go back to game.fxml
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("game.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/game.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
