@@ -31,7 +31,7 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        game = new Hangman("build/resources/main/testWords.txt");
+        game = new Hangman("build/resources/main/testWords.txt"); //TODO: set GameSettings.wordToGuess
         updateLabels();
     }
 
@@ -48,7 +48,7 @@ public class GameController implements Initializable {
                 pressedButton.setStyle("-fx-background-color: red;");
             }
             pressedButton.setDisable(true);
-            if (game.checkIfWon()) {
+            if (game.checkIfWon()) { //TODO: set GameSettings.won
                 System.out.println("You won!");
             } else if (game.wrongGuesses == game.MAXNUMBEROFGUESSES) {
                 System.out.println("You lost!");

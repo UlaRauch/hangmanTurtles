@@ -73,7 +73,7 @@ public class ChooseList {
         //check if file is chosen, to avoid NullpointerException.
         if (file != null) {
             //set private path variable in Hangman class
-            Hangman.setListPathOfChoice(file.getAbsolutePath());
+            Hangman.setListPathOfChoice(file.getAbsolutePath()); //TODO: set GameSettings.listPathofChoice
             System.out.println("File chosen:" + file.getAbsolutePath());
         }
     }

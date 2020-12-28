@@ -16,6 +16,7 @@ public class ChooseFighters {
     @FXML
     private Button turtleButton;
 
+    //TODO: set GameSettings.chosenAnimal
     public void chooseTurtle(ActionEvent actionEvent) {
         System.out.println("You chose Tina the Turtle");
         //Stage stage = (Stage) turtleButton.getScene().getWindow():
