@@ -17,6 +17,9 @@ import java.util.ResourceBundle;
 public class GameController implements Initializable {
 
     private static Hangman game;
+    public final static int WIDTH = 1000;
+    public final static int HEIGHT = 500;
+    public final static String WINDOWTITLE = "Game";
 
     @FXML
     public Label wordLabel;
@@ -59,12 +62,11 @@ public class GameController implements Initializable {
 
     public void backButtonClicked(ActionEvent actionEvent) {
         try {
-            Stage stage = (Stage) wordLabel.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/chooseList.fxml"));
             Scene scene = new Scene(root, 500, 500);
-            stage.setTitle("Save the Animals");
-            stage.setScene(scene);
-            stage.show();
+            GameSettings.stage.setTitle("Save the Animals");
+            GameSettings.stage.setScene(scene);
+            GameSettings.stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }

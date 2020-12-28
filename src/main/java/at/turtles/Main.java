@@ -25,8 +25,9 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/chooseList.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/finish.fxml"));
         Scene scene = new Scene(root, 500, 500);
+        GameSettings.stage = primaryStage;
         primaryStage.setTitle("Save the Animals");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -35,12 +36,14 @@ public class Main extends Application{
 }
 
 /*
-Anleitung für neues Fenster:
-- in resources neue xyz.fxml erstellen
-- zu Beginn bei fx:controller Namen ausbessern
-- XyzController.java erstellen - wird angezeigt wenn man mit Maus drauffährt (ggf. in Package verschieben)
-- in Main.java in start(Stage ....) die gewünschte Datei laden (Parent root), Größe/Title einstellen
-- bei offenen Punkten todos einfügen
+Anleitung für Fenster:
+- Jede Controller Klasse muss folgende Konstanten definieren:
+    - int WIDTH, int HEIGHT, String WINDOWTITLE (Beispiel in GameController)
+- zum Aufrufen anderer Fenster:
+    - GameSettings.showWindow(filename, width, height, title); (Beispiel: in Finish.tryAgain() )
+
+TODO für alle: Buttons in anderen Fenster mit eigenen Fenstern verknüpfen
+    (Beispiel: ChooseList wird von ChooseFighters und GameController aufgerufen -> Ulas Aufgabe)
 
 TODO Jess: Choose your Fighter - Auswahl in Variable speichern
 TODO Ula: Done - Wortliste auswählen
