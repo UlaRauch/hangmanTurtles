@@ -76,4 +76,7 @@
             GridPane.rowIndex="3" GridPane.columnIndex="25"/>
     <Button text="Z" fx:id="zButton" onAction="#letterButtonClicked" styleClass="letterButton"
             GridPane.rowIndex="3" GridPane.columnIndex="26"/>
+
+    <Button text="Back" fx:id="backButton" onAction="#backButtonClicked" styleClass="button1"
+            GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
 </GridPane>
