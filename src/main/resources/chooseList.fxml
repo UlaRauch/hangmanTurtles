@@ -57,7 +57,7 @@
             GridPane.rowIndex="5" GridPane.columnIndex="4" styleClass="button2"/>
 
     <!-- Field for Text messages -->
-    <Text  fx:id="textMessage" GridPane.columnSpan="5" GridPane.rowIndex="7"
+    <Text fx:id="textMessage" GridPane.columnSpan="5" GridPane.rowIndex="7"
           GridPane.halignment="CENTER"/>
 
 </GridPane>

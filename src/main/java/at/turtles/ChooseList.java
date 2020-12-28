@@ -72,9 +72,14 @@ public class ChooseList {
         File file = fileChooser.showOpenDialog(stage);
         //check if file is chosen, to avoid NullpointerException.
         if (file != null) {
-            //set private path variable in Hangman class
-            Hangman.setListPathOfChoice(file.getAbsolutePath()); //TODO: set GameSettings.listPathofChoice
-            System.out.println("File chosen:" + file.getAbsolutePath());
+            if (!file.getAbsolutePath().endsWith(".txt")) {
+                //set private path variable in Hangman class
+                Hangman.setListPathOfChoice(file.getAbsolutePath());//TODO: set GameSettings.listPathofChoice
+                System.out.println("File chosen:" + file.getAbsolutePath());
+            } else {
+                System.out.println("Wrong filetype!");
+                //TODO: Ula Alert message wrong filetype
+            }
         }
     }
 
@@ -87,6 +92,7 @@ public class ChooseList {
             //Parent root = FXMLLoader.load(getClass().getResource("/choosefighters.fxml"));
             //TODO: fix scene switching
         } else {
+            //TODO: Info in Popup (Information dialog) ändern
             textMessage.setText("You are without words! Choose a List, then continue.");
             System.out.println("No words defined, refuses to continue");
         }
