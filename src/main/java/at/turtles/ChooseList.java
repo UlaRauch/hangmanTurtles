@@ -5,12 +5,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert.AlertType;
 
 import java.io.File;
 
@@ -63,25 +65,39 @@ public class ChooseList {
 
     public void loadUserList(ActionEvent actionEvent) {
         System.out.println("Clicked Use your own List");
+
+        //Information Dialog with file requirements
+        Alert alert = new Alert(AlertType.WARNING);
+        alert.setTitle("File requirements");
+        alert.setHeaderText("Choose your words wisely!");
+        alert.setContentText("- .txt only\n- each word in a seperate line\n- no line without words\n- semicolons etc. won't be removed\n\nLike this:\nword\nsecond example word\nother word\nanother\n\n- umlaut will be transformed (-> ae, oe, ue)\n- case doesn't matter");
+        alert.showAndWait();
+
         //offne Browser für Fileauswahl
         Stage stage = (Stage) titleLabel.getScene().getWindow();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Where are your words?");
-        //nur files mit Dateiendung ".txt" werden angezeigt
+
+        //nur files mit Dateiendung ".txt" anzeigen
         fileChooser.getExtensionFilters()
                     .add(new ExtensionFilter("Text Files", "*.txt"));
+
         File file = fileChooser.showOpenDialog(stage);
 
-        //check if file is chosen to avoid NullpointerException
+        //use file path information to set variable in GameSettings
+        //check if filepath is chosen to avoid NullpointerException
+        //check if file is .txt
         if (file != null) {
-            //checks if file is .txt
-            if (!file.getAbsolutePath().endsWith(".txt")) {
-                //set private path variable in Hangman class
+            if (file.getAbsolutePath().endsWith(".txt")) {
                 GameSettings.listPathOfChoice = file.getAbsolutePath();
                 System.out.println("File chosen:" + file.getAbsolutePath());
             } else {
                 System.out.println("Wrong filetype!");
-                //TODO: Ula Alert message wrong filetype
+                Alert wrongFileAlert = new Alert(AlertType.ERROR);
+                alert.setTitle("Sorry, not this file!");
+                alert.setHeaderText("Please choose a file that ends with .txt to continue!");
+                alert.setContentText("If you don't have a list that fits the requirements, choose one from our fine selections of frog names and turtle names.");
+                alert.showAndWait();
             }
         }
     }
