@@ -16,3 +16,8 @@
 .triesLabel {
     -fx-font-size: 15px;
 }
+
+.StartGridPane{
+    -fx-background-image: url("/images/background.jpg");
+    -fx-background-repeat: no-repeat;
+}
