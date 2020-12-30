@@ -15,6 +15,9 @@ import java.io.IOException;
 public class Finish {
 
     private static Hangman game;
+    public final static int WIDTH = 1000;
+    public final static int HEIGHT = 500;
+    public final static String WINDOWTITLE = "Game";
 
     @FXML
     public Text status;

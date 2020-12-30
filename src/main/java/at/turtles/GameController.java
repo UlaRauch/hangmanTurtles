@@ -43,7 +43,7 @@ public class GameController implements Initializable {
         updateLabels();
     }
 
-    public void letterButtonClicked(ActionEvent actionEvent) {
+    public void letterButtonClicked(ActionEvent actionEvent) throws IOException {
         Button pressedButton = (Button) actionEvent.getSource();
         char letter = pressedButton.getText().charAt(0);
         System.out.println("Clicked " + letter );
@@ -59,8 +59,10 @@ public class GameController implements Initializable {
             if (game.checkIfWon()) { //TODO: set GameSettings.won
                 System.out.println("You won!");
                 GameSettings.won = true;
+                GameSettings.showWindow("/finish.fxml", Finish.WIDTH, Finish.HEIGHT, Finish.WINDOWTITLE);
             } else if (game.wrongGuesses == game.MAXNUMBEROFGUESSES) {
                 System.out.println("You lost!");
+                GameSettings.showWindow("/finish.fxml", Finish.WIDTH, Finish.HEIGHT, Finish.WINDOWTITLE);
             }
         }
         updateLabels();
