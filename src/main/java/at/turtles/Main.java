@@ -25,12 +25,8 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/start.fxml"));
-        Scene scene = new Scene(root, 500, 500);
         GameSettings.stage = primaryStage;
-        primaryStage.setTitle("Save the Animals");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        GameSettings.showWindow("/start.fxml", StartController.WIDTH, StartController.HEIGHT, StartController.WINDOWTITLE);
     }
 
 }
