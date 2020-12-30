@@ -132,6 +132,7 @@ public class ChooseList {
     public void goBack(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked back");
         //TODO Jess: fix scene switching -> chooseFighter
+        //jess is done
         GameSettings.showWindow("/choosefighters.fxml",
                 ChooseFighters.WIDTH, ChooseFighters.HEIGHT, ChooseFighters.WINDOWTITLE);
     }

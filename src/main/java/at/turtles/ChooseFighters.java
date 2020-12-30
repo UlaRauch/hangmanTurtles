@@ -47,7 +47,7 @@ public class ChooseFighters {
             GameSettings.showWindow("/chooseList.fxml",
                     ChooseList.WIDTH, ChooseList.HEIGHT, ChooseList.WINDOWTITLE);
 
-        } else {
+        } else {                 //alert window
             Alert NoAnimalChosen = new Alert(AlertType.ERROR);
             NoAnimalChosen.setResizable(true);
             NoAnimalChosen.setWidth(600);
