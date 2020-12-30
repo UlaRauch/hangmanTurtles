@@ -79,4 +79,6 @@
 
     <Button text="Back" fx:id="backButton" onAction="#backButtonClicked" styleClass="button1"
             GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+    <Label text="This is a test comment" fx:id="commentLabel"
+           GridPane.rowIndex="4" GridPane.columnIndex="4" GridPane.columnSpan="5"/>
 </GridPane>

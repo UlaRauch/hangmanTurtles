@@ -27,6 +27,9 @@ public class GameController implements Initializable {
     @FXML
     public Label triesLabel;
 
+    @FXML
+    public Label commentLabel;
+
     private void updateLabels(){
         wordLabel.setText(String.valueOf(game.wordInProgress));
         triesLabel.setText(String.format("Fehlversuche: %d / %d", game.wrongGuesses, game.MAXNUMBEROFGUESSES));
@@ -35,6 +38,8 @@ public class GameController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         game = new Hangman(GameSettings.listPathOfChoice); //TODO: set GameSettings.wordToGuess
+        GameSettings.wordToGuess = game.WORDTOGUESS;
+        GameSettings.won = false;
         updateLabels();
     }
 
@@ -53,6 +58,7 @@ public class GameController implements Initializable {
             pressedButton.setDisable(true);
             if (game.checkIfWon()) { //TODO: set GameSettings.won
                 System.out.println("You won!");
+                GameSettings.won = true;
             } else if (game.wrongGuesses == game.MAXNUMBEROFGUESSES) {
                 System.out.println("You lost!");
             }
