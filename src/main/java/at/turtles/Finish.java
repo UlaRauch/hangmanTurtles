@@ -46,15 +46,15 @@ public class Finish {
     }
 
 
-    public void animalChange(ActionEvent actionEvent) {
-        //go back to choosefighters.fxml
-    }
-
-
-    public void endGame(ActionEvent actionEvent) throws IOException {
-        //go back to start.fxml
+    public void animalChange(ActionEvent actionEvent) throws IOException {
         System.out.println("Back to Choose your fighter");
         GameSettings.showWindow("/choosefighters.fxml",
                 ChooseFighters.WIDTH, ChooseFighters.HEIGHT, ChooseFighters.WINDOWTITLE);
+    }
+
+
+    public void endGame(ActionEvent actionEvent) {
+        //go back to start.fxml
+
     }
 }
