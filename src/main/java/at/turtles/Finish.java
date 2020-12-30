@@ -1,5 +1,6 @@
 package at.turtles;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -55,6 +56,6 @@ public class Finish {
 
     public void endGame(ActionEvent actionEvent) {
         //go back to start.fxml
-
+        Platform.exit();
     }
 }
