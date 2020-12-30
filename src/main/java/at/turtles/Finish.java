@@ -51,7 +51,10 @@ public class Finish {
     }
 
 
-    public void endGame(ActionEvent actionEvent) {
+    public void endGame(ActionEvent actionEvent) throws IOException {
         //go back to start.fxml
+        System.out.println("Back to Choose your fighter");
+        GameSettings.showWindow("/choosefighters.fxml",
+                ChooseFighters.WIDTH, ChooseFighters.HEIGHT, ChooseFighters.WINDOWTITLE);
     }
 }
