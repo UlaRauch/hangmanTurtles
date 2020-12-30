@@ -18,6 +18,6 @@
 }
 
 .StartGridPane{
-    -fx-background-image: url("/images/background.jpg");
+    -fx-background-image: url("/images/background-start.png");
     -fx-background-repeat: no-repeat;
 }
