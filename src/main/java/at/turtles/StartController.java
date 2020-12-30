@@ -8,7 +8,9 @@ import javafx.scene.control.Label;
 
 public class StartController {
 
-
+    public final static int WIDTH = 700;
+    public final static int HEIGHT = 500;
+    public final static String WINDOWTITLE = "Start";
     @FXML
     private Label titleLabel;
 

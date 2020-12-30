@@ -13,6 +13,8 @@ public class GameSettings {
     public static char[] wordToGuess;
     public static boolean won;
     public static String chosenAnimal;
+
+
     public static Stage stage;
 
     public static void showWindow(String filename, int width, int height, String windowTitle) throws IOException {

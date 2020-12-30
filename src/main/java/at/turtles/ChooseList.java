@@ -123,15 +123,17 @@ public class ChooseList {
                             "the standard quality game experience without any word to play with. \n\n" +
                             "We offer a choice of the most beautiful turtle names and frog names. " +
                             "If this doesn't satisfy your wishes, you can also upload your own list.\n\n" +
-                            "Thank you for understanding."); //;-) ormalerweise würde hier natürlich kein Roman stehen.
+                            "Thank you for understanding."); //;-) normalerweise würde hier natürlich kein Roman stehen.
             noListAlert.showAndWait();
             System.out.println("No words defined, refuses to continue");
         }
     }
 
-    public void goBack(ActionEvent actionEvent) {
+    public void goBack(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked back");
         //TODO Jess: fix scene switching -> chooseFighter
+        GameSettings.showWindow("/choosefighters.fxml",
+                ChooseFighters.WIDTH, ChooseFighters.HEIGHT, ChooseFighters.WINDOWTITLE);
     }
 
 }
