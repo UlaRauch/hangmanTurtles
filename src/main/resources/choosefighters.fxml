@@ -20,5 +20,5 @@
             GridPane.rowIndex="5" GridPane.columnIndex="1" styleClass="button2"/>
     <Button text="Continue" fx:id="continueButton" onAction="#goToNextScene"
             GridPane.rowIndex="5" GridPane.columnIndex="4" styleClass="button2"/>
-//buttons done
+<!--buttons done-->
 </GridPane>

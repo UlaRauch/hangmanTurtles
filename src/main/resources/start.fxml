@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import java.net.URL?>
-<GridPane xmlns="http://javafx.com/javafx"
-          xmlns:fx="http://javafx.com/fxml"
-          fx:controller="at.turtles.StartController"
-          prefHeight="400.0" prefWidth="600.0"
-          hgap="10" vgap="10">
+<GridPane hgap="10" prefHeight="400.0" prefWidth="600.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.StartController">
 
     <gridLinesVisible>true</gridLinesVisible>
     <stylesheets>
-        <URL value="@style.css"/>
+        <URL value="@style.css" />
     </stylesheets>
 
     <!-- TODO: Design -->
-    <Label text="Save the Animals" fx:id="titleLabel" GridPane.rowIndex="3" GridPane.columnIndex="1" />
-    <Button text="Start" GridPane.rowIndex="5" GridPane.columnIndex="0" styleClass="button1"/>
-    <Button text="Exit" fx:id="exitButton" onAction="#onExit" styleClass="button2"
-            GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+    <Label fx:id="titleLabel" text="Save the Animals" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Button fx:id="startButton" onAction="#startButtonclicked" styleClass="button1" text="Start" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+    <Button fx:id="exitButton" onAction="#onExit" styleClass="button2" text="Exit" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints maxWidth="125.33333333333331" minWidth="52.66665903727213" prefWidth="104.66666666666666" />
+      <ColumnConstraints maxWidth="72.66667429606119" minWidth="0.0" prefWidth="20.666666666666657" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
 
 
 </GridPane>

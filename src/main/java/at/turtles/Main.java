@@ -25,7 +25,7 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/chooseList.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/choosefighters.fxml"));
         Scene scene = new Scene(root, 500, 500);
         GameSettings.stage = primaryStage;
         primaryStage.setTitle("Save the Animals");
