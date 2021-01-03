@@ -9,7 +9,7 @@
 
 <GridPane hgap="10" vgap="10"
           prefHeight="400.0" prefWidth="600.0"
-          styleClass="StartGridPane"
+          styleClass="FighterGridPane"
           xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="at.turtles.ChooseFighters">
@@ -19,14 +19,14 @@
         <URL value="@style.css"/>
     </stylesheets>
 
-    <Label text="Choose your fighter" fx:id="chooseTurtleOrFrog" GridPane.rowIndex="3" GridPane.columnIndex="8"/>
+    <Label text="Choose your fighter" fx:id="chooseTurtleOrFrog" GridPane.rowIndex="3" GridPane.columnIndex="25"/>
     <Button text="TurtlePicture" fx:id="turtleButton" onAction="#chooseTurtle"
-            GridPane.rowIndex="7" GridPane.columnIndex="2"/>
+            GridPane.rowIndex="34" GridPane.columnIndex="39"/>
     <Button text="FrogPicture" fx:id="frogButton" onAction="#chooseFrog"
-            GridPane.rowIndex="7" GridPane.columnIndex="20"/>
+            GridPane.rowIndex="34" GridPane.columnIndex="13"/>
     <Button text="Back" fx:id="backButton" onAction="#goBack"
-            GridPane.rowIndex="5" GridPane.columnIndex="1" styleClass="button2"/>
+            GridPane.rowIndex="38" GridPane.columnIndex="1" styleClass="button2"/>
     <Button text="Continue" fx:id="continueButton" onAction="#goToNextScene"
-            GridPane.rowIndex="5" GridPane.columnIndex="4" styleClass="button2"/>
+            GridPane.rowIndex="38" GridPane.columnIndex="60" styleClass="button2"/>
     <!--buttons done-->
 </GridPane>

@@ -33,3 +33,13 @@
     -fx-background-image: url("/images/background-start.png");
     -fx-background-repeat: no-repeat;
 }
+
+.GameGridPane{
+    -fx-background-image: url("/images/backgroundani.gif");
+    -fx-background-repeat: no-repeat;
+}
+
+.FighterGridPane{
+    -fx-background-image: url("/images/choosefighter.png");
+    -fx-background-repeat: no-repeat;
+}

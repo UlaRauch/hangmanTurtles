@@ -39,7 +39,6 @@ public class GameController implements Initializable {
 
     @FXML
     public ImageView image;
-    public Box box;
 
 
     private void updateLabels(){
@@ -53,6 +52,12 @@ public class GameController implements Initializable {
         GameSettings.wordToGuess = game.WORDTOGUESS;
         GameSettings.won = false;
         updateLabels();
+
+        if (GameSettings.chosenAnimal == "turtle"){
+            image.setImage(new Image("Tina/tina.001.png"));
+        }else{
+            image.setImage(new Image("Franklin/franklin.001.png"));
+        }
     }
 
 
