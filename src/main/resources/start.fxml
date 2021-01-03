@@ -3,32 +3,39 @@
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane hgap="100" vgap="50"
-          prefHeight="500.0" prefWidth="600.0"
-          styleClass="StartGridPane"
-          xmlns="http://javafx.com/javafx/11.0.1"
-          xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="at.turtles.StartController">
+<GridPane hgap="20" prefHeight="500.0" prefWidth="1000.0" styleClass="StartGridPane" vgap="20" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.StartController">
 
-    <gridLinesVisible>true</gridLinesVisible>
+    <gridLinesVisible>false</gridLinesVisible>
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
 
     <!-- TODO: Design -->
-    <Label fx:id="titleLabel" text="Save the Animals" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-    <Button fx:id="startButton" onAction="#startButtonclicked" styleClass="button1" text="Start" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-    <Button fx:id="exitButton" onAction="#onExit" styleClass="button2" text="Exit" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+    <Label fx:id="titleLabel" alignment="CENTER" prefHeight="206.0" prefWidth="752.0" text="Save the Animals" textAlignment="CENTER" textFill="#010600" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <font>
+            <Font name="Berlin Sans FB" size="72.0" />
+        </font></Label>
+    <Button fx:id="startButton" alignment="CENTER" onAction="#startButtonclicked" styleClass="button1" text="Start" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+      <font>
+         <Font size="20.0" />
+      </font></Button>
+    <Button fx:id="exitButton" alignment="CENTER" contentDisplay="RIGHT" onAction="#onExit" styleClass="button2" text="Exit" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+      <font>
+         <Font size="20.0" />
+      </font></Button>
     <columnConstraints>
-        <ColumnConstraints maxWidth="127.19999999999999" minWidth="26.200003814697254" prefWidth="68.40001525878907" />
-        <ColumnConstraints maxWidth="72.66667429606119" minWidth="0.0" prefWidth="17.999984741210938" />
+        <ColumnConstraints maxWidth="150.0" minWidth="50.0" prefWidth="150.0" />
+        <ColumnConstraints maxWidth="800.0" minWidth="451.0" prefWidth="800.0" />
+        <ColumnConstraints maxWidth="150.0" minWidth="50.0" prefWidth="150.0" />
     </columnConstraints>
     <rowConstraints>
         <RowConstraints />
-        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
-        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
-        <RowConstraints />
+        <RowConstraints maxHeight="500.0" minHeight="87.0" prefHeight="340" />
+        <RowConstraints maxHeight="160" minHeight="1.5999999999999943" prefHeight="160" />
+
+
     </rowConstraints>
 
 
