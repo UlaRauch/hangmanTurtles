@@ -13,26 +13,29 @@
     </stylesheets>
 
     <!-- TODO: Design -->
-    <Label fx:id="titleLabel" alignment="CENTER" prefHeight="206.0" prefWidth="752.0" text="Save the Animals" textAlignment="CENTER" textFill="#010600" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    <Label fx:id="titleLabel" alignment="CENTER" prefHeight="206.0" prefWidth="752.0" text="Save the Animals" textAlignment="CENTER" textFill="#010600" GridPane.columnIndex="2" GridPane.rowIndex="1">
         <font>
             <Font name="Berlin Sans FB" size="72.0" />
         </font></Label>
 
-    <Button fx:id="startButton" alignment="CENTER" onAction="#startButtonclicked" styleClass="button1" text="Start" textAlignment="CENTER"
-            GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+    <Button fx:id="startButton" alignment="CENTER" onAction="#startButtonclicked" styleClass="invisibleButton" text="Start" textAlignment="CENTER"
+            GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" minWidth="130">
       <font>
          <Font size="20.0" />
       </font></Button>
 
-    <Button fx:id="exitButton" alignment="CENTER" contentDisplay="RIGHT" onAction="#onExit" styleClass="button2" text="Exit" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+    <Button fx:id="exitButton" alignment="CENTER" contentDisplay="RIGHT" onAction="#onExit" styleClass="invisibleButton" text="Exit" textAlignment="CENTER"
+            GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" minWidth="130">
       <font>
          <Font size="20.0" />
       </font></Button>
 
     <columnConstraints>
+        <ColumnConstraints maxWidth="150.0" minWidth="75.0" prefWidth="150.0" />
         <ColumnConstraints maxWidth="150.0" minWidth="50.0" prefWidth="150.0" />
         <ColumnConstraints maxWidth="800.0" minWidth="451.0" prefWidth="800.0" />
         <ColumnConstraints maxWidth="150.0" minWidth="50.0" prefWidth="150.0" />
+        <ColumnConstraints maxWidth="150.0" minWidth="75.0" prefWidth="150.0" />
     </columnConstraints>
 
     <rowConstraints>
