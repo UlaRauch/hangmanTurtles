@@ -6,6 +6,18 @@
     -fx-background-color: red;
 }
 
+.buttonTurtle {
+    -fx-background-image: url("/images/turtle.png");
+    -fx-height: 400px;
+    -fx-width: 400px;
+    }
+
+.buttonFrog {
+    -fx-background-image: url("/images/froggie.jpg");
+    -fx-height: 400px;
+    -fx-width: 400px;
+    }
+
 .wordLabel {
     -fx-font-size: 35px;
 }
