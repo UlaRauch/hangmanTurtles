@@ -101,12 +101,14 @@ public class Hangman {
     }
 
 
-    public void reaction(boolean won) {
-        System.out.println(WORDTOGUESS);
+    public static String reaction(boolean won) {
+        //System.out.println(WORDTOGUESS);
         if (won) {
-            System.out.println("Congratulations! It was hard brain work, but in the end you did it! The turtle lives!");
+            System.out.println("Congratulations! It was hard brain work, but in the end you did it! The " + GameSettings.chosenAnimal + " lives!");
+            return "Congratulations! It was hard brain work, but in the end you did it! The " + GameSettings.chosenAnimal + " lives!";
         } else {
-            System.out.println("Oh no! You couldn't save the Frog from it's destiny. Maybe try a different strategy next time?");
+            System.out.println("Oh no! You couldn't save the " + GameSettings.chosenAnimal +  "from it's destiny. Maybe try a different strategy next time?");
+            return "Oh no! You couldn't save the " + GameSettings.chosenAnimal +  " from it's destiny. Maybe try a different strategy next time?";
         }
     }
 
