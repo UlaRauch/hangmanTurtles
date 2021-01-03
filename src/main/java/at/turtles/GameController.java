@@ -2,21 +2,13 @@ package at.turtles;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.shape.Box;
-import javafx.stage.Stage;
+import javafx.scene.input.TouchEvent;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -39,6 +31,7 @@ public class GameController implements Initializable {
 
     @FXML
     public ImageView image;
+    public ImageView movingPic;
 
 
     private void updateLabels(){
@@ -58,6 +51,7 @@ public class GameController implements Initializable {
         }else{
             image.setImage(new Image("Franklin/franklin.001.png"));
         }
+
     }
 
 
@@ -72,6 +66,12 @@ public class GameController implements Initializable {
             } else {
                 game.wrongGuesses++;
                 pressedButton.setStyle("-fx-background-color: red;");
+
+                if(GameSettings.chosenAnimal == "turtle"){
+                    image.setImage(new Image("Tina/tina.gif"));
+                }else{
+                    image.setImage(new Image("Franklin/franklin.gif"));
+                }
             }
             pressedButton.setDisable(true);
             if (game.checkIfWon()) { //TODO: set GameSettings.won
