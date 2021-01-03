@@ -8,8 +8,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.shape.Box;
 import javafx.stage.Stage;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,6 +37,11 @@ public class GameController implements Initializable {
     @FXML
     public Label commentLabel;
 
+    @FXML
+    public ImageView image;
+    public Box box;
+
+
     private void updateLabels(){
         wordLabel.setText(String.valueOf(game.wordInProgress));
         triesLabel.setText(String.format("Fehlversuche: %d / %d", game.wrongGuesses, game.MAXNUMBEROFGUESSES));
@@ -42,6 +54,7 @@ public class GameController implements Initializable {
         GameSettings.won = false;
         updateLabels();
     }
+
 
     public void letterButtonClicked(ActionEvent actionEvent) throws IOException {
         Button pressedButton = (Button) actionEvent.getSource();
@@ -72,4 +85,6 @@ public class GameController implements Initializable {
         //go back to chooseList.fxml
         GameSettings.showWindow("/chooseList.fxml", ChooseList.WIDTH, ChooseList.HEIGHT, ChooseList.WINDOWTITLE);
     }
+
+
 }
