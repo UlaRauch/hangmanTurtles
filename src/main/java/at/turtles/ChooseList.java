@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class ChooseList {
 
-    public final static int WIDTH = 700;
+    public final static int WIDTH = 1000;
     public final static int HEIGHT = 500;
     public final static String WINDOWTITLE = "Choose List";
 
