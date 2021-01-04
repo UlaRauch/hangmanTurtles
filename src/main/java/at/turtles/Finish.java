@@ -38,10 +38,6 @@ public class Finish implements Initializable {
     private Button endButton;
 
 
-    private void endLabelOutput(){
-        game.reaction(game.checkIfWon());
-    }
-
 
     public void tryAgain(ActionEvent actionEvent) throws IOException {
     //go back to game.fxml
@@ -63,6 +59,6 @@ public class Finish implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        comment.setText(Hangman.reaction(GameSettings.won));
+        comment.setText(Hangman.comments);
     }
 }

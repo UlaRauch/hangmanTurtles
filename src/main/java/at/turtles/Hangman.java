@@ -3,7 +3,6 @@ package at.turtles;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class Hangman {
@@ -13,6 +12,8 @@ public class Hangman {
     final int MAXNUMBEROFGUESSES = 6;
     int wrongGuesses = 0;
     char[] wordInProgress;
+    public static String comments;
+    public int positiveCounter = 0;
 
     //default constructor
     public Hangman() {
@@ -101,14 +102,66 @@ public class Hangman {
     }
 
 
-    public static String reaction(boolean won) {
-        //System.out.println(WORDTOGUESS);
+    //message at end of game
+    //TODO: chosenAnimal -> Frankin/Tina
+    public void finalReaction(boolean won) {
+        System.out.println(WORDTOGUESS);
         if (won) {
             System.out.println("Congratulations! It was hard brain work, but in the end you did it! The " + GameSettings.chosenAnimal + " lives!");
-            return "Congratulations! It was hard brain work, but in the end you did it! The " + GameSettings.chosenAnimal + " lives!";
+            comments = "Congratulations! It was hard brain work, but in the end you did it! The " + GameSettings.chosenAnimal + " lives!";
         } else {
-            System.out.println("Oh no! You couldn't save the " + GameSettings.chosenAnimal +  "from it's destiny. Maybe try a different strategy next time?");
-            return "Oh no! You couldn't save the " + GameSettings.chosenAnimal +  " from it's destiny. Maybe try a different strategy next time?";
+            System.out.println("Oh no! You couldn't save the " + GameSettings.chosenAnimal + "from it's destiny. Maybe try a different strategy next time?");
+            comments = "Oh no! You couldn't save the " + GameSettings.chosenAnimal + " from it's destiny. Maybe try a different strategy next time?";
+        }
+    }
+
+    //comment false guesses
+    //TODO: warum hats mit switch case nicht funktioniert? (alle Kommentare außer default gleichzeitig)
+    public void negativeComments(int wrongGuesses) {
+        if (wrongGuesses == 2) {
+            comments = "This doesn't work either.";
+            System.out.println(comments);
+        } else if (wrongGuesses == 3) {
+            comments = "Are you sure you are using the right strategy?";
+            System.out.println(comments);
+        } else if (wrongGuesses == 4) {
+            comments = "Now you should really start thinking of a solution!";
+            System.out.println(comments);
+        } else if (wrongGuesses == 5) {
+            comments = "Honestly, do you want to save the " + GameSettings.chosenAnimal + " or kill it?";
+            System.out.println(comments);
+        } else {
+            comments = "Nope, try again!";
+            System.out.println(comments);
+        }
+    }
+
+    //comment right guesses
+    //TODO: Algorithmus verbessern?
+    public void positiveComments(int wrongGuesses) {
+        if (wrongGuesses == 0 && positiveCounter == 0) {
+            comments = "Genius or beginner's luck?";
+            System.out.println(comments);
+            positiveCounter++;
+        } else if (wrongGuesses > 0 && positiveCounter == 0) {
+            comments = "That's better";
+            System.out.println(comments);
+            positiveCounter++;
+        } else if (positiveCounter > 1 && wrongGuesses < 4) {
+            comments = "Look at you!";
+            System.out.println(comments);
+            positiveCounter++;
+        } else if (wrongGuesses > 3 && positiveCounter > 4) {
+            comments = "There is hope!";
+            System.out.println(comments);
+            positiveCounter++;
+        } else if (wrongGuesses > 4) {
+            comments = "You can do it! The god of " + GameSettings.chosenAnimal + "s is with you now!";
+            System.out.println(comments);
+            positiveCounter++;
+        } else {
+            comments = "Nice!";
+            System.out.println(comments);
         }
     }
 
@@ -139,7 +192,7 @@ public class Hangman {
 
         }
 
-        reaction(weWon);
+        finalReaction(weWon);
     }
 
 }
