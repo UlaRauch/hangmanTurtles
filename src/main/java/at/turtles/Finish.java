@@ -26,6 +26,8 @@ public class Finish implements Initializable {
     public final static String WINDOWTITLE = "Game";
 
     @FXML
+    public Label wordLabel;
+    @FXML
     public Text comment;
     @FXML
     public ImageView image;
@@ -64,5 +66,6 @@ public class Finish implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         comment.setText(Hangman.comments);
+        wordLabel.setText(String.valueOf(GameSettings.wordToGuess));
     }
 }

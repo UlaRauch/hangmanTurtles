@@ -22,17 +22,20 @@
          <Font size="36.0" />
       </font></Text>
 
-    <Button fx:id="changeB" onAction="#animalChange" text="Change animal/list" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+
+    <Label fx:id="wordLabel" styleClass="wordLabel" text="" GridPane.columnIndex="2" GridPane.columnSpan="10" GridPane.rowIndex="2" />
+
+    <Button fx:id="changeB" onAction="#animalChange" text="Change animal/list" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
       <font>
          <Font size="18.0" />
       </font></Button>
 
-    <Button fx:id="retryButton" onAction="#tryAgain" text="Play again" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+    <Button fx:id="retryButton" onAction="#tryAgain" text="Play again" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
       <font>
          <Font size="18.0" />
       </font></Button>
 
-    <Button fx:id="endButton" onAction="#endGame" text="End game" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+    <Button fx:id="endButton" onAction="#endGame" text="End game" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
 
    <columnConstraints>
       <ColumnConstraints />
