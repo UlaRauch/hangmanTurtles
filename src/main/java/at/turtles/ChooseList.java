@@ -58,11 +58,6 @@ public class ChooseList {
         System.out.println(GameSettings.listPathOfChoice);
     }
 
-    public void loadThirdList(ActionEvent actionEvent) {
-        System.out.println("Clicked Third list");
-        //Hangman.setListPathOfChoice();
-        //Ula TODO: create List, change button label, id & method name, set path
-    }
 
     public void loadUserList(ActionEvent actionEvent) {
         System.out.println("Clicked Use your own List");
