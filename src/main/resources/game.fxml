@@ -3,11 +3,9 @@
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 <GridPane hgap="14" prefHeight="500.0" prefWidth="1000.0" styleClass="GameGridPane" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.GameController">
 
     <gridLinesVisible>false</gridLinesVisible>

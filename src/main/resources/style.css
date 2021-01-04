@@ -56,3 +56,9 @@
     -fx-background-image: url("/images/choosefighter.png");
     -fx-background-repeat: no-repeat;
 }
+
+.ListGridPane{
+    -fx-background-image: url("/images/back2.png");
+    -fx-background-repeat: no-repeat;
+}
+

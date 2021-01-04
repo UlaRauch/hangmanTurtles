@@ -67,6 +67,7 @@ public class GameController implements Initializable {
                 game.wrongGuesses++;
                 pressedButton.setStyle("-fx-background-color: red;");
 
+
                 if(GameSettings.chosenAnimal == "turtle"){
                     image.setImage(new Image("Tina/tina.gif"));
                 }else{
