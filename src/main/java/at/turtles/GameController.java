@@ -77,10 +77,17 @@ public class GameController implements Initializable {
                 commentLabel.setText(Hangman.comments);//TODO: setText funktioniert wieder nicht?
                 pressedButton.setStyle("-fx-background-color: red;");
 
-                if (GameSettings.chosenAnimal == "turtle") {
-                    image.setImage(new Image("Tina/tina.gif"));
-                } else {
+                if(GameSettings.chosenAnimal == "turtle"){
+                    if(game.wrongGuesses == 1){ image.setImage(new Image("Tina/tina.gif"));}
+                    if(game.wrongGuesses == 2){ image.setImage(new Image("Tina/tinastep2.gif")); }
+                    if(game.wrongGuesses == 3){ image.setImage(new Image("Tina/tinastep3.gif")); }
+                    if(game.wrongGuesses == 4){ image.setImage(new Image("Tina/tinastep4.gif")); }
+                    if(game.wrongGuesses == 5){ image.setImage(new Image("Tina/tinastep5.gif")); }
+                }else{
                     image.setImage(new Image("Franklin/franklin.gif"));
+                    if(GameSettings.chosenAnimal == "frog" && game.wrongGuesses % 2 == 0){
+                        image.setImage(new Image("Franklin/frogjump2.gif"));
+                    }
                 }
             }
             pressedButton.setDisable(true);//TODO: remove & add comment
