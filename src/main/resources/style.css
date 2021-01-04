@@ -64,7 +64,7 @@
 }
 
 .FighterGridPane{
-    -fx-background-image: url("/images/choosefighter.png");
+    -fx-background-image: url("/images/fightersback.png");
     -fx-background-repeat: no-repeat;
 }
 
