@@ -37,7 +37,6 @@ public class GameController implements Initializable {
 
     @FXML
     public ImageView image;
-    public ImageView movingPic;
 
 
     private void updateLabels() {
@@ -77,15 +76,15 @@ public class GameController implements Initializable {
                 commentLabel.setText(Hangman.comments);//TODO: setText funktioniert wieder nicht?
                 pressedButton.setStyle("-fx-background-color: red;");
 
-                if(GameSettings.chosenAnimal == "turtle"){
+                if(GameSettings.chosenAnimal.equals("turtle")){
                     if(game.wrongGuesses == 1){ image.setImage(new Image("Tina/tina.gif"));}
                     if(game.wrongGuesses == 2){ image.setImage(new Image("Tina/tinastep2.gif")); }
                     if(game.wrongGuesses == 3){ image.setImage(new Image("Tina/tinastep3.gif")); }
                     if(game.wrongGuesses == 4){ image.setImage(new Image("Tina/tinastep4.gif")); }
                     if(game.wrongGuesses == 5){ image.setImage(new Image("Tina/tinastep5.gif")); }
-                }else{
+                }else if (game.wrongGuesses < game.MAXNUMBEROFGUESSES){
                     image.setImage(new Image("Franklin/franklin.gif"));
-                    if(GameSettings.chosenAnimal == "frog" && game.wrongGuesses % 2 == 0){
+                    if(GameSettings.chosenAnimal.equals("frog") && game.wrongGuesses % 2 == 0){
                         image.setImage(new Image("Franklin/frogjump2.gif"));
                     }
                 }
