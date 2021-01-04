@@ -13,18 +13,15 @@
     </stylesheets>
 
     <!-- TODO: Design -->
-    <Label fx:id="titleLabel" text="Save the Animals" styleClass="textStartTitle"
-           alignment="CENTER" prefHeight="206.0" prefWidth="752.0" textAlignment="CENTER" textFill="#010600" GridPane.columnIndex="2" GridPane.rowIndex="1">
+    <Label fx:id="titleLabel" alignment="CENTER" prefHeight="206.0" prefWidth="752.0" styleClass="textStartTitle" text="Save the Animals" textAlignment="CENTER" textFill="#010600" GridPane.columnIndex="2" GridPane.rowIndex="1">
 </Label>
 
-    <Button fx:id="startButton" alignment="CENTER" onAction="#startButtonclicked" styleClass="invisibleButton" text="Start" textAlignment="CENTER"
-            GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" minWidth="130">
+    <Button fx:id="startButton" alignment="CENTER" minWidth="130" onAction="#startButtonclicked" styleClass="invisibleButton" text="Start" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
       <font>
          <Font size="20.0" />
       </font></Button>
 
-    <Button fx:id="exitButton" alignment="CENTER" contentDisplay="RIGHT" onAction="#onExit" styleClass="invisibleButton" text="Exit" textAlignment="CENTER"
-            GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" minWidth="130">
+    <Button fx:id="exitButton" alignment="CENTER" contentDisplay="RIGHT" minWidth="130" onAction="#onExit" styleClass="invisibleButton" text="Exit" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
       <font>
          <Font size="20.0" />
       </font></Button>
