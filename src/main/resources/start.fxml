@@ -13,10 +13,9 @@
     </stylesheets>
 
     <!-- TODO: Design -->
-    <Label fx:id="titleLabel" alignment="CENTER" prefHeight="206.0" prefWidth="752.0" text="Save the Animals" textAlignment="CENTER" textFill="#010600" GridPane.columnIndex="2" GridPane.rowIndex="1">
-        <font>
-            <Font name="Berlin Sans FB" size="72.0" />
-        </font></Label>
+    <Label fx:id="titleLabel" text="Save the Animals" styleClass="textStartTitle"
+           alignment="CENTER" prefHeight="206.0" prefWidth="752.0" textAlignment="CENTER" textFill="#010600" GridPane.columnIndex="2" GridPane.rowIndex="1">
+</Label>
 
     <Button fx:id="startButton" alignment="CENTER" onAction="#startButtonclicked" styleClass="invisibleButton" text="Start" textAlignment="CENTER"
             GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" minWidth="130">

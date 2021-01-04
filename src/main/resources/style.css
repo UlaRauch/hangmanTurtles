@@ -6,17 +6,11 @@
     -fx-background-color: red;
 }
 
-.buttonTurtle {
-    -fx-background-image: url("/images/turtle.png");
-    -fx-height: 400px;
-    -fx-width: 400px;
-    }
-
-.buttonFrog {
-    -fx-background-image: url("/images/froggie.jpg");
-    -fx-height: 400px;
-    -fx-width: 400px;
-    }
+.textStartTitle {
+   -fx-font-size: 72px;
+    -fx-font-family: "Bangla FM";
+    -fx-font-weight: bold;
+}
 
 .text1 {
     -fx-font-size: 40px;
