@@ -49,7 +49,7 @@ public class GameController implements Initializable {
         game = new Hangman(GameSettings.listPathOfChoice); //TODO: set GameSettings.wordToGuess
         GameSettings.wordToGuess = game.WORDTOGUESS;
         updateLabels();
-        if (GameSettings.chosenAnimal == "turtle") {
+        if (GameSettings.chosenAnimal.equals("turtle")) {
             image.setImage(new Image("Tina/tina.001.png"));
             commentLabel.setText("Oh no! Tina is in danger! Save her by finding the right letters!");
 

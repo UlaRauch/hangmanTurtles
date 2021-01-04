@@ -67,5 +67,12 @@ public class Finish implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         comment.setText(Hangman.comments);
         wordLabel.setText(String.valueOf(GameSettings.wordToGuess));
+
+        if(GameSettings.chosenAnimal.equals("turtle")){
+            image.setImage(new Image("Tina/tinadeath.gif"));
+        }else {
+            image.setImage(new Image("Franklin/franklindeath.gif"));
+        }
+
     }
 }
