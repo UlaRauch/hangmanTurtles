@@ -57,7 +57,7 @@
       <font>
          <Font size="14.0" />
       </font></Button>
-    <Label fx:id="commentLabel" text="This is a test comment" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="4" />
+    <Label fx:id="commentLabel" text="This is a test comment" styleClass="text3" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="4" />
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />

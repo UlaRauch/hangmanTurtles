@@ -18,6 +18,23 @@
     -fx-width: 400px;
     }
 
+.text1 {
+    -fx-font-size: 40px;
+    -fx-font-family: "Bangla FM";
+    -fx-font-weight: bold;
+}
+
+.text2 {
+    -fx-font-size: 20px;
+    -fx-font-family: "Bangla FM";
+}
+
+.text3 {
+    -fx-font-size: 25px;
+    -fx-font-family: "Bangla FM";
+    -fx-font-weight: bold;
+}
+
 .wordLabel {
     -fx-font-size: 35px;
 }

@@ -38,10 +38,6 @@ public class Finish implements Initializable {
     private Button endButton;
 
 
-    private void endLabelOutput(){
-        game.reaction(game.checkIfWon());
-    }
-
 
 //https://edencoding.com/javafx-scene/#change-close-clear
     public void tryAgain(ActionEvent actionEvent) throws IOException {
@@ -64,6 +60,6 @@ public class Finish implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        comment.setText(Hangman.reaction(GameSettings.won));
+        comment.setText(Hangman.comments);
     }
 }
