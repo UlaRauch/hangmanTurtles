@@ -118,21 +118,26 @@ public class Hangman {
     //comment false guesses
     //TODO: warum hats mit switch case nicht funktioniert? (alle Kommentare außer default gleichzeitig)
     public void negativeComments(int wrongGuesses) {
-        if (wrongGuesses == 2) {
-            comments = "This doesn't work either.";
-            System.out.println(comments);
-        } else if (wrongGuesses == 3) {
-            comments = "Are you sure you are using the right strategy?";
-            System.out.println(comments);
-        } else if (wrongGuesses == 4) {
-            comments = "Now you should really start thinking of a solution!";
-            System.out.println(comments);
-        } else if (wrongGuesses == 5) {
-            comments = "Honestly, do you want to save the " + GameSettings.chosenAnimal + " or kill it?";
-            System.out.println(comments);
-        } else {
-            comments = "Nope, try again!";
-            System.out.println(comments);
+        switch (wrongGuesses) {
+            case 2:
+                comments = "This doesn't work either.";
+                System.out.println(comments);
+                break;
+            case 3:
+                comments = "Are you sure you are using the right strategy?";
+                System.out.println(comments);
+                break;
+            case 4:
+                comments = "Now you should really start thinking of a solution!";
+                System.out.println(comments);
+                break;
+            case 5: //TODO: "the frog/turtle" -> Tina/Franklin
+                comments = "Honestly, do you want to save the " + GameSettings.chosenAnimal + " or kill it?";
+                System.out.println(comments);
+                break;
+            default:
+                comments = "Nope, try again!";
+                System.out.println(comments);
         }
     }
 
@@ -155,12 +160,22 @@ public class Hangman {
             comments = "There is hope!";
             System.out.println(comments);
             positiveCounter++;
-        } else if (wrongGuesses > 4) {
+        } else if (wrongGuesses > 4) {//TODO: if/else, falls chosenAnimal.equals(Tina/Franklin)
             comments = "You can do it! The god of " + GameSettings.chosenAnimal + "s is with you now!";
             System.out.println(comments);
             positiveCounter++;
         } else {
             comments = "Nice!";
+            System.out.println(comments);
+        }
+    }
+
+    public void sameLetterComments(boolean existsInWord) {
+        if (existsInWord) {
+            comments = "It only works once, now try something else.";
+            System.out.println(comments);
+        } else {
+            comments = "You've ALREADY tried this.";
             System.out.println(comments);
         }
     }
