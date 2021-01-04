@@ -22,7 +22,7 @@ public class Hangman {
 
     public Hangman(String filename) {
         String word = getRandomWordFromFile(filename).toUpperCase().replaceAll("Ä", "AE")
-                .replaceAll("Ö", "OE").replaceAll("Ü", "UE");
+                .replaceAll("Ö", "OE").replaceAll("Ü", "UE").replaceAll("ß", "SS");
         WORDTOGUESS = word.toCharArray();
         wordInProgress = word.replaceAll("[A-Z]", "_").toCharArray(); //turns letter to _
     }

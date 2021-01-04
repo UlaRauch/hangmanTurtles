@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane hgap="14" prefHeight="500.0" prefWidth="1000.0" styleClass="GameGridPane" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.GameController">
+<GridPane hgap="5.0" prefHeight="500.0" prefWidth="1000.0" styleClass="GameGridPane" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.GameController">
 
     <gridLinesVisible>false</gridLinesVisible>
     <stylesheets>
@@ -46,7 +46,7 @@
     <Button fx:id="yButton" onAction="#letterButtonClicked" styleClass="letterButton" text="Y" GridPane.columnIndex="25" GridPane.rowIndex="3" />
     <Button fx:id="zButton" onAction="#letterButtonClicked" styleClass="letterButton" text="Z" GridPane.columnIndex="26" GridPane.rowIndex="3" />
 
-    <Button fx:id="backButton" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="63.0" styleClass="invisibleButtonSmall" text="Back" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4">
+    <Button fx:id="backButton" onAction="#backButtonClicked" prefHeight="22.0" prefWidth="90.0" styleClass="invisibleButtonSmall" text="Back" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4">
       <font>
          <Font size="14.0" />
       </font></Button>
@@ -83,8 +83,8 @@
    <rowConstraints>
       <RowConstraints />
       <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints minHeight="50.0" prefHeight="100.0" />
+      <RowConstraints maxHeight="295.0" minHeight="272.0" prefHeight="272.0" />
+      <RowConstraints maxHeight="52.666666666666686" minHeight="22.666666666666686" prefHeight="27.666666666666686" />
+      <RowConstraints maxHeight="79.0" minHeight="50.0" prefHeight="74.0" />
    </rowConstraints>
 </GridPane>

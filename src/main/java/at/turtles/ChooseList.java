@@ -48,13 +48,13 @@ public class ChooseList {
 
     public void loadTurtleNames(ActionEvent actionEvent) {
         System.out.println("Clicked Turtle names");
-        GameSettings.listPathOfChoice = "build/resources/main/turtleNames.txt";
+        GameSettings.listPathOfChoice = "build/resources/main/wordLists/turtleNames.txt";
         System.out.println(GameSettings.listPathOfChoice);
     }
 
     public void loadFrogNames(ActionEvent actionEvent) {
         System.out.println("Clicked Frog names");
-        GameSettings.listPathOfChoice= "build/resources/main/frogNames.txt";
+        GameSettings.listPathOfChoice= "build/resources/main/wordLists/frogNames.txt";
         System.out.println(GameSettings.listPathOfChoice);
     }
 

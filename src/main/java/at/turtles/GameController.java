@@ -24,7 +24,7 @@ public class GameController implements Initializable {
     private static Hangman game;
     public final static int WIDTH = 1000;
     public final static int HEIGHT = 500;
-    public final static String WINDOWTITLE = "Game";
+    public final static String WINDOWTITLE = "Play";
 
     @FXML
     public Label wordLabel;
@@ -41,7 +41,7 @@ public class GameController implements Initializable {
 
     private void updateLabels() {
         wordLabel.setText(String.valueOf(game.wordInProgress));
-        triesLabel.setText(String.format("Fehlversuche: %d / %d", game.wrongGuesses, game.MAXNUMBEROFGUESSES));
+        triesLabel.setText(String.format("False tries: %d / %d", game.wrongGuesses, game.MAXNUMBEROFGUESSES));
     }
 
     @Override
@@ -49,11 +49,13 @@ public class GameController implements Initializable {
         game = new Hangman(GameSettings.listPathOfChoice); //TODO: set GameSettings.wordToGuess
         GameSettings.wordToGuess = game.WORDTOGUESS;
         updateLabels();
-        commentLabel.setText("Oh no! The " + GameSettings.chosenAnimal + " is in danger! Save it by finding the right letters!");
         if (GameSettings.chosenAnimal == "turtle") {
             image.setImage(new Image("Tina/tina.001.png"));
+            commentLabel.setText("Oh no! Tina is in danger! Save her by finding the right letters!");
+
         } else {
             image.setImage(new Image("Franklin/franklin.001.png"));
+            commentLabel.setText("Oh no! Franklin is in danger! Save him by finding the right letters!");
         }
     }
 
