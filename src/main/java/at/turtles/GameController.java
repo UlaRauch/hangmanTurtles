@@ -42,7 +42,6 @@ public class GameController implements Initializable {
     private void updateLabels() {
         wordLabel.setText(String.valueOf(game.wordInProgress));
         triesLabel.setText(String.format("Fehlversuche: %d / %d", game.wrongGuesses, game.MAXNUMBEROFGUESSES));
-        commentLabel.setText("Oh no! The " + GameSettings.chosenAnimal + " is in danger! Save it by finding the right letters!");
     }
 
     @Override
@@ -51,7 +50,7 @@ public class GameController implements Initializable {
         GameSettings.wordToGuess = game.WORDTOGUESS;
         GameSettings.won = false;
         updateLabels();
-
+        commentLabel.setText("Oh no! The " + GameSettings.chosenAnimal + " is in danger! Save it by finding the right letters!");
         if (GameSettings.chosenAnimal == "turtle") {
             image.setImage(new Image("Tina/tina.001.png"));
         } else {
