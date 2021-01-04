@@ -68,15 +68,17 @@ public class GameController implements Initializable {
             if (game.existsInTheWord(letter)) {
                 game.updateProgress(letter);
                 pressedButton.setStyle("-fx-background-color: green;");
+                game.alreadyGuessed.add(letter); //add letter to already used letters
                 game.positiveComments(game.wrongGuesses);//TODO: in eigene Commentmethode zusammenfassen?
                 commentLabel.setText(Hangman.comments);
             } else {
                 game.wrongGuesses++;
                 game.negativeComments(game.wrongGuesses); //TODO: in eigene Commentmethode zusammenfassen?
+                game.alreadyGuessed.add(letter); //add letter to already used letters
                 commentLabel.setText(Hangman.comments);
                 pressedButton.setStyle("-fx-background-color: red;");
 
-                if(GameSettings.chosenAnimal.equals("turtle")){
+                if(GameSettings.chosenAnimal.equals("turtle")){ //TODO: Vorschlag: Methode in Gamesettings draus machen?
                     if(game.wrongGuesses == 1){ image.setImage(new Image("Tina/tina.gif"));}
                     if(game.wrongGuesses == 2){ image.setImage(new Image("Tina/tinastep2.gif")); }
                     if(game.wrongGuesses == 3){ image.setImage(new Image("Tina/tinastep3.gif")); }
@@ -89,14 +91,17 @@ public class GameController implements Initializable {
                     }
                 }
             }
-            pressedButton.setDisable(true);//TODO: remove & add comment
+            //pressedButton.setDisable(true);//prevents nasty comments (sameLetterComments)
             if (game.checkIfWon()) {
-                game.finalReaction(game.checkIfWon());
+                game.finalReaction(game.checkIfWon());//comment will be used in next window
                 GameSettings.showWindow("/finish.fxml", Finish.WIDTH, Finish.HEIGHT, Finish.WINDOWTITLE);
             } else if (game.wrongGuesses == game.MAXNUMBEROFGUESSES) {
-                game.finalReaction(game.checkIfWon());
+                game.finalReaction(game.checkIfWon());//comment will be used in next window
                 GameSettings.showWindow("/finish.fxml", Finish.WIDTH, Finish.HEIGHT, Finish.WINDOWTITLE);
             }
+        } else { //if letter has already been clicked before - just for fun
+            game.sameLetterComments(game.existsInTheWord(letter));
+            commentLabel.setText(Hangman.comments);
         }
         updateLabels();
     }
