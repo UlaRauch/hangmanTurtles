@@ -43,7 +43,6 @@ public class Finish implements Initializable {
     }
 
 
-//https://edencoding.com/javafx-scene/#change-close-clear
     public void tryAgain(ActionEvent actionEvent) throws IOException {
     //go back to game.fxml
         GameSettings.showWindow("/game.fxml", GameController.WIDTH, GameController.HEIGHT, GameController.WINDOWTITLE);
