@@ -2,22 +2,20 @@
 
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.image.ImageView?>
-<GridPane hgap="20" prefHeight="500.0" prefWidth="1000.0" styleClass="StartGridPane"
-          vgap="20" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.Finish">
+<GridPane hgap="20" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" styleClass="StartGridPane" vgap="20" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.Finish">
 
     <gridLinesVisible>false</gridLinesVisible>
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
 
-    <ImageView fx:id="image" fitHeight="300" fitWidth="1000" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true"
-               GridPane.rowIndex="2" GridPane.columnSpan="50"/>
+    <ImageView fx:id="image" fitHeight="300" fitWidth="1000" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="50" GridPane.rowIndex="2" />
 
-    <Text fx:id="comment" text="text" textAlignment="CENTER" wrappingWidth="577.265625" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+    <Text fx:id="comment" styleClass="textCommentLabel" textAlignment="CENTER" wrappingWidth="577.265625" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
       <font>
          <Font size="36.0" />
       </font></Text>
@@ -25,28 +23,71 @@
 
     <Label fx:id="wordLabel" styleClass="wordLabel" text="" GridPane.columnIndex="2" GridPane.columnSpan="10" GridPane.rowIndex="2" />
 
-    <Button fx:id="changeB" onAction="#animalChange" text="Change animal/list" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-      <font>
-         <Font size="18.0" />
-      </font></Button>
+    <Button fx:id="changeB" onAction="#animalChange" styleClass="invisibleButtonSmall" text="Change animal/list" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+      </Button>
 
-    <Button fx:id="retryButton" onAction="#tryAgain" text="Play again" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-      <font>
-         <Font size="18.0" />
-      </font></Button>
+    <Button fx:id="retryButton" onAction="#tryAgain" styleClass="invisibleButtonSmall" text="Play again" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+</Button>
 
-    <Button fx:id="endButton" onAction="#endGame" text="End game" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+    <Button fx:id="endButton" onAction="#endGame" styleClass="invisibleButtonSmall" text="End game" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
 
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints maxWidth="200.0" minWidth="100.0" prefWidth="200.0" />
       <ColumnConstraints maxWidth="600.0" minWidth="500.0" prefWidth="600.0" />
       <ColumnConstraints maxWidth="200.0" minWidth="100.0" prefWidth="200.0" />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />
       <RowConstraints maxHeight="300.0" minHeight="100.0" prefHeight="300.0" />
       <RowConstraints maxHeight="150.0" minHeight="50.0" prefHeight="150.0" />
+      <RowConstraints />
    </rowConstraints>
 
 

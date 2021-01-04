@@ -12,11 +12,11 @@
         <URL value="@style.css" />
     </stylesheets>
 
-    <Label fx:id="chooseTurtleOrFrog" prefHeight="88.0" prefWidth="794.0" text="Choose your fighter" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-    <Button fx:id="turtleButton" onAction="#chooseTurtle" text="Tina the Turtle" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
-    <Button fx:id="frogButton" onAction="#chooseFrog" text="Franklin the Frog" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
-    <Button fx:id="backButton" onAction="#goBack" styleClass="button2" text="Back" GridPane.rowIndex="4" />
-    <Button fx:id="continueButton" onAction="#goToNextScene" styleClass="button2" text="Continue" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+    <Label fx:id="chooseTurtleOrFrog" styleClass="textWindowTitle" prefHeight="88.0" prefWidth="794.0" text="Choose your fighter" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+    <Button fx:id="turtleButton" styleClass="invisibleButtonSmall" onAction="#chooseTurtle" text="Tina the Turtle" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+    <Button fx:id="frogButton" styleClass="invisibleButtonSmall" onAction="#chooseFrog" text="Franklin the Frog" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+    <Button fx:id="backButton" onAction="#goBack" styleClass="invisibleButtonSmall"  text="Back" GridPane.rowIndex="4" />
+    <Button fx:id="continueButton" onAction="#goToNextScene" styleClass="invisibleButtonSmall"  text="Continue" GridPane.columnIndex="3" GridPane.rowIndex="4" />
 
     <ImageView fx:id="imageFrog" fitHeight="300" fitWidth="300" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
 

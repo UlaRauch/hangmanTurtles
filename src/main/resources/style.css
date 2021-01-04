@@ -8,25 +8,51 @@
 
 .textStartTitle {
    -fx-font-size: 72px;
-    -fx-font-family: "Bangla FM";
+    -fx-font-family: "Berlin Sans FB";
     -fx-font-weight: bold;
 }
 
-.text1 {
-    -fx-font-size: 40px;
-    -fx-font-family: "Bangla FM";
+.textWindowTitle {
+    -fx-font-size: 48px;
+    -fx-font-family: "Berlin Sans FB";
     -fx-font-weight: bold;
 }
 
-.text2 {
-    -fx-font-size: 20px;
-    -fx-font-family: "Bangla FM";
+
+.textCommentLabel {
+    -fx-font-size: 24px;
+    -fx-font-family: "Berlin Sans FB";
+    -fx-font-weight: bold;
 }
 
-.text3 {
-    -fx-font-size: 25px;
-    -fx-font-family: "Bangla FM";
+.invisibleButtonBig {
+    -fx-background-color: none;
+    -fx-border-color: none;
+    /*-fx-text-fill: none;*/
+
+    -fx-font-size: 36px;
+    -fx-font-family: "Berlin Sans FB";
     -fx-font-weight: bold;
+}
+.invisibleButtonBig:hover {
+    -fx-border-color: black;
+    -fx-border-width: 0 0 1 0;
+    -fx-cursor: hand;
+}
+
+.invisibleButtonSmall {
+    -fx-background-color: none;
+    -fx-border-color: none;
+    /*-fx-text-fill: none;*/
+
+    -fx-font-size: 24px;
+    -fx-font-family: "Berlin Sans FB";
+    -fx-font-weight: bold;
+}
+.invisibleButtonSmall:hover {
+    -fx-border-color: black;
+    -fx-border-width: 0 0 1 0;
+    -fx-cursor: hand;
 }
 
 .wordLabel {
@@ -43,19 +69,6 @@
 .StartGridPane{
     -fx-background-image: url("/images/background-start.png");
     -fx-background-repeat: no-repeat;
-}
-
-.invisibleButton {
-    -fx-background-color: none;
-    -fx-border-color: none;
-    /*-fx-text-fill: none;*/
-    -fx-font-family: "Berlin Sans FB";
-    -fx-font-size: 36;
-}
-.invisibleButton:hover {
-    -fx-border-color: black;
-    -fx-border-width: 0 0 1 0;
-    -fx-cursor: hand;
 }
 
 .GameGridPane{

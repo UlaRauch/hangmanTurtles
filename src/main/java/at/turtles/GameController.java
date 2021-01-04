@@ -48,7 +48,6 @@ public class GameController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         game = new Hangman(GameSettings.listPathOfChoice); //TODO: set GameSettings.wordToGuess
         GameSettings.wordToGuess = game.WORDTOGUESS;
-        GameSettings.won = false;
         updateLabels();
         commentLabel.setText("Oh no! The " + GameSettings.chosenAnimal + " is in danger! Save it by finding the right letters!");
         if (GameSettings.chosenAnimal == "turtle") {
@@ -67,12 +66,12 @@ public class GameController implements Initializable {
             if (game.existsInTheWord(letter)) {
                 game.updateProgress(letter);
                 pressedButton.setStyle("-fx-background-color: green;");
-                game.positiveComments(game.wrongGuesses);
-                commentLabel.setText(Hangman.comments);//TODO: warum funktioniert setText hier schon wieder nicht?
+                game.positiveComments(game.wrongGuesses);//TODO: in eigene Commentmethode zusammenfassen?
+                commentLabel.setText(Hangman.comments);
             } else {
                 game.wrongGuesses++;
                 game.negativeComments(game.wrongGuesses); //TODO: in eigene Commentmethode zusammenfassen?
-                commentLabel.setText(Hangman.comments);//TODO: setText funktioniert wieder nicht?
+                commentLabel.setText(Hangman.comments);
                 pressedButton.setStyle("-fx-background-color: red;");
 
                 if(GameSettings.chosenAnimal.equals("turtle")){
@@ -90,7 +89,6 @@ public class GameController implements Initializable {
             }
             pressedButton.setDisable(true);//TODO: remove & add comment
             if (game.checkIfWon()) {
-                GameSettings.won = true;//TODO: wird Gamesettings.won noch benötigt?
                 game.finalReaction(game.checkIfWon());
                 GameSettings.showWindow("/finish.fxml", Finish.WIDTH, Finish.HEIGHT, Finish.WINDOWTITLE);
             } else if (game.wrongGuesses == game.MAXNUMBEROFGUESSES) {

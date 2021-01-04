@@ -46,11 +46,11 @@
     <Button fx:id="yButton" onAction="#letterButtonClicked" styleClass="letterButton" text="Y" GridPane.columnIndex="25" GridPane.rowIndex="3" />
     <Button fx:id="zButton" onAction="#letterButtonClicked" styleClass="letterButton" text="Z" GridPane.columnIndex="26" GridPane.rowIndex="3" />
 
-    <Button fx:id="backButton" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="63.0" styleClass="button1" text="Back" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4">
+    <Button fx:id="backButton" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="63.0" styleClass="invisibleButtonSmall" text="Back" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4">
       <font>
          <Font size="14.0" />
       </font></Button>
-    <Label fx:id="commentLabel" styleClass="text3" text="This is a test comment" GridPane.columnIndex="4" GridPane.columnSpan="23" GridPane.rowIndex="4" />
+    <Label fx:id="commentLabel" styleClass="textCommentLabel" GridPane.columnIndex="4" GridPane.columnSpan="23" GridPane.rowIndex="4" />
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
