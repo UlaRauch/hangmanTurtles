@@ -57,13 +57,26 @@
 
 .wordLabel {
     -fx-font-size: 35px;
+    -fx-font-family: "Berlin Sans FB";
 }
 
 .letterButton {
+    -fx-font-size: 15px;
+    -fx-font-family: "Berlin Sans FB";
+    -fx-font-weight: bold;
+    -fx-background-color: none;
+    -fx-border-color: none;
+}
+
+.letterButton:hover {
+    -fx-border-color: black;
+    -fx-border-width: 0 0 1 0;
+    -fx-cursor: hand;
 }
 
 .triesLabel {
-    -fx-font-size: 15px;
+    -fx-font-size: 24px;
+    -fx-font-family: "Berlin Sans FB";
 }
 
 .StartGridPane{
