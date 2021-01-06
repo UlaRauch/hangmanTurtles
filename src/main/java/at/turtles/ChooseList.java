@@ -67,6 +67,7 @@ public class ChooseList {
      * is executed when customList button is clicked in GUI
      * shows message what the file should contain
      * sets chosen wordlist to path picked in file browser
+     * shows error message if no file or wrong type of file is selected
      * updates buttons to reflect choice
      */
     public void loadUserList(ActionEvent actionEvent) {
