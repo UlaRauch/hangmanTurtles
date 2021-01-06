@@ -47,8 +47,9 @@
 }
 
 .wordLabel {
-    -fx-font-size: 35px;
+    -fx-font-size: 24px;
     -fx-font-family: "Berlin Sans FB";
+    -fx-font-weight: bold;
 }
 
 .letterButton {
