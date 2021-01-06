@@ -107,12 +107,11 @@ public class Hangman {
         System.out.println(WORDTOGUESS);
         if (GameSettings.chosenAnimal != null) {
             if (won) {
-                System.out.println("Congratulations! It was hard brain work, but in the end you did it! " + GameSettings.chosenAnimal + " lives!");
                 comments = "Congratulations! It was hard brain work, but in the end you did it! " + GameSettings.chosenAnimal + " lives!";
             } else {
-                System.out.println("Oh no! You couldn't save " + GameSettings.chosenAnimal + "from this horrible destiny. Maybe try a different strategy next time?");
                 comments = "Oh no! You couldn't save " + GameSettings.chosenAnimal + " from this horrible destiny. Maybe try a different strategy next time?";
             }
+            System.out.println(comments);
         } else { //when played in console
             if (won) {
                 System.out.println("Congratulations! It was hard brain work, but in the end you did it!");
@@ -127,28 +126,24 @@ public class Hangman {
         switch (wrongGuesses) {
             case 2 -> {
                 comments = "This doesn't work either.";
-                System.out.println(comments);
             }
             case 3 -> {
                 comments = "Are you sure this is the right strategy?";
-                System.out.println(comments);
             }
             case 4 -> {
                 comments = "Now you should really start thinking of a solution!";
-                System.out.println(comments);
             }
             case 5 -> {
                 comments = "Honestly, are you here to save animals or to kill them?";
-                System.out.println(comments);
             }
             default -> {
                 comments = "Nope, try again!";
-                System.out.println(comments);
             }
         }
+        System.out.println(comments);
     }
 
-    //comment right guesses
+    //comment right guesses (only for GUI)
     //TODO: Algorithmus verbessern!
     public void positiveComments(int wrongGuesses) {
         if (wrongGuesses == 0 && positiveCounter == 0) {
@@ -192,6 +187,7 @@ public class Hangman {
             boolean alreadyTyped = checkIfAlreadyTyped(letter);
             if (alreadyTyped) {
                 sameLetterComments(existsInTheWord(letter));
+                System.out.println("Nice!");
                 continue;
             }
 
@@ -202,7 +198,7 @@ public class Hangman {
                 alreadyGuessed.add(letter); //add letter to already used letters
                 wrongGuesses += 1;
                 if (wrongGuesses < MAXNUMBEROFGUESSES) {
-                    sameLetterComments(existsInTheWord(letter));
+                    negativeComments(wrongGuesses);
                 }
             }
 
