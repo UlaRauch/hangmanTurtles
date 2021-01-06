@@ -11,9 +11,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+/**
+ * Controller for game.fxml
+ */
 public class GameController implements Initializable {
 
-    private static Hangman game;
+    private Hangman game;
     public final static int WIDTH = 1000;
     public final static int HEIGHT = 500;
     public final static String WINDOWTITLE = "Play";
@@ -30,12 +34,12 @@ public class GameController implements Initializable {
     @FXML
     public ImageView image;
 
-
-    private void updateLabels() {
-        wordLabel.setText(String.valueOf(game.wordInProgress));
-        triesLabel.setText(String.format("False tries: %d / %d", game.wrongGuesses, game.MAXNUMBEROFGUESSES));
-    }
-
+    /**
+     * is executed when loading window
+     * initializes new Hangman object to create new game
+     * shows _ for letters in word to be guessed
+     * shows image of chosen animal
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         game = new Hangman(GameSettings.listPathOfChoice);
@@ -51,7 +55,23 @@ public class GameController implements Initializable {
         }
     }
 
-    //playing the game
+
+    /**
+     * updates labels in Window to show current game progress
+     */
+    private void updateLabels() {
+        wordLabel.setText(String.valueOf(game.wordInProgress));
+        triesLabel.setText(String.format("False tries: %d / %d", game.wrongGuesses, game.MAXNUMBEROFGUESSES));
+        commentLabel.setText(Hangman.comments);
+    }
+
+
+    /**
+     * is executed when a letter button is clicked
+     * contains game logic for Hangman
+     * reacts to guessed letter (was it already guessed?, is it correct?)
+     * switches to Finish Window at the end of the game
+     */
     public void letterButtonClicked(ActionEvent actionEvent) throws IOException {
         Button pressedButton = (Button) actionEvent.getSource();
         char letter = pressedButton.getText().charAt(0);
@@ -62,12 +82,10 @@ public class GameController implements Initializable {
                 pressedButton.setStyle("-fx-background-color: green;");
                 game.alreadyGuessed.add(letter); //add letter to already used letters
                 game.positiveComments();//TODO: in eigene Commentmethode zusammenfassen?
-                commentLabel.setText(Hangman.comments);
             } else {
                 game.wrongGuesses++;
                 game.negativeComments(); //TODO: in eigene Commentmethode zusammenfassen?
                 game.alreadyGuessed.add(letter); //add letter to already used letters
-                commentLabel.setText(Hangman.comments);
                 pressedButton.setStyle("-fx-background-color: red;");
 
                 if(GameSettings.chosenAnimal.equals("Tina")){ //TODO: Vorschlag: Methode in Gamesettings draus machen?
@@ -93,11 +111,13 @@ public class GameController implements Initializable {
             }
         } else { //if letter has already been clicked before - just for fun
             game.sameLetterComments(game.existsInTheWord(letter));
-            commentLabel.setText(Hangman.comments);
         }
         updateLabels();
     }
 
+    /**
+     * Switches back to Choose List Window
+     */
     public void backButtonClicked(ActionEvent actionEvent) throws IOException {
         //go back to chooseList.fxml
         GameSettings.showWindow("/chooseList.fxml", ChooseList.WIDTH, ChooseList.HEIGHT, ChooseList.WINDOWTITLE);
