@@ -5,6 +5,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * Represents a single game of Hangman
+ */
 public class Hangman {
 
     final char[] WORDTOGUESS;
@@ -20,6 +23,11 @@ public class Hangman {
         this("C:\\Users\\urauc\\Documents\\Ausbildung\\FH\\Programmieren\\testList.txt");//wenn das auf git landet, hat Ula was falsch gemacht, sorry!
     }
 
+
+    /**
+     * Constructor for Hangman
+     * @param filename path to wordlist to choose random word from
+     */
     public Hangman(String filename) {
         String word = getRandomWordFromFile(filename).toUpperCase().replaceAll("Ä", "AE")
                 .replaceAll("Ö", "OE").replaceAll("Ü", "UE").replaceAll("ß", "SS");
@@ -27,7 +35,12 @@ public class Hangman {
         wordInProgress = word.replaceAll("[A-Z]", "_").toCharArray(); //turns letter to _
     }
 
-    //returns random word
+
+    /**
+     * returns random word from file
+     * @param filename path to wordlist to choose random word from
+     * @return         random word from file
+     */
     public String getRandomWordFromFile(String filename) {
         ArrayList<String> wordList = new ArrayList<>();
         try {
@@ -42,39 +55,53 @@ public class Hangman {
         return wordList.get(new Random().nextInt(wordList.size()));
     }
 
+    /**
+     * Scans System.in until a letter is entered
+     * @return first entered letter as uppercase
+     */
     public char takeLetter() {
+        Scanner scanner = new Scanner(System.in);
+        char letter;
+        boolean enteredLetter = false;
 
-        for (int i = 0; i < MAXNUMBEROFGUESSES; ) {
+        do {
             System.out.println("Enter letter: ");
-            Scanner scanner = new Scanner(System.in);
-            String line = scanner.nextLine(); //scan entered letter
-
-            if (line.charAt(0) >= 64) { // (ASCII) check if entry = letter (not character)
-                checkIfAlreadyTyped(line.charAt(0));
-                existsInTheWord(line.charAt(0));
-                checkIfWon();
-                i++;
-                return line.toUpperCase().charAt(0);
-
-            } else { //if entry = character
-                while (i < MAXNUMBEROFGUESSES) {
-                    System.out.println("Your entry was not a letter! ");
-                    return 0;
-                }
+            String line = scanner.nextLine();
+            letter = line.toUpperCase().charAt(0);
+            if (letter >= 'A' && letter <= 'Z') {
+                enteredLetter = true;
+            } else {
+                System.out.println("Your entry was not a letter! ");
             }
-        }
-        return 0;
+        } while (!enteredLetter);
+
+        return letter;
     }
 
+    /**
+     * Prints current progress of guessed letters and remaining wrong-guesses
+     */
     public void printCurrentGameState() {
         System.out.println(wordInProgress);
         System.out.println("You have " + (MAXNUMBEROFGUESSES - wrongGuesses) + " guesses left");
     }
 
+
+    /**
+     * Checks if letter has already been guessed
+     * @param letter letter to check
+     * @return       if letter was already guessed
+     */
     public boolean checkIfAlreadyTyped(char letter) {
         return alreadyGuessed.contains(letter);
     }
 
+
+    /**
+     * Checks if letter exists in word to guess
+     * @param letter letter to check
+     * @return       if word contains letter
+     */
     public boolean existsInTheWord(char letter) {
         for (char c : WORDTOGUESS) {
             if (c == letter) {
@@ -84,6 +111,11 @@ public class Hangman {
         return false;
     }
 
+
+    /**
+     * Updates WORDTOGUESS to show guessed letter in word
+     * @param letter letter to show in WORDTOGUESS
+     */
     public void updateProgress(char letter) {
         for (int i = 0; i < WORDTOGUESS.length; i++) {
             if (WORDTOGUESS[i] == letter) {
@@ -92,6 +124,11 @@ public class Hangman {
         }
     }
 
+
+    /**
+     * Checks if all letters have been guessed
+     * @return if the game is won
+     */
     public boolean checkIfWon() {
         for (int i = 0; i < WORDTOGUESS.length; i++) {
             if (WORDTOGUESS[i] != wordInProgress[i])
@@ -102,7 +139,11 @@ public class Hangman {
     }
 
 
-    //message at end of game
+    /**
+     * In GUI mode: sets comment variable depending on winning/losing
+     * In Console mode: Outputs comment depending on winning/losing
+     * @param won if game is won
+     */
     public void finalReaction(boolean won) {
         System.out.println(WORDTOGUESS);
         if (GameSettings.chosenAnimal != null) {
@@ -121,8 +162,11 @@ public class Hangman {
         }
     }
 
-    //comment false guesses
-    public void negativeComments(int wrongGuesses) {
+
+    /**
+     * Outputs negative comment depending of current amount of wrong guesses
+     */
+    public void negativeComments() {
         switch (wrongGuesses) {
             case 2 -> {
                 comments = "This doesn't work either.";
@@ -143,9 +187,12 @@ public class Hangman {
         System.out.println(comments);
     }
 
-    //comment right guesses (only for GUI)
+
+    /**
+     * Outputs positive comment depending of current amount of wrong guesses
+     */
     //TODO: Algorithmus verbessern!
-    public void positiveComments(int wrongGuesses) {
+    public void positiveComments() {
         if (wrongGuesses == 0 && positiveCounter == 0) {
             comments = "Genius or beginner's luck?";
         } else if (wrongGuesses > 0 && positiveCounter == 0) {
@@ -169,6 +216,11 @@ public class Hangman {
         positiveCounter++;
     }
 
+
+    /**
+     * Outputs comment when letter has already been guessed
+     * @param existsInWord if comment should be about a correctly guessed letter
+     */
     public void sameLetterComments(boolean existsInWord) {
         if (existsInWord) {
             comments = "It only works once, now try something else.";
@@ -178,6 +230,9 @@ public class Hangman {
         System.out.println(comments);
     }
 
+    /**
+     * Hangman game logic for console version
+     */
     public void game() {
         // Willkommen zum Spiel!;
         boolean weWon = false;
@@ -198,7 +253,7 @@ public class Hangman {
                 alreadyGuessed.add(letter); //add letter to already used letters
                 wrongGuesses += 1;
                 if (wrongGuesses < MAXNUMBEROFGUESSES) {
-                    negativeComments(wrongGuesses);
+                    negativeComments();
                 }
             }
 

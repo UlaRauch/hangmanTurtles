@@ -61,11 +61,11 @@ public class GameController implements Initializable {
                 game.updateProgress(letter);
                 pressedButton.setStyle("-fx-background-color: green;");
                 game.alreadyGuessed.add(letter); //add letter to already used letters
-                game.positiveComments(game.wrongGuesses);//TODO: in eigene Commentmethode zusammenfassen?
+                game.positiveComments();//TODO: in eigene Commentmethode zusammenfassen?
                 commentLabel.setText(Hangman.comments);
             } else {
                 game.wrongGuesses++;
-                game.negativeComments(game.wrongGuesses); //TODO: in eigene Commentmethode zusammenfassen?
+                game.negativeComments(); //TODO: in eigene Commentmethode zusammenfassen?
                 game.alreadyGuessed.add(letter); //add letter to already used letters
                 commentLabel.setText(Hangman.comments);
                 pressedButton.setStyle("-fx-background-color: red;");
