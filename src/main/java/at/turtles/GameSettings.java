@@ -25,14 +25,12 @@ public class GameSettings {
         GameSettings.stage.show();
     }
 
-    public static void updateSelectedButtons(Button selected, Button unselected1) {
+    //mark buttons, unmark other buttons
+    //use to mark button after selection
+    public static void updateSelectedButtons(Button selected, Button... unselected) {
         selected.setStyle("-fx-underline: true");
-        unselected1.setStyle("-fx-underline: false");
-    }
-
-    public static void updateSelectedButtons(Button selected, Button unselected1, Button unselected2) {
-        selected.setStyle("-fx-underline: true");
-        unselected1.setStyle("-fx-underline: false");
-        unselected2.setStyle("-fx-underline: false");
+        for (Button b: unselected) {
+            b.setStyle("-fx-underline: false");
+        }
     }
 }
