@@ -3,11 +3,8 @@
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<GridPane prefHeight="500.0" prefWidth="1000.0" styleClass="StartGridPane" hgap="20" vgap="20"
-          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="at.turtles.StartController">
+<GridPane hgap="20" prefHeight="500.0" prefWidth="1000.0" styleClass="StartGridPane" vgap="20" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.StartController">
 
     <gridLinesVisible>false</gridLinesVisible>
     <stylesheets>
@@ -15,22 +12,11 @@
     </stylesheets>
 
     <!-- TODO: Design -->
-    <Label fx:id="titleLabel" text="Save the Animals" styleClass="textStartTitle"
-           alignment="CENTER" prefHeight="206.0" prefWidth="752.0"
-           textAlignment="CENTER" textFill="#010600"
-           GridPane.columnIndex="2" GridPane.rowIndex="1" />
+    <Label fx:id="titleLabel" alignment="CENTER" prefHeight="206.0" prefWidth="752.0" styleClass="textStartTitle" text="Save the Animals" textAlignment="CENTER" textFill="#010600" GridPane.columnIndex="2" GridPane.rowIndex="1" />
 
-    <Button fx:id="startButton" text="Start" styleClass="invisibleButtonBig"
-            alignment="CENTER" minWidth="130"
-            textAlignment="CENTER"
-            GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.halignment="CENTER"
-            onAction="#startButtonClicked" />
+    <Button fx:id="startButton" alignment="CENTER" minWidth="130" onAction="#startButtonClicked" styleClass="invisibleButtonBig" text="Start" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
 
-    <Button fx:id="exitButton" text="Exit" styleClass="invisibleButtonBig"
-            alignment="CENTER" minWidth="130"
-            textAlignment="CENTER"
-            GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER"
-            onAction="#exitButtonClicked" />
+    <Button fx:id="exitButton" alignment="CENTER" minWidth="130" onAction="#exitButtonClicked" styleClass="invisibleButtonBig" text="Exit" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
 
     <columnConstraints>
         <ColumnConstraints maxWidth="150.0" minWidth="75.0" prefWidth="150.0" />
