@@ -103,80 +103,79 @@ public class Hangman {
 
 
     //message at end of game
-    //TODO: chosenAnimal -> Frankin/Tina
     public void finalReaction(boolean won) {
         System.out.println(WORDTOGUESS);
-        if (won) {
-            System.out.println("Congratulations! It was hard brain work, but in the end you did it! The " + GameSettings.chosenAnimal + " lives!");
-            comments = "Congratulations! It was hard brain work, but in the end you did it! The " + GameSettings.chosenAnimal + " lives!";
-        } else {
-            System.out.println("Oh no! You couldn't save the " + GameSettings.chosenAnimal + "from it's destiny. Maybe try a different strategy next time?");
-            comments = "Oh no! You couldn't save the " + GameSettings.chosenAnimal + " from it's destiny. Maybe try a different strategy next time?";
+        if (GameSettings.chosenAnimal != null) {
+            if (won) {
+                comments = "Congratulations! It was hard brain work, but in the end you did it! " + GameSettings.chosenAnimal + " lives!";
+            } else {
+                comments = "Oh no! You couldn't save " + GameSettings.chosenAnimal + " from this horrible destiny. Maybe try a different strategy next time?";
+            }
+            System.out.println(comments);
+        } else { //when played in console
+            if (won) {
+                System.out.println("Congratulations! It was hard brain work, but in the end you did it!");
+            } else {
+                System.out.println("Oh no! That took too long. Maybe try a different strategy next time?");
+            }
         }
     }
 
     //comment false guesses
     public void negativeComments(int wrongGuesses) {
         switch (wrongGuesses) {
-            case 2:
+            case 2 -> {
                 comments = "This doesn't work either.";
-                System.out.println(comments);
-                break;
-            case 3:
-                comments = "Are you sure you are using the right strategy?";
-                System.out.println(comments);
-                break;
-            case 4:
+            }
+            case 3 -> {
+                comments = "Are you sure this is the right strategy?";
+            }
+            case 4 -> {
                 comments = "Now you should really start thinking of a solution!";
-                System.out.println(comments);
-                break;
-            case 5: //TODO: "the frog/turtle" -> Tina/Franklin
-                comments = "Honestly, do you want to save the " + GameSettings.chosenAnimal + " or kill it?";
-                System.out.println(comments);
-                break;
-            default:
+            }
+            case 5 -> {
+                comments = "Honestly, are you here to save animals or to kill them?";
+            }
+            default -> {
                 comments = "Nope, try again!";
-                System.out.println(comments);
+            }
         }
+        System.out.println(comments);
     }
 
-    //comment right guesses
-    //TODO: Algorithmus verbessern?
+    //comment right guesses (only for GUI)
+    //TODO: Algorithmus verbessern!
     public void positiveComments(int wrongGuesses) {
         if (wrongGuesses == 0 && positiveCounter == 0) {
             comments = "Genius or beginner's luck?";
-            System.out.println(comments);
-            positiveCounter++;
         } else if (wrongGuesses > 0 && positiveCounter == 0) {
             comments = "That's better";
-            System.out.println(comments);
-            positiveCounter++;
-        } else if (positiveCounter > 1 && wrongGuesses < 4) {
+        } else if (wrongGuesses < 4 && positiveCounter == 2) {
             comments = "Look at you!";
-            System.out.println(comments);
-            positiveCounter++;
-        } else if (wrongGuesses > 3 && positiveCounter > 4) {
+        } else if (wrongGuesses > 3 && positiveCounter == 4) {
             comments = "There is hope!";
-            System.out.println(comments);
-            positiveCounter++;
-        } else if (wrongGuesses > 4) {//TODO: if/else, falls chosenAnimal.equals(Tina/Franklin)
-            comments = "You can do it! The god of " + GameSettings.chosenAnimal + "s is with you now!";
-            System.out.println(comments);
-            positiveCounter++;
+        } else if (wrongGuesses > 4 && (positiveCounter % 2 != 0)) {
+            if (GameSettings.chosenAnimal.equals("Tina")) {
+                comments = "You can do it! The god of turtles is with you now!";
+            } else {
+                comments = "You can do it! The god of frogs is with you now!";
+            }
+        } else if (wrongGuesses > 4 && (positiveCounter % 2 == 0)) {
+            comments = GameSettings.chosenAnimal + " believes in you!";
         } else {
-            comments = "Nice!";
-            System.out.println(comments);
+            comments = "Nice";
         }
+        System.out.println(comments);
+        positiveCounter++;
     }
 
     public void sameLetterComments(boolean existsInWord) {
         if (existsInWord) {
             comments = "It only works once, now try something else.";
-            System.out.println(comments);
         } else {
             comments = "You've ALREADY tried this.";
-            System.out.println(comments);
         }
+        System.out.println(comments);
     }
 
     public void game() {
@@ -187,7 +186,8 @@ public class Hangman {
             char letter = takeLetter();
             boolean alreadyTyped = checkIfAlreadyTyped(letter);
             if (alreadyTyped) {
-                System.out.println("You've ALREADY typed this.");
+                sameLetterComments(existsInTheWord(letter));
+                System.out.println("Nice!");
                 continue;
             }
 
@@ -198,7 +198,7 @@ public class Hangman {
                 alreadyGuessed.add(letter); //add letter to already used letters
                 wrongGuesses += 1;
                 if (wrongGuesses < MAXNUMBEROFGUESSES) {
-                    System.out.println("Wrong, try again!");
+                    negativeComments(wrongGuesses);
                 }
             }
 
