@@ -43,27 +43,17 @@ public class ChooseFighters implements Initializable {
     public Button continueButton;
 
 
-    public void markSelectedButton() {
-        if (GameSettings.chosenAnimal.equals("frog")) {
-            frogButton.setStyle("-fx-underline: true;");
-            turtleButton.setStyle("-fx-underline: false");
-        } else if (GameSettings.chosenAnimal.equals("turtle")) {
-            frogButton.setStyle("-fx-underline: false;");
-            turtleButton.setStyle("-fx-underline: true");
-        }
-    }
-
     //TODO: set GameSettings.chosenAnimal
     public void chooseTurtle(ActionEvent actionEvent) {
         System.out.println("You chose Tina the Turtle");
         GameSettings.chosenAnimal = "turtle";
-        markSelectedButton();
+        GameSettings.updateSelectedButtons(turtleButton, frogButton);
     }
 
     public void chooseFrog(ActionEvent actionEvent) {
         System.out.println("You chose Franklin the frog");
         GameSettings.chosenAnimal = "frog";
-        markSelectedButton();
+        GameSettings.updateSelectedButtons(frogButton, turtleButton);
     }
 
 

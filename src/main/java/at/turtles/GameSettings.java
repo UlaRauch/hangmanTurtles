@@ -3,6 +3,7 @@ package at.turtles;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,5 +23,23 @@ public class GameSettings {
         GameSettings.stage.setScene(scene);
         GameSettings.stage.setTitle(windowTitle);
         GameSettings.stage.show();
+    }
+
+    public static void updateSelectedButtons(Button selected, Button unselected) {
+        selected.setStyle("-fx-underline: true");
+        unselected.setStyle("-fx-underline: false");
+    }
+
+    public static void updateSelectedButtons(Button selected, Button unselected1, Button unselected2) {
+        selected.setStyle("-fx-underline: true");
+        unselected1.setStyle("-fx-underline: false");
+        unselected2.setStyle("-fx-underline: false");
+    }
+
+    public static void updateSelectedButtons(Button selected, Button unselected1, Button unselected2, Button unselected3) {
+        selected.setStyle("-fx-underline: true");
+        unselected1.setStyle("-fx-underline: false");
+        unselected2.setStyle("-fx-underline: false");
+        unselected3.setStyle("-fx-underline: false");
     }
 }

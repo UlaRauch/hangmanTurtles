@@ -44,33 +44,17 @@ public class ChooseList {
     public Button continueButton;
 
 
-    public void markSelectedButton() {
-        if (GameSettings.listPathOfChoice.equals(pathTurtleNames)) {
-            turtleNamesButton.setStyle("-fx-underline: true");
-            frogNamesButton.setStyle("-fx-underline: false");
-            userListButton.setStyle("-fx-underline: false");
-        } else if (GameSettings.listPathOfChoice.equals(pathFrogNames)) {
-            turtleNamesButton.setStyle("-fx-underline: false");
-            frogNamesButton.setStyle("-fx-underline: true");
-            userListButton.setStyle("-fx-underline: false");
-        } else {
-            turtleNamesButton.setStyle("-fx-underline: false");
-            frogNamesButton.setStyle("-fx-underline: false");
-            userListButton.setStyle("-fx-underline: true");
-        }
-    }
-
     public void loadTurtleNames(ActionEvent actionEvent) {
         System.out.println("Clicked Turtle names");
         GameSettings.listPathOfChoice = pathTurtleNames;
-        markSelectedButton();
+        GameSettings.updateSelectedButtons(turtleNamesButton, frogNamesButton, userListButton);
         System.out.println("Selected file: " + GameSettings.listPathOfChoice);
     }
 
     public void loadFrogNames(ActionEvent actionEvent) {
         System.out.println("Clicked Frog names");
         GameSettings.listPathOfChoice = pathFrogNames;
-        markSelectedButton();
+        GameSettings.updateSelectedButtons(frogNamesButton, turtleNamesButton, userListButton);
         System.out.println("Selected file: " + GameSettings.listPathOfChoice);
     }
 
@@ -103,7 +87,7 @@ public class ChooseList {
             if (file.getAbsolutePath().endsWith(".txt")) {
                 pathOtherFile = file.getAbsolutePath();
                 GameSettings.listPathOfChoice = pathOtherFile;
-                markSelectedButton();
+                GameSettings.updateSelectedButtons(userListButton, turtleNamesButton, frogNamesButton);
                 System.out.println("File chosen:" + pathOtherFile);
 
             } else {
