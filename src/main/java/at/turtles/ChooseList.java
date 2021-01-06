@@ -9,10 +9,12 @@ import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert.AlertType;
-
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Controller for chooseList.fxml
+ */
 public class ChooseList {
 
     public final static int WIDTH = 1000;
@@ -24,10 +26,7 @@ public class ChooseList {
     turtle names: https://www.schildkroetenwelt.com/schildkroeten-arten/
     frog names: http://www.lexikon-froesche.de/froesche_a.shtml
     */
-    public String pathOtherFile;
 
-    @FXML
-    private Label titleLabel;
 
     @FXML
     private Button turtleNamesButton;
@@ -38,13 +37,12 @@ public class ChooseList {
     @FXML
     private Button userListButton;
 
-    @FXML
-    public Button backButton;
 
-    @FXML
-    public Button continueButton;
-
-
+    /**
+     * is executed when turtleNames button is clicked in GUI
+     * sets chosen wordlist to the default turtleNames list
+     * updates buttons to reflect choice
+     */
     public void loadTurtleNames(ActionEvent actionEvent) {
         System.out.println("Clicked Turtle names");
         GameSettings.listPathOfChoice = pathTurtleNames;
@@ -52,6 +50,12 @@ public class ChooseList {
         System.out.println("Selected file: " + GameSettings.listPathOfChoice);
     }
 
+
+    /**
+     * is executed when frogNames button is clicked in GUI
+     * sets chosen wordlist to the default frogNames list
+     * updates buttons to reflect choice
+     */
     public void loadFrogNames(ActionEvent actionEvent) {
         System.out.println("Clicked Frog names");
         GameSettings.listPathOfChoice = pathFrogNames;
@@ -59,7 +63,12 @@ public class ChooseList {
         System.out.println("Selected file: " + GameSettings.listPathOfChoice);
     }
 
-
+    /**
+     * is executed when customList button is clicked in GUI
+     * shows message what the file should contain
+     * sets chosen wordlist to path picked in file browser
+     * updates buttons to reflect choice
+     */
     public void loadUserList(ActionEvent actionEvent) {
         System.out.println("Clicked Use your own List");
 
@@ -71,7 +80,6 @@ public class ChooseList {
         alert.showAndWait();
 
         //offne Browser für Fileauswahl
-        Stage stage = (Stage) titleLabel.getScene().getWindow();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Where are your words?");
 
@@ -79,17 +87,16 @@ public class ChooseList {
         fileChooser.getExtensionFilters()
                 .add(new ExtensionFilter("Text Files", "*.txt"));
 
-        File file = fileChooser.showOpenDialog(stage);
+        File file = fileChooser.showOpenDialog(GameSettings.stage);
 
         //use file path information to set variable in GameSettings
         //check if filepath is chosen to avoid NullpointerException
         //check if file is .txt
         if (file != null) {
             if (file.getAbsolutePath().endsWith(".txt")) {
-                pathOtherFile = file.getAbsolutePath();
-                GameSettings.listPathOfChoice = pathOtherFile;
+                GameSettings.listPathOfChoice = file.getAbsolutePath();
                 GameSettings.updateSelectedButtons(userListButton, turtleNamesButton, frogNamesButton);
-                System.out.println("File chosen:" + pathOtherFile);
+                System.out.println("File chosen:" + GameSettings.listPathOfChoice);
 
             } else {
                 System.out.println("Wrong filetype!");
@@ -102,6 +109,12 @@ public class ChooseList {
         }
     }
 
+
+    /**
+     * switches to Game Window
+     * only possible when a word list is selected
+     * otherwise shows error message
+     */
     public void goToNextScene(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked continue");
 
@@ -127,6 +140,10 @@ public class ChooseList {
         }
     }
 
+
+    /**
+     * switches back to Choose Fighters Window
+     */
     public void goBack(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked back");
         GameSettings.showWindow("/choosefighters.fxml",
