@@ -116,10 +116,10 @@ public class GameController implements Initializable {
     }
 
     /**
+     * is executed when Back Button is clicked in GUI
      * Switches back to Choose List Window
      */
     public void backButtonClicked(ActionEvent actionEvent) throws IOException {
-        //go back to chooseList.fxml
         GameSettings.showWindow("/chooseList.fxml", ChooseList.WIDTH, ChooseList.HEIGHT, ChooseList.WINDOWTITLE);
     }
 

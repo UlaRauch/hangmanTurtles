@@ -112,6 +112,7 @@ public class ChooseList {
 
 
     /**
+     * is executed when Continue Button is clicked in GUI
      * switches to Game Window
      * only possible when a word list is selected
      * otherwise shows error message
@@ -143,6 +144,7 @@ public class ChooseList {
 
 
     /**
+     * is executed when Back Button is clicked in GUI
      * switches back to Choose Fighters Window
      */
     public void goBack(ActionEvent actionEvent) throws IOException {

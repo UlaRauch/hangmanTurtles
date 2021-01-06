@@ -72,6 +72,7 @@ public class ChooseFighters implements Initializable {
 
 
     /**
+     * is executed when Continue Button is clicked in GUI
      * switches to Choose List Window
      * only possible when animal is selected
      * otherwise shows error message
@@ -98,6 +99,7 @@ public class ChooseFighters implements Initializable {
 
 
     /**
+     * is executed when Back Button is clicked in GUI
      * switches back to Start Window
      */
     public void goBack(ActionEvent actionEvent) throws IOException {
