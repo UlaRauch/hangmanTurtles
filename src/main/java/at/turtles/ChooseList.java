@@ -20,6 +20,10 @@ public class ChooseList {
     public final static String WINDOWTITLE = "Choose List";
     public final String pathFrogNames = "build/resources/main/wordLists/frogNames.txt";
     public final String pathTurtleNames = "build/resources/main/wordLists/turtleNames.txt";
+    /* Quellen:
+    turtle names: https://www.schildkroetenwelt.com/schildkroeten-arten/
+    frog names: http://www.lexikon-froesche.de/froesche_a.shtml
+    */
     public String pathOtherFile;
 
     @FXML
@@ -30,9 +34,6 @@ public class ChooseList {
 
     @FXML
     private Button frogNamesButton;
-
-    @FXML
-    private Button thirdListButton;
 
     @FXML
     private Button userListButton;
@@ -108,7 +109,6 @@ public class ChooseList {
         if (GameSettings.listPathOfChoice != null) {
             System.out.println("continues");
             GameSettings.showWindow("/game.fxml", GameController.WIDTH, GameController.HEIGHT, GameController.WINDOWTITLE);
-            //TODO: Lukas fix scene switching --> Game
         } else {
             Alert noListAlert = new Alert(AlertType.ERROR);
             noListAlert.setResizable(true);
@@ -129,8 +129,6 @@ public class ChooseList {
 
     public void goBack(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked back");
-        //TODO Jess: fix scene switching -> chooseFighter
-        //jess is done
         GameSettings.showWindow("/choosefighters.fxml",
                 ChooseFighters.WIDTH, ChooseFighters.HEIGHT, ChooseFighters.WINDOWTITLE);
     }

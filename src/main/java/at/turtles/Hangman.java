@@ -116,7 +116,6 @@ public class Hangman {
     }
 
     //comment false guesses
-    //TODO: warum hats mit switch case nicht funktioniert? (alle Kommentare außer default gleichzeitig)
     public void negativeComments(int wrongGuesses) {
         switch (wrongGuesses) {
             case 2:

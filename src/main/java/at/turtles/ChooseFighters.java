@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -43,7 +42,6 @@ public class ChooseFighters implements Initializable {
     public Button continueButton;
 
 
-    //TODO: set GameSettings.chosenAnimal
     public void chooseTurtle(ActionEvent actionEvent) {
         System.out.println("You chose Tina the Turtle");
         GameSettings.chosenAnimal = "turtle";
