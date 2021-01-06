@@ -26,37 +26,12 @@ public class Finish implements Initializable {
     public Text comment;
     @FXML
     public ImageView image;
-    @FXML
-    private Label won;
-    @FXML
-    private Label lost;
 
-    @FXML
-    private Button changeB;
-    @FXML
-    private Button retryButton;
-    @FXML
-    private Button endButton;
-
-
-
-    public void tryAgain(ActionEvent actionEvent) throws IOException {
-    //go back to game.fxml
-        GameSettings.showWindow("/game.fxml", GameController.WIDTH, GameController.HEIGHT, GameController.WINDOWTITLE);
-    }
-
-
-    public void animalChange(ActionEvent actionEvent) throws IOException {
-        System.out.println("Back to Choose your fighter");
-        GameSettings.showWindow("/choosefighters.fxml",
-                ChooseFighters.WIDTH, ChooseFighters.HEIGHT, ChooseFighters.WINDOWTITLE);
-    }
-
-
-    public void endGame(ActionEvent actionEvent) {
-        Platform.exit();
-    }
-
+    /**
+     * is executed when loading window
+     * shows comment and image to reflect if game has been won
+     * shows complete word of ended game
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         comment.setText(Hangman.comments);
@@ -67,6 +42,36 @@ public class Finish implements Initializable {
         }else {
             image.setImage(new Image("Franklin/franklindeath.gif"));
         }
-
     }
+
+    /**
+     * is executed when Play again Button is clicked in GUI
+     * Switches back to Game Window
+     * starts new game with the same animal and word list
+     */
+    public void tryAgain(ActionEvent actionEvent) throws IOException {
+    //go back to game.fxml
+        GameSettings.showWindow("/game.fxml", GameController.WIDTH, GameController.HEIGHT, GameController.WINDOWTITLE);
+    }
+
+
+    /**
+     * is executed when Change animal/list Button is clicked in GUI
+     * Switches back to Choose Fighters Window
+     */
+    public void animalChange(ActionEvent actionEvent) throws IOException {
+        System.out.println("Back to Choose your fighter");
+        GameSettings.showWindow("/choosefighters.fxml",
+                ChooseFighters.WIDTH, ChooseFighters.HEIGHT, ChooseFighters.WINDOWTITLE);
+    }
+
+    /**
+     * is executed when Exit Button is clicked in GUI
+     * exits the program
+     */
+    public void endGame(ActionEvent actionEvent) {
+        Platform.exit();
+    }
+
+
 }
