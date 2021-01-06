@@ -25,21 +25,14 @@ public class GameSettings {
         GameSettings.stage.show();
     }
 
-    public static void updateSelectedButtons(Button selected, Button unselected) {
+    public static void updateSelectedButtons(Button selected, Button unselected1) {
         selected.setStyle("-fx-underline: true");
-        unselected.setStyle("-fx-underline: false");
+        unselected1.setStyle("-fx-underline: false");
     }
 
     public static void updateSelectedButtons(Button selected, Button unselected1, Button unselected2) {
         selected.setStyle("-fx-underline: true");
         unselected1.setStyle("-fx-underline: false");
         unselected2.setStyle("-fx-underline: false");
-    }
-
-    public static void updateSelectedButtons(Button selected, Button unselected1, Button unselected2, Button unselected3) {
-        selected.setStyle("-fx-underline: true");
-        unselected1.setStyle("-fx-underline: false");
-        unselected2.setStyle("-fx-underline: false");
-        unselected3.setStyle("-fx-underline: false");
     }
 }

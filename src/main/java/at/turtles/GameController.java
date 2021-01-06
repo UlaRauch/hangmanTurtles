@@ -49,7 +49,7 @@ public class GameController implements Initializable {
         game = new Hangman(GameSettings.listPathOfChoice); //TODO: set GameSettings.wordToGuess
         GameSettings.wordToGuess = game.WORDTOGUESS;
         updateLabels();
-        if (GameSettings.chosenAnimal.equals("turtle")) {
+        if (GameSettings.chosenAnimal.equals("Tina")) {
             image.setImage(new Image("Tina/tina.001.png"));
             commentLabel.setText("Oh no! Tina is in danger! Save her by finding the right letters!");
 
@@ -78,7 +78,7 @@ public class GameController implements Initializable {
                 commentLabel.setText(Hangman.comments);
                 pressedButton.setStyle("-fx-background-color: red;");
 
-                if(GameSettings.chosenAnimal.equals("turtle")){ //TODO: Vorschlag: Methode in Gamesettings draus machen?
+                if(GameSettings.chosenAnimal.equals("Tina")){ //TODO: Vorschlag: Methode in Gamesettings draus machen?
                     if(game.wrongGuesses == 1){ image.setImage(new Image("Tina/tina.gif"));}
                     if(game.wrongGuesses == 2){ image.setImage(new Image("Tina/tinastep2.gif")); }
                     if(game.wrongGuesses == 3){ image.setImage(new Image("Tina/tinastep3.gif")); }
@@ -86,7 +86,7 @@ public class GameController implements Initializable {
                     if(game.wrongGuesses == 5){ image.setImage(new Image("Tina/tinastep5.gif")); }
                 }else if (game.wrongGuesses < game.MAXNUMBEROFGUESSES){
                     image.setImage(new Image("Franklin/franklin.gif"));
-                    if(GameSettings.chosenAnimal.equals("frog") && game.wrongGuesses % 2 == 0){
+                    if(GameSettings.chosenAnimal.equals("Franklin") && game.wrongGuesses % 2 == 0){
                         image.setImage(new Image("Franklin/frogjump2.gif"));
                     }
                 }

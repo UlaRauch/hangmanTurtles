@@ -46,13 +46,13 @@ public class ChooseFighters implements Initializable {
     //TODO: set GameSettings.chosenAnimal
     public void chooseTurtle(ActionEvent actionEvent) {
         System.out.println("You chose Tina the Turtle");
-        GameSettings.chosenAnimal = "turtle";
+        GameSettings.chosenAnimal = "Tina";
         GameSettings.updateSelectedButtons(turtleButton, frogButton);
     }
 
     public void chooseFrog(ActionEvent actionEvent) {
         System.out.println("You chose Franklin the frog");
-        GameSettings.chosenAnimal = "frog";
+        GameSettings.chosenAnimal = "Franklin";
         GameSettings.updateSelectedButtons(frogButton, turtleButton);
     }
 
