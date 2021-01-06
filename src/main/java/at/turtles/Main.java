@@ -22,7 +22,7 @@ public class Main extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         GameSettings.stage = primaryStage;
-        GameSettings.showWindow("/choosefighters.fxml", StartController.WIDTH, StartController.HEIGHT, StartController.WINDOWTITLE);
+        GameSettings.showWindow("/start.fxml", StartController.WIDTH, StartController.HEIGHT, StartController.WINDOWTITLE);
     }
 
 }

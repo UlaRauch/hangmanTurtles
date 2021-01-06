@@ -6,30 +6,38 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane hgap="20" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" styleClass="StartGridPane" vgap="20" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.Finish">
+<GridPane prefHeight="500.0" prefWidth="1000.0" styleClass="StartGridPane" hgap="20" vgap="20"
+          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="at.turtles.Finish">
 
     <gridLinesVisible>false</gridLinesVisible>
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
 
-    <ImageView fx:id="image" fitHeight="300" fitWidth="1000" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="50" GridPane.rowIndex="2" />
+    <ImageView fx:id="image"
+               fitHeight="300" fitWidth="1000" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true"
+               GridPane.columnSpan="50" GridPane.rowIndex="2" />
 
-    <Text fx:id="comment" styleClass="textCommentLabel" textAlignment="CENTER" wrappingWidth="577.265625" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-      <font>
-         <Font size="36.0" />
-      </font></Text>
+    <Text fx:id="comment" styleClass="textCommentLabel"
+          textAlignment="CENTER" wrappingWidth="577.265625"
+          GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" />
 
 
-    <Label fx:id="wordLabel" styleClass="wordLabel" text="" GridPane.columnIndex="2" GridPane.columnSpan="10" GridPane.rowIndex="2" />
+    <Label fx:id="wordLabel" text="" styleClass="wordLabel"
+           GridPane.columnIndex="2" GridPane.columnSpan="10" GridPane.rowIndex="2" />
 
-    <Button fx:id="changeB" onAction="#animalChange" styleClass="invisibleButtonSmall" text="Change animal/list" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-      </Button>
+    <Button fx:id="changeB" text="Change animal/list" styleClass="invisibleButtonSmall"
+            GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.halignment="CENTER"
+            onAction="#animalChange" />
 
-    <Button fx:id="retryButton" onAction="#tryAgain" styleClass="invisibleButtonSmall" text="Play again" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-</Button>
+    <Button fx:id="retryButton" text="Play again" styleClass="invisibleButtonSmall"
+            GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.halignment="CENTER"
+            onAction="#tryAgain" />
 
-    <Button fx:id="endButton" onAction="#endGame" styleClass="invisibleButtonSmall" text="End game" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+    <Button fx:id="endButton" text="End game" styleClass="invisibleButtonSmall"
+            GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.halignment="CENTER"
+            onAction="#endGame" />
 
    <columnConstraints>
       <ColumnConstraints />

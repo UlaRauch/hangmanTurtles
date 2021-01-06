@@ -3,9 +3,10 @@
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<GridPane hgap="10" prefHeight="500.0" prefWidth="1000.0" styleClass="ListGridPane" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.ChooseList">
+<GridPane prefHeight="500.0" prefWidth="1000.0" styleClass="ListGridPane" hgap="10" vgap="10"
+          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="at.turtles.ChooseList">
 
     <gridLinesVisible>false</gridLinesVisible>
     <stylesheets>
@@ -14,26 +15,33 @@
 
     <!-- TODO: Design -->
     <!-- Title -->
-    <Label fx:id="titleLabel" styleClass="textWindowTitle" alignment="CENTER" prefHeight="71.0" prefWidth="738.0" text="Choose your preferred word list!" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-     </Label>
+    <Label fx:id="titleLabel" text="Choose your preferred word list!" styleClass="textWindowTitle"
+           alignment="CENTER" prefHeight="71.0" prefWidth="738.0"
+           GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" />
 
-    <Button fx:id="frogNamesButton" onAction="#loadFrogNames" styleClass="invisibleButtonSmall" text="Frog names (easy)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-      </Button>
 
-    <Button fx:id="turtleNamesButton" onAction="#loadTurtleNames" styleClass="invisibleButtonSmall" text="Turtle names (hard)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-     </Button>
+    <Button fx:id="frogNamesButton" text="Frog names (easy)" styleClass="invisibleButtonSmall"
+            GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER"
+            onAction="#loadFrogNames" />
+
+    <Button fx:id="turtleNamesButton" text="Turtle names (hard)" styleClass="invisibleButtonSmall"
+            GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.halignment="CENTER"
+            onAction="#loadTurtleNames" />
 
     <!-- Button for other Word list-->
-    <Button fx:id="userListButton" onAction="#loadUserList" styleClass="invisibleButtonSmall" text="Use your own words" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-      <font>
-         <Font size="16.0" />
-      </font></Button>
+    <Button fx:id="userListButton" text="Use your own words" styleClass="invisibleButtonSmall"
+            GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.halignment="CENTER"
+            onAction="#loadUserList" />
 
     <!-- Buttons for back and continue -->
-    <Button fx:id="backButton" onAction="#goBack" styleClass="invisibleButtonSmall" text="Back" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-      </Button>
-    <Button fx:id="continueButton" onAction="#goToNextScene" styleClass="invisibleButtonSmall" text="Continue" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-     </Button>
+    <Button fx:id="backButton" text="Back" styleClass="invisibleButtonSmall"
+            GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.halignment="CENTER"
+            onAction="#goBack" />
+
+    <Button fx:id="continueButton" text="Continue" styleClass="invisibleButtonSmall"
+            GridPane.columnIndex="5" GridPane.rowIndex="3" GridPane.halignment="CENTER"
+            onAction="#goToNextScene" />
+
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints maxWidth="150.0" minWidth="50.0" prefWidth="125.0" />

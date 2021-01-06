@@ -5,22 +5,42 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" styleClass="FighterGridPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.ChooseFighters">
+<GridPane prefHeight="500.0" prefWidth="1000.0" styleClass="FighterGridPane"
+          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="at.turtles.ChooseFighters">
 
     <gridLinesVisible>false</gridLinesVisible>
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
 
-    <Label fx:id="chooseTurtleOrFrog" styleClass="textWindowTitle" prefHeight="88.0" prefWidth="794.0" text="Choose your fighter" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-    <Button fx:id="turtleButton" styleClass="invisibleButtonSmall" onAction="#chooseTurtle" text="Tina the Turtle" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
-    <Button fx:id="frogButton" styleClass="invisibleButtonSmall" onAction="#chooseFrog" text="Franklin the Frog" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
-    <Button fx:id="backButton" onAction="#goBack" styleClass="invisibleButtonSmall"  text="Back" GridPane.rowIndex="4" />
-    <Button fx:id="continueButton" onAction="#goToNextScene" styleClass="invisibleButtonSmall"  text="Continue" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+    <Label fx:id="chooseTurtleOrFrog" text="Choose your fighter" styleClass="textWindowTitle"
+           prefHeight="88.0" prefWidth="794.0"
+           GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" />
 
-    <ImageView fx:id="imageFrog" fitHeight="300" fitWidth="300" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+    <Button fx:id="turtleButton" text="Tina the Turtle" styleClass="invisibleButtonSmall"
+            GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.halignment="CENTER"  GridPane.valignment="BOTTOM"
+            onAction="#chooseTurtle" />
 
-    <ImageView fx:id="imageTurtle" fitHeight="300" fitWidth="300" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+    <Button fx:id="frogButton" text="Franklin the Frog" styleClass="invisibleButtonSmall"
+            GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM"
+            onAction="#chooseFrog" />
+
+    <Button fx:id="backButton" text="Back" styleClass="invisibleButtonSmall"
+            GridPane.rowIndex="4"
+            onAction="#goBack" />
+
+    <Button fx:id="continueButton" text="Continue" styleClass="invisibleButtonSmall"
+            GridPane.columnIndex="3" GridPane.rowIndex="4"
+            onAction="#goToNextScene" />
+
+    <ImageView fx:id="imageFrog"
+               fitHeight="300" fitWidth="300" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true"
+               GridPane.columnIndex="1" GridPane.columnSpan="1" GridPane.rowIndex="2" GridPane.halignment="CENTER"  />
+
+    <ImageView fx:id="imageTurtle"
+               fitHeight="300" fitWidth="300" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true"
+               GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER" />
 
     <columnConstraints>
       <ColumnConstraints maxWidth="100.0" prefWidth="100.0" />
@@ -36,5 +56,4 @@
       <RowConstraints minHeight="10.0" prefHeight="50.0" />
       <RowConstraints prefHeight="50.0" />
    </rowConstraints>
-    <!--buttons done-->
 </GridPane>
