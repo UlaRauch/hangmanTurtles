@@ -20,6 +20,7 @@ public class ChooseFighters implements Initializable {
     public final static int WIDTH = 1000;
     public final static int HEIGHT = 500;
     public final static String WINDOWTITLE = "Choose your Fighter";
+
     @FXML
     private Label chooseTurtleOrFrog;
 
@@ -41,15 +42,28 @@ public class ChooseFighters implements Initializable {
     @FXML
     public Button continueButton;
 
+
+    public void markSelectedButton() {
+        if (GameSettings.chosenAnimal.equals("frog")) {
+            frogButton.setStyle("-fx-underline: true;");
+            turtleButton.setStyle("-fx-underline: false");
+        } else if (GameSettings.chosenAnimal.equals("turtle")) {
+            frogButton.setStyle("-fx-underline: false;");
+            turtleButton.setStyle("-fx-underline: true");
+        }
+    }
+
     //TODO: set GameSettings.chosenAnimal
     public void chooseTurtle(ActionEvent actionEvent) {
         System.out.println("You chose Tina the Turtle");
         GameSettings.chosenAnimal = "turtle";
+        markSelectedButton();
     }
 
     public void chooseFrog(ActionEvent actionEvent) {
         System.out.println("You chose Franklin the frog");
         GameSettings.chosenAnimal = "frog";
+        markSelectedButton();
     }
 
 
@@ -81,8 +95,9 @@ public class ChooseFighters implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       imageFrog.setImage(new Image("images/frog-choose-fighters.png"));
-       imageTurtle.setImage(new Image("images/turtle-choose-fighters.png"));
+        imageFrog.setImage(new Image("images/frog-choose-fighters.png"));
+        imageTurtle.setImage(new Image("images/turtle-choose-fighters.png"));
 
-    }}
+    }
+}
 

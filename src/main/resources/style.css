@@ -49,9 +49,9 @@
     -fx-font-family: "Berlin Sans FB";
     -fx-font-weight: bold;
 }
+
 .invisibleButtonSmall:hover {
-    -fx-border-color: black;
-    -fx-border-width: 0 0 1 0;
+    -fx-underline: true;
     -fx-cursor: hand;
 }
 

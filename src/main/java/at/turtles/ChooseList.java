@@ -1,14 +1,10 @@
 package at.turtles;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
@@ -22,6 +18,9 @@ public class ChooseList {
     public final static int WIDTH = 1000;
     public final static int HEIGHT = 500;
     public final static String WINDOWTITLE = "Choose List";
+    public final String pathFrogNames = "build/resources/main/wordLists/frogNames.txt";
+    public final String pathTurtleNames = "build/resources/main/wordLists/turtleNames.txt";
+    public String pathOtherFile;
 
     @FXML
     private Label titleLabel;
@@ -45,17 +44,34 @@ public class ChooseList {
     public Button continueButton;
 
 
+    public void markSelectedButton() {
+        if (GameSettings.listPathOfChoice.equals(pathTurtleNames)) {
+            turtleNamesButton.setStyle("-fx-underline: true");
+            frogNamesButton.setStyle("-fx-underline: false");
+            userListButton.setStyle("-fx-underline: false");
+        } else if (GameSettings.listPathOfChoice.equals(pathFrogNames)) {
+            turtleNamesButton.setStyle("-fx-underline: false");
+            frogNamesButton.setStyle("-fx-underline: true");
+            userListButton.setStyle("-fx-underline: false");
+        } else {
+            turtleNamesButton.setStyle("-fx-underline: false");
+            frogNamesButton.setStyle("-fx-underline: false");
+            userListButton.setStyle("-fx-underline: true");
+        }
+    }
 
     public void loadTurtleNames(ActionEvent actionEvent) {
         System.out.println("Clicked Turtle names");
-        GameSettings.listPathOfChoice = "build/resources/main/wordLists/turtleNames.txt";
-        System.out.println(GameSettings.listPathOfChoice);
+        GameSettings.listPathOfChoice = pathTurtleNames;
+        markSelectedButton();
+        System.out.println("Selected file: " + GameSettings.listPathOfChoice);
     }
 
     public void loadFrogNames(ActionEvent actionEvent) {
         System.out.println("Clicked Frog names");
-        GameSettings.listPathOfChoice= "build/resources/main/wordLists/frogNames.txt";
-        System.out.println(GameSettings.listPathOfChoice);
+        GameSettings.listPathOfChoice = pathFrogNames;
+        markSelectedButton();
+        System.out.println("Selected file: " + GameSettings.listPathOfChoice);
     }
 
 
@@ -76,7 +92,7 @@ public class ChooseList {
 
         //nur files mit Dateiendung ".txt" anzeigen
         fileChooser.getExtensionFilters()
-                    .add(new ExtensionFilter("Text Files", "*.txt"));
+                .add(new ExtensionFilter("Text Files", "*.txt"));
 
         File file = fileChooser.showOpenDialog(stage);
 
@@ -85,8 +101,11 @@ public class ChooseList {
         //check if file is .txt
         if (file != null) {
             if (file.getAbsolutePath().endsWith(".txt")) {
-                GameSettings.listPathOfChoice = file.getAbsolutePath();
-                System.out.println("File chosen:" + file.getAbsolutePath());
+                pathOtherFile = file.getAbsolutePath();
+                GameSettings.listPathOfChoice = pathOtherFile;
+                markSelectedButton();
+                System.out.println("File chosen:" + pathOtherFile);
+
             } else {
                 System.out.println("Wrong filetype!");
                 Alert wrongFileAlert = new Alert(AlertType.ERROR);
