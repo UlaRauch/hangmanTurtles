@@ -21,7 +21,7 @@ public class StartController {
      * is executed when Start Button is clicked in GUI
      * switches to Choose Fighters Window
      */
-    public void startButtonclicked(ActionEvent actionEvent) throws IOException {
+    public void startButtonClicked(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked 'Start'");
         GameSettings.showWindow("/choosefighters.fxml", ChooseFighters.WIDTH, ChooseFighters.HEIGHT, ChooseFighters.WINDOWTITLE);
     }
@@ -30,7 +30,7 @@ public class StartController {
      * is executed when Exit Button is clicked in GUI
      * exits the program
      */
-    public void onExit(ActionEvent actionEvent) {
+    public void exitButtonClicked(ActionEvent actionEvent) {
         System.out.println("Clicked exit");
         Platform.exit();
     }

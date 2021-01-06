@@ -24,13 +24,13 @@
             alignment="CENTER" minWidth="130"
             textAlignment="CENTER"
             GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.halignment="CENTER"
-            onAction="#startButtonclicked" />
+            onAction="#startButtonClicked" />
 
     <Button fx:id="exitButton" text="Exit" styleClass="invisibleButtonBig"
             alignment="CENTER" minWidth="130"
             textAlignment="CENTER"
             GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER"
-            onAction="#onExit" />
+            onAction="#exitButtonClicked" />
 
     <columnConstraints>
         <ColumnConstraints maxWidth="150.0" minWidth="75.0" prefWidth="150.0" />
