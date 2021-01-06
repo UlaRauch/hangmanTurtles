@@ -9,13 +9,6 @@ public class Main extends Application{
 
     public static void main(String[] args) {
         launch(args);
-
-//        Hangman testMan = new Hangman();
-//        System.out.println(testMan.wordInProgress);
-//
-//        testMan.game();
-
-        //Platform.exit();
     }
 
 
