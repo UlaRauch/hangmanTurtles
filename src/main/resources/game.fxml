@@ -19,6 +19,8 @@
 
     <Label fx:id="wordLabel" styleClass="wordLabel" text="" GridPane.columnIndex="1" GridPane.columnSpan="26" GridPane.rowIndex="1" />
 
+    <Label fx:id="instructionLabel" styleClass="instructionLabel" GridPane.columnIndex="1" GridPane.columnSpan="26" GridPane.rowIndex="2" />
+
     <Button fx:id="aButton" onAction="#letterButtonClicked" styleClass="letterButton" text="A" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
     <Button fx:id="bButton" onAction="#letterButtonClicked" styleClass="letterButton" text="B" GridPane.columnIndex="2" GridPane.rowIndex="3" />

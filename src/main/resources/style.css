@@ -15,7 +15,7 @@
 }
 
 .textWindowTitle {
-    -fx-font-size: 48px;
+    -fx-font-size: 42px;
     -fx-font-family: "Berlin Sans FB";
     -fx-font-weight: bold;
 }
@@ -23,7 +23,6 @@
 .textCommentLabel {
     -fx-font-size: 24px;
     -fx-font-family: "Berlin Sans FB";
-    -fx-font-weight: bold;
 }
 
 .invisibleButtonBig {
@@ -36,8 +35,7 @@
     -fx-font-weight: bold;
 }
 .invisibleButtonBig:hover {
-    -fx-border-color: black;
-    -fx-border-width: 0 0 1 0;
+    -fx-underline: true;
     -fx-cursor: hand;
 }
 
@@ -56,10 +54,28 @@
     -fx-cursor: hand;
 }
 
+.listButton {
+    -fx-background-color: none;
+    -fx-border-color: none;
+    /*-fx-text-fill: none;*/
+
+    -fx-font-size: 24px;
+    -fx-font-family: "Berlin Sans FB";
+}
+
+.listButton:hover {
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
 .wordLabel {
     -fx-font-size: 24px;
     -fx-font-family: "Berlin Sans FB";
-    -fx-font-weight: bold;
+}
+
+.instructionLabel {
+    -fx-font-size: 24px;
+    -fx-font-family: "Berlin Sans FB";
 }
 
 .letterButton {
