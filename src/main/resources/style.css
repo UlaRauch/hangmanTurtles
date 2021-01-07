@@ -1,5 +1,15 @@
+@font-face {
+    font-family: "Berlin Sans FB";
+    src: url("/Fonts/BerlinSansFBRegular.ttf");
+}
+
+@font-face {
+    font-family: "Berlin Sans FB";
+    src: url("/Fonts/BerlinSansFBBold.ttf");
+}
+
 .textStartTitle {
-   -fx-font-size: 72px;
+    -fx-font-size: 72px;
     -fx-font-family: "Berlin Sans FB";
     -fx-font-weight: bold;
 }
@@ -90,4 +100,3 @@
     -fx-background-image: url("/images/back2.png");
     -fx-background-repeat: no-repeat;
 }
-
