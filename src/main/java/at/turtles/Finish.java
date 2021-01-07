@@ -4,7 +4,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -49,7 +48,7 @@ public class Finish implements Initializable {
             if(!GameSettings.won) {
                 image.setImage(new Image("Franklin/franklindeath.gif"));
             }else {
-                image.setImage(new Image("Franklin/fighterbackground.png"));
+                image.setImage(new Image("Franklin/frog.png"));
             }
         }
     }
