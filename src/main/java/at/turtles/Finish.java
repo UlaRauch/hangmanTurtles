@@ -37,10 +37,20 @@ public class Finish implements Initializable {
         comment.setText(Hangman.comments);
         wordLabel.setText(String.valueOf(GameSettings.wordToGuess));
 
+
+
         if(GameSettings.chosenAnimal.equals("Tina")){
-            image.setImage(new Image("Tina/tinadeath.gif"));
+            if(GameSettings.won){
+                image.setImage(new Image("Tina/winningdance.gif"));
+            }else {
+                image.setImage(new Image("Tina/tinadeath.gif"));
+            }
         }else {
-            image.setImage(new Image("Franklin/franklindeath.gif"));
+            if(!GameSettings.won) {
+                image.setImage(new Image("Franklin/franklindeath.gif"));
+            }else {
+                image.setImage(new Image("Franklin/fighterbackground.png"));
+            }
         }
     }
 

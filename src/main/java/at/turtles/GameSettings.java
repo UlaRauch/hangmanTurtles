@@ -19,6 +19,7 @@ public class GameSettings {
     public static char[] wordToGuess;
     public static String chosenAnimal;//TODO: auf Tina/Franklin setzen, statt turtle/frog
     public static Stage stage;
+    public static boolean won;
 
     /**
      * Shows window from specified .fxml file

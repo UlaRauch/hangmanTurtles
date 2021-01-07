@@ -85,7 +85,7 @@ public class GameController implements Initializable {
                 game.wrongGuesses++;
                 game.negativeComments();
                 game.alreadyGuessed.add(letter); //add letter to already used letters
-                pressedButton.setStyle("-fx-background-color: red;");
+                pressedButton.setStyle("-fx-background-color: #ff0001;");
 
                 if(GameSettings.chosenAnimal.equals("Tina")){ //TODO: Vorschlag: Methode in Gamesettings draus machen?
                     if(game.wrongGuesses == 1){ image.setImage(new Image("Tina/tina.gif"));}
@@ -103,9 +103,11 @@ public class GameController implements Initializable {
             //pressedButton.setDisable(true);//prevents nasty comments (sameLetterComments)
             if (game.checkIfWon()) {
                 game.finalReaction(game.checkIfWon());//comment will be used in next window
+                GameSettings.won = true;
                 GameSettings.showWindow("/finish.fxml", Finish.WIDTH, Finish.HEIGHT, Finish.WINDOWTITLE);
             } else if (game.wrongGuesses == game.MAXNUMBEROFGUESSES) {
                 game.finalReaction(game.checkIfWon());//comment will be used in next window
+                GameSettings.won = false;
                 GameSettings.showWindow("/finish.fxml", Finish.WIDTH, Finish.HEIGHT, Finish.WINDOWTITLE);
             }
         } else { //if letter has already been clicked before - just for fun
