@@ -13,37 +13,35 @@
 
     <!-- TODO: Design -->
     <!-- Title -->
-    <Label fx:id="titleLabel" alignment="CENTER" prefHeight="71.0" prefWidth="738.0" styleClass="textWindowTitle" text="Choose your words!" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+    <Label fx:id="titleLabel" alignment="CENTER" prefHeight="71.0" prefWidth="738.0" styleClass="textWindowTitle" text="Choose your words!" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
 
 
-    <Button fx:id="frogNamesButton" onAction="#loadFrogNames" styleClass="listButton" text="Frog names (easy)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+    <Button fx:id="frogNamesButton" onAction="#loadFrogNames" styleClass="listButton" text="Frog names (easy)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
 
-    <Button fx:id="turtleNamesButton" onAction="#loadTurtleNames" styleClass="listButton" prefHeight="50.0" prefWidth="305.0" text="Turtle names (hard)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+    <Button fx:id="turtleNamesButton" onAction="#loadTurtleNames" prefHeight="47.0" prefWidth="267.0" styleClass="listButton" text="Turtle names (hard)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
 
     <!-- Button for other Word list-->
-    <Button fx:id="userListButton" onAction="#loadUserList" styleClass="listButton" text="Use your own words" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+    <Button fx:id="userListButton" onAction="#loadUserList" styleClass="listButton" text="Use your own words" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
 
     <!-- Buttons for back and continue -->
     <Button fx:id="backButton" onAction="#goBack" styleClass="invisibleButtonSmall" text="Back" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
 
-    <Button fx:id="continueButton" onAction="#goToNextScene" styleClass="invisibleButtonSmall" text="Continue" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+    <Button fx:id="continueButton" onAction="#goToNextScene" styleClass="invisibleButtonSmall" text="Continue" GridPane.columnIndex="3"
+            GridPane.halignment="CENTER" GridPane.rowIndex="5" />
 
-   <columnConstraints>
-      <ColumnConstraints />
-      <ColumnConstraints maxWidth="150.0" minWidth="50.0" prefWidth="125.0" />
-      <ColumnConstraints maxWidth="200.0" minWidth="50.0" prefWidth="200.0" />
-      <ColumnConstraints maxWidth="350.0" minWidth="50.0" prefWidth="350.0" />
-      <ColumnConstraints maxWidth="200.0" minWidth="50.0" prefWidth="100.0" />
-      <ColumnConstraints maxWidth="150.0" minWidth="50.0" prefWidth="150.0" />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints maxHeight="100.0" prefHeight="100.0" />
-      <RowConstraints maxHeight="350.0" minHeight="10.0" prefHeight="105.0" />
-      <RowConstraints maxHeight="350.0" minHeight="10.0" prefHeight="113.0" />
-      <RowConstraints maxHeight="350.0" minHeight="30.0" prefHeight="105.0" />
-      <RowConstraints maxHeight="100.0" minHeight="18.0" prefHeight="21.0" />
-      <RowConstraints />
-   </rowConstraints>
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints maxWidth="-Infinity" minWidth="50.0" prefWidth="150.0" />
+        <ColumnConstraints minWidth="50.0" prefWidth="700.0" />
+        <ColumnConstraints maxWidth="-Infinity" minWidth="50.0" prefWidth="150.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints maxHeight="100.0" minHeight="81.0" prefHeight="81.0" />
+        <RowConstraints maxHeight="350.0" minHeight="10.0" prefHeight="100.0" />
+        <RowConstraints maxHeight="350.0" minHeight="10.0" prefHeight="113.0" />
+        <RowConstraints maxHeight="350.0" minHeight="30.0" prefHeight="98.0" />
+        <RowConstraints maxHeight="100.0" minHeight="18.0" prefHeight="62.0" />
+    </rowConstraints>
 
 </GridPane>

@@ -5,39 +5,39 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane prefHeight="500.0" prefWidth="1000.0" styleClass="FighterGridPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.ChooseFighters">
+<GridPane hgap="10.0" prefHeight="500.0" prefWidth="1000.0" styleClass="FighterGridPane" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.ChooseFighters">
 
     <gridLinesVisible>false</gridLinesVisible>
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
 
-    <Label fx:id="chooseTurtleOrFrog" contentDisplay="CENTER" prefHeight="88.0" prefWidth="458.0" styleClass="textWindowTitle" text="Choose your fighter" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+    <Label fx:id="chooseTurtleOrFrog" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="732.0" styleClass="textWindowTitle" text="Choose your fighter" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
 
-    <Button fx:id="turtleButton" onAction="#chooseTurtle" styleClass="invisibleButtonSmall" text="Tina the Turtle" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+    <Button fx:id="turtleButton" onAction="#chooseTurtle" styleClass="invisibleButtonSmall" text="Tina the Turtle" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
 
     <Button fx:id="frogButton" onAction="#chooseFrog" styleClass="invisibleButtonSmall" text="Franklin the Frog" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
 
-    <Button fx:id="backButton" onAction="#goBack" styleClass="invisibleButtonSmall" text="Back" GridPane.rowIndex="4" />
+    <Button fx:id="backButton" alignment="CENTER" contentDisplay="CENTER" onAction="#goBack" styleClass="invisibleButtonSmall" text="Back" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
 
-    <Button fx:id="continueButton" onAction="#goToNextScene" styleClass="invisibleButtonSmall" text="Continue" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+    <Button fx:id="continueButton" alignment="CENTER" contentDisplay="CENTER" onAction="#goToNextScene" prefHeight="27.0" prefWidth="138.0" styleClass="invisibleButtonSmall" text="Continue" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
 
     <ImageView fx:id="imageFrog" fitHeight="300" fitWidth="300" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
 
     <ImageView fx:id="imageTurtle" fitHeight="300" fitWidth="300" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
 
     <columnConstraints>
-      <ColumnConstraints maxWidth="150.0" prefWidth="125.0" />
-      <ColumnConstraints prefWidth="375.0" />
-      <ColumnConstraints prefWidth="375.0" />
-      <ColumnConstraints prefWidth="150.0" />
+      <ColumnConstraints prefWidth="140.0" />
+      <ColumnConstraints prefWidth="350.0" />
+      <ColumnConstraints maxWidth="350.6" minWidth="325.6" prefWidth="350.0" />
+      <ColumnConstraints maxWidth="159.19999999999993" minWidth="134.19999999999993" prefWidth="150.0" />
 
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />
-      <RowConstraints prefHeight="100.0" />
-      <RowConstraints prefHeight="300.0" />
-      <RowConstraints minHeight="10.0" prefHeight="50.0" />
-      <RowConstraints prefHeight="50.0" />
+      <RowConstraints maxHeight="81.0" minHeight="67.0" prefHeight="73.0" />
+      <RowConstraints maxHeight="319.0" minHeight="305.0" prefHeight="313.0" />
+      <RowConstraints maxHeight="37.39999999999998" minHeight="10.0" prefHeight="37.39999999999998" />
+      <RowConstraints maxHeight="56.39999999999998" minHeight="47.39999999999998" prefHeight="47.39999999999998" />
    </rowConstraints>
 </GridPane>
