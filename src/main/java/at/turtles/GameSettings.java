@@ -17,7 +17,7 @@ public class GameSettings {
 
     public static String listPathOfChoice;
     public static char[] wordToGuess;
-    public static String chosenAnimal;//TODO: auf Tina/Franklin setzen, statt turtle/frog
+    public static String chosenAnimal;
     public static Stage stage;
 
     /**

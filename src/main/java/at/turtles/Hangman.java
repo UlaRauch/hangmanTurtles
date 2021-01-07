@@ -188,7 +188,6 @@ public class Hangman {
     /**
      * Outputs positive comment depending of current amount of right and wrong guesses
      */
-    //TODO: Algorithmus verbessern!Random mit so wenig Optionen ist leider keine gute Idee. Notfalls Rollback?
     public void positiveComments() {
 
         positiveCounter++;
@@ -199,7 +198,7 @@ public class Hangman {
         }
         int lettersLeft = lettersSet.size() - positiveCounter;
         Random r = new Random();
-        int random = r.nextInt(9);
+        int random = r.nextInt(8);
 
         if (wrongGuesses == 0 && positiveCounter == 1) {
             comments = "Genius or beginner's luck?";

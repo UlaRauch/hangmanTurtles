@@ -11,7 +11,6 @@
         <URL value="@style.css" />
     </stylesheets>
 
-    <!-- TODO: Design -->
     <!-- Title -->
     <Label fx:id="titleLabel" alignment="CENTER" prefHeight="71.0" prefWidth="738.0" styleClass="textWindowTitle" text="Choose your words!" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
 

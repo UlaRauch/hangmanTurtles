@@ -90,7 +90,7 @@ public class GameController implements Initializable {
                 game.alreadyGuessed.add(letter); //add letter to already used letters
                 pressedButton.setStyle("-fx-background-color: red;");
 
-                if(GameSettings.chosenAnimal.equals("Tina")){ //TODO: Vorschlag: Methode in Gamesettings draus machen?
+                if(GameSettings.chosenAnimal.equals("Tina")){
                     if(game.wrongGuesses == 1){ image.setImage(new Image("Tina/tina.gif"));}
                     if(game.wrongGuesses == 2){ image.setImage(new Image("Tina/tinastep2.gif")); }
                     if(game.wrongGuesses == 3){ image.setImage(new Image("Tina/tinastep3.gif")); }
