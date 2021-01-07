@@ -48,7 +48,7 @@ public class GameController implements Initializable {
         game = new Hangman(GameSettings.listPathOfChoice);
         GameSettings.wordToGuess = game.WORDTOGUESS;
         updateLabels();
-        instructionLabel.setText("Going right is not a good idea, but animals can't read signs. \nFind the right letters to make " + GameSettings.chosenAnimal + " stay!");
+        instructionLabel.setText("Animals can't read signs. \nFind the right letters to stop " + GameSettings.chosenAnimal + " from moving!");
         if (GameSettings.chosenAnimal.equals("Tina")) {
             image.setImage(new Image("Tina/tina.001.png"));
 
