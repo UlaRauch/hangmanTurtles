@@ -109,7 +109,7 @@
       <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints maxWidth="31.200000000000045" minWidth="28.200000000000045" prefWidth="29.200000000000045" />
-      <ColumnConstraints maxWidth="161.20000000000005" minWidth="0.0" prefWidth="31.799999999999955" />
+      <ColumnConstraints maxWidth="161.20000000000005" minWidth="28.200000000000045" prefWidth="31.799999999999955" />
       <ColumnConstraints maxWidth="428.19999999999993" minWidth="35.799999999999955" prefWidth="224.19999999999993" />
    </columnConstraints>
    <rowConstraints>
