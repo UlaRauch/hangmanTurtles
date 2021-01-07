@@ -13,15 +13,15 @@
 
     <!-- TODO: Design -->
     <!-- Title -->
-    <Label fx:id="titleLabel" alignment="CENTER" prefHeight="71.0" prefWidth="738.0" styleClass="textWindowTitle" text="Choose your preferred word list!" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+    <Label fx:id="titleLabel" alignment="CENTER" prefHeight="71.0" prefWidth="738.0" styleClass="textWindowTitle" text="Choose your words!" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
 
 
-    <Button fx:id="frogNamesButton" onAction="#loadFrogNames" styleClass="invisibleButtonSmall" text="Frog names (easy)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+    <Button fx:id="frogNamesButton" onAction="#loadFrogNames" styleClass="listButton" text="Frog names (easy)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
 
-    <Button fx:id="turtleNamesButton" onAction="#loadTurtleNames" prefHeight="50.0" prefWidth="305.0" styleClass="invisibleButtonSmall" text="Turtle names (hard)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+    <Button fx:id="turtleNamesButton" onAction="#loadTurtleNames" styleClass="listButton" prefHeight="50.0" prefWidth="305.0" text="Turtle names (hard)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
 
     <!-- Button for other Word list-->
-    <Button fx:id="userListButton" onAction="#loadUserList" styleClass="invisibleButtonSmall" text="Use your own words" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+    <Button fx:id="userListButton" onAction="#loadUserList" styleClass="listButton" text="Use your own words" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
 
     <!-- Buttons for back and continue -->
     <Button fx:id="backButton" onAction="#goBack" styleClass="invisibleButtonSmall" text="Back" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />

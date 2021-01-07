@@ -155,21 +155,13 @@ public class Hangman {
      */
     public void finalReaction(boolean won) {
         System.out.println(WORDTOGUESS);
-        if (GameSettings.chosenAnimal != null) {
             if (won) {
-                comments = "Congratulations! It was hard brain work, but in the end you did it! " + GameSettings.chosenAnimal + " lives!";
+                comments = "That was hard brain work! Well done!";
             } else {
-                comments = "Oh no! You couldn't save " + GameSettings.chosenAnimal + " from this horrible destiny. Maybe try a different strategy next time?";
+                comments = "Now look what you did.";
             }
-            System.out.println(comments);
-        } else { //when played in console
-            if (won) {
-                System.out.println("Congratulations! It was hard brain work, but in the end you did it!");
-            } else {
-                System.out.println("Oh no! That took too long. Maybe try a different strategy next time?");
-            }
+        System.out.println(comments);
         }
-    }
 
 
     /**
@@ -182,7 +174,7 @@ public class Hangman {
                 if (GameSettings.chosenAnimal.equals("Tina")) {
                     comments = "If you go on like this, you will be reborn as a turtle!";
                 } else {
-                    comments = "Disappointing.";
+                    comments = "That was disappointing.";
                 }
             }
             case 4 -> comments = "Now you should really start thinking of a solution!";

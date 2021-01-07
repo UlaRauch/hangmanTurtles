@@ -50,7 +50,6 @@ public class Finish implements Initializable {
      * starts new game with the same animal and word list
      */
     public void tryAgain(ActionEvent actionEvent) throws IOException {
-    //go back to game.fxml
         GameSettings.showWindow("/game.fxml", GameController.WIDTH, GameController.HEIGHT, GameController.WINDOWTITLE);
     }
 

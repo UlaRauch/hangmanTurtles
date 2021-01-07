@@ -29,6 +29,9 @@ public class GameController implements Initializable {
     public Label triesLabel;
 
     @FXML
+    public Label instructionLabel;
+
+    @FXML
     public Label commentLabel;
 
     @FXML
@@ -45,7 +48,7 @@ public class GameController implements Initializable {
         game = new Hangman(GameSettings.listPathOfChoice);
         GameSettings.wordToGuess = game.WORDTOGUESS;
         updateLabels();
-        commentLabel.setText("Going right is not a good idea. Find the right letters to make " + GameSettings.chosenAnimal + " stay!");
+        instructionLabel.setText("Going right is not a good idea. \nFind the right letters to make " + GameSettings.chosenAnimal + " stay!");
         if (GameSettings.chosenAnimal.equals("Tina")) {
             image.setImage(new Image("Tina/tina.001.png"));
 
