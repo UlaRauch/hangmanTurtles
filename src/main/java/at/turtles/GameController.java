@@ -49,9 +49,9 @@ public class GameController implements Initializable {
         GameSettings.wordToGuess = game.WORDTOGUESS;
         updateLabels();
         instructionLabel.setText("Animals can't read signs. \nFind the right letters to stop " + GameSettings.chosenAnimal + " from moving!");
+        commentLabel.setText("Wrong guesses will scare " + GameSettings.chosenAnimal + "!");
         if (GameSettings.chosenAnimal.equals("Tina")) {
             image.setImage(new Image("Tina/tina.001.png"));
-
         } else {
             image.setImage(new Image("Franklin/franklin.001.png"));
         }

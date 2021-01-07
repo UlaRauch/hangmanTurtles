@@ -155,13 +155,13 @@ public class Hangman {
      */
     public void finalReaction(boolean won) {
         System.out.println(WORDTOGUESS);
-            if (won) {
-                comments = "That was hard brain work! Well done!";
-            } else {
-                comments = "Now look what you did.";
-            }
-        System.out.println(comments);
+        if (won) {
+            comments = "That was hard brain work! Well done!";
+        } else {
+            comments = "Now look what you did.";
         }
+        System.out.println(comments);
+    }
 
 
     /**
@@ -194,7 +194,7 @@ public class Hangman {
         positiveCounter++;
 
         HashSet<Character> lettersSet = new HashSet<>();
-        for (Character c: WORDTOGUESS){
+        for (Character c : WORDTOGUESS) {
             lettersSet.add(c);
         }
         int lettersLeft = lettersSet.size() - positiveCounter;
@@ -207,7 +207,7 @@ public class Hangman {
             comments = "That's better";
         } else if (wrongGuesses > 0 && positiveCounter == 2) {
             comments = "There is hope.";
-    }else if (wrongGuesses > 4 && lettersLeft < 4) {
+        } else if (wrongGuesses > 3 && lettersLeft < 4) {
             switch (lettersLeft) {
                 case 3 -> {
                     if (GameSettings.chosenAnimal.equals("Tina")) {
