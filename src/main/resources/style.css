@@ -56,13 +56,13 @@
     -fx-font-size: 15px;
     -fx-font-family: "Berlin Sans FB";
     -fx-font-weight: bold;
-    -fx-background-color: none;
     -fx-border-color: none;
+    -fx-background-color: radial-gradient(center 50% 50%, radius 30%, white, transparent);
+    -fx-border-radius: 25%;
 }
 
 .letterButton:hover {
-    -fx-border-color: black;
-    -fx-border-width: 0 0 1 0;
+    -fx-underline: true;
     -fx-cursor: hand;
 }
 

@@ -20,12 +20,14 @@ public class Hangman {
 
     //default constructor
     public Hangman() {
-        this("C:\\Users\\urauc\\Documents\\Ausbildung\\FH\\Programmieren\\testList.txt");//wenn das auf git landet, hat Ula was falsch gemacht, sorry!
+        this("C:\\Users\\urauc\\Documents\\Ausbildung\\FH\\Programmieren\\testList.txt");
+        //wenn das auf git landet, hat Ula was falsch gemacht, sorry!
     }
 
 
     /**
      * Constructor for Hangman
+     *
      * @param filename path to wordlist to choose random word from
      */
     public Hangman(String filename) {
@@ -38,8 +40,9 @@ public class Hangman {
 
     /**
      * returns random word from file
+     *
      * @param filename path to wordlist to choose random word from
-     * @return         random word from file
+     * @return random word from file
      */
     public String getRandomWordFromFile(String filename) {
         ArrayList<String> wordList = new ArrayList<>();
@@ -57,6 +60,7 @@ public class Hangman {
 
     /**
      * Scans System.in until a letter is entered
+     *
      * @return first entered letter as uppercase
      */
     public char takeLetter() {
@@ -89,8 +93,9 @@ public class Hangman {
 
     /**
      * Checks if letter has already been guessed
+     *
      * @param letter letter to check
-     * @return       if letter was already guessed
+     * @return if letter was already guessed
      */
     public boolean checkIfAlreadyTyped(char letter) {
         return alreadyGuessed.contains(letter);
@@ -99,8 +104,9 @@ public class Hangman {
 
     /**
      * Checks if letter exists in word to guess
+     *
      * @param letter letter to check
-     * @return       if word contains letter
+     * @return if word contains letter
      */
     public boolean existsInTheWord(char letter) {
         for (char c : WORDTOGUESS) {
@@ -114,6 +120,7 @@ public class Hangman {
 
     /**
      * Updates WORDTOGUESS to show guessed letter in word
+     *
      * @param letter letter to show in WORDTOGUESS
      */
     public void updateProgress(char letter) {
@@ -127,6 +134,7 @@ public class Hangman {
 
     /**
      * Checks if all letters have been guessed
+     *
      * @return if the game is won
      */
     public boolean checkIfWon() {
@@ -142,6 +150,7 @@ public class Hangman {
     /**
      * In GUI mode: sets comment variable depending on winning/losing
      * In Console mode: Outputs comment depending on winning/losing
+     *
      * @param won if game is won
      */
     public void finalReaction(boolean won) {
@@ -168,57 +177,72 @@ public class Hangman {
      */
     public void negativeComments() {
         switch (wrongGuesses) {
-            case 2 -> {
-                comments = "This doesn't work either.";
-            }
+            case 2 -> comments = "This doesn't work either.";
             case 3 -> {
-                comments = "Are you sure this is the right strategy?";
+                if (GameSettings.chosenAnimal.equals("Tina")) {
+                    comments = "If you go on like this, you will be reborn as a turtle!";
+                } else {
+                    comments = "Disappointing.";
+                }
             }
-            case 4 -> {
-                comments = "Now you should really start thinking of a solution!";
-            }
-            case 5 -> {
-                comments = "Honestly, are you here to save animals or to kill them?";
-            }
-            default -> {
-                comments = "Nope, try again!";
-            }
+            case 4 -> comments = "Now you should really start thinking of a solution!";
+            case 5 -> comments = "Honestly, are you here to save animals or to kill them?";
+            default -> comments = "Nope, try again!";
         }
         System.out.println(comments);
     }
 
 
     /**
-     * Outputs positive comment depending of current amount of wrong guesses
+     * Outputs positive comment depending of current amount of right and wrong guesses
      */
-    //TODO: Algorithmus verbessern!
+    //TODO: Algorithmus verbessern!Random mit so wenig Optionen ist leider keine gute Idee. Notfalls Rollback?
     public void positiveComments() {
-        if (wrongGuesses == 0 && positiveCounter == 0) {
+
+        int lettersLeft = WORDTOGUESS.length - positiveCounter;
+        Random r = new Random();
+        int random = r.nextInt(9);
+
+        positiveCounter++;
+
+        if (wrongGuesses == 0 && positiveCounter == 1) {
             comments = "Genius or beginner's luck?";
-        } else if (wrongGuesses > 0 && positiveCounter == 0) {
+        } else if (wrongGuesses > 0 && positiveCounter == 1) {
             comments = "That's better";
-        } else if (wrongGuesses < 4 && positiveCounter == 2) {
-            comments = "Look at you!";
-        } else if (wrongGuesses > 3 && positiveCounter == 4) {
-            comments = "There is hope!";
-        } else if (wrongGuesses > 4 && (positiveCounter % 2 != 0)) {
-            if (GameSettings.chosenAnimal.equals("Tina")) {
-                comments = "You can do it! The god of turtles is with you now!";
-            } else {
-                comments = "You can do it! The god of frogs is with you now!";
+        } else if (wrongGuesses > 0 && positiveCounter == 2) {
+            comments = "There is hope.";
+    }else if (wrongGuesses > 4 && lettersLeft < 4) {
+            switch (lettersLeft) {
+                case 3 -> {
+                    if (GameSettings.chosenAnimal.equals("Tina")) {
+                        comments = "You can do it! The god of turtles is with you now!";
+                    } else {
+                        comments = "You can do it! The god of frogs is with you now!";
+                    }
+                }
+                case 2 -> comments = GameSettings.chosenAnimal + " believes in you!";
+                case 1 -> comments = "That was close!";
             }
-        } else if (wrongGuesses > 4 && (positiveCounter % 2 == 0)) {
-            comments = GameSettings.chosenAnimal + " believes in you!";
         } else {
-            comments = "Nice";
+            switch (random) {
+                case 0 -> comments = "Are you cheating?";
+                case 1 -> comments = "Good, but don't get overexcited over a little success.";
+                case 2 -> comments = "Practice is everything.";
+                case 3 -> comments = "Who would have thought you could do this.";
+                case 4 -> comments = "Now you think you are good, but the game isn't won yet.";
+                case 5 -> comments = "Nice!";
+                case 6 -> comments = "Not as bad as it seemed in the beginning.";
+                case 7 -> comments = "At least you know your alphabet";
+                case 8 -> comments = "This looks promising.";
+            }
         }
         System.out.println(comments);
-        positiveCounter++;
     }
 
 
     /**
      * Outputs comment when letter has already been guessed
+     *
      * @param existsInWord if comment should be about a correctly guessed letter
      */
     public void sameLetterComments(boolean existsInWord) {

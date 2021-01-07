@@ -45,13 +45,12 @@ public class GameController implements Initializable {
         game = new Hangman(GameSettings.listPathOfChoice);
         GameSettings.wordToGuess = game.WORDTOGUESS;
         updateLabels();
+        commentLabel.setText("Going right is not a good idea. Find the right letters to make " + GameSettings.chosenAnimal + " stay!");
         if (GameSettings.chosenAnimal.equals("Tina")) {
             image.setImage(new Image("Tina/tina.001.png"));
-            commentLabel.setText("Oh no! Tina is in danger! Save her by finding the right letters!");
 
         } else {
             image.setImage(new Image("Franklin/franklin.001.png"));
-            commentLabel.setText("Oh no! Franklin is in danger! Save him by finding the right letters!");
         }
     }
 
@@ -81,10 +80,10 @@ public class GameController implements Initializable {
                 game.updateProgress(letter);
                 pressedButton.setStyle("-fx-background-color: green;");
                 game.alreadyGuessed.add(letter); //add letter to already used letters
-                game.positiveComments();//TODO: in eigene Commentmethode zusammenfassen?
+                game.positiveComments();
             } else {
                 game.wrongGuesses++;
-                game.negativeComments(); //TODO: in eigene Commentmethode zusammenfassen?
+                game.negativeComments();
                 game.alreadyGuessed.add(letter); //add letter to already used letters
                 pressedButton.setStyle("-fx-background-color: red;");
 

@@ -14,7 +14,7 @@
 
     <ImageView fx:id="image" fitHeight="300" fitWidth="1000" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="26" GridPane.rowIndex="2" />
 
-
+<!--TODO: Fehlversuche -> englisch?-->
     <Label fx:id="triesLabel" styleClass="triesLabel" text="Fehlversuche: " GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="0" />
 
     <Label fx:id="wordLabel" styleClass="wordLabel" text="" GridPane.columnIndex="1" GridPane.columnSpan="26" GridPane.rowIndex="1" />
