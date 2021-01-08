@@ -155,13 +155,13 @@ public class Hangman {
      */
     public void finalReaction(boolean won) {
         System.out.println(WORDTOGUESS);
-            if (won) {
-                comments = "That was hard brain work! Well done!";
-            } else {
-                comments = "Now look what you did.";
-            }
-        System.out.println(comments);
+        if (won) {
+            comments = "That was hard brain work! Well done!";
+        } else {
+            comments = "Now look what you did.";
         }
+        System.out.println(comments);
+    }
 
 
     /**
@@ -188,14 +188,17 @@ public class Hangman {
     /**
      * Outputs positive comment depending of current amount of right and wrong guesses
      */
-    //TODO: Algorithmus verbessern!Random mit so wenig Optionen ist leider keine gute Idee. Notfalls Rollback?
     public void positiveComments() {
 
-        int lettersLeft = WORDTOGUESS.length - positiveCounter;
-        Random r = new Random();
-        int random = r.nextInt(9);
-
         positiveCounter++;
+
+        HashSet<Character> lettersSet = new HashSet<>();
+        for (Character c : WORDTOGUESS) {
+            lettersSet.add(c);
+        }
+        int lettersLeft = lettersSet.size() - positiveCounter;
+        Random r = new Random();
+        int random = r.nextInt(8);
 
         if (wrongGuesses == 0 && positiveCounter == 1) {
             comments = "Genius or beginner's luck?";
@@ -203,7 +206,7 @@ public class Hangman {
             comments = "That's better";
         } else if (wrongGuesses > 0 && positiveCounter == 2) {
             comments = "There is hope.";
-    }else if (wrongGuesses > 4 && lettersLeft < 4) {
+        } else if (wrongGuesses > 3 && lettersLeft < 4) {
             switch (lettersLeft) {
                 case 3 -> {
                     if (GameSettings.chosenAnimal.equals("Tina")) {

@@ -48,10 +48,10 @@ public class GameController implements Initializable {
         game = new Hangman(GameSettings.listPathOfChoice);
         GameSettings.wordToGuess = game.WORDTOGUESS;
         updateLabels();
-        instructionLabel.setText("Going right is not a good idea, but animals can't read signs. \nFind the right letters to make " + GameSettings.chosenAnimal + " stay!");
+        instructionLabel.setText("Animals can't read signs. \nFind the right letters to stop " + GameSettings.chosenAnimal + " from moving!");
+        commentLabel.setText("Wrong guesses will scare " + GameSettings.chosenAnimal + "!");
         if (GameSettings.chosenAnimal.equals("Tina")) {
             image.setImage(new Image("Tina/tina.001.png"));
-
         } else {
             image.setImage(new Image("Franklin/franklin.001.png"));
         }
@@ -90,7 +90,7 @@ public class GameController implements Initializable {
                 game.alreadyGuessed.add(letter); //add letter to already used letters
                 pressedButton.setStyle("-fx-background-color: #ff0001;");
 
-                if(GameSettings.chosenAnimal.equals("Tina")){ //TODO: Vorschlag: Methode in Gamesettings draus machen?
+                if(GameSettings.chosenAnimal.equals("Tina")){
                     if(game.wrongGuesses == 1){ image.setImage(new Image("Tina/tina.gif"));}
                     if(game.wrongGuesses == 2){ image.setImage(new Image("Tina/tinastep2.gif")); }
                     if(game.wrongGuesses == 3){ image.setImage(new Image("Tina/tinastep3.gif")); }

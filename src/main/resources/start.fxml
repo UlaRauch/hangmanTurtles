@@ -11,7 +11,6 @@
         <URL value="@style.css" />
     </stylesheets>
 
-    <!-- TODO: Design -->
     <Label fx:id="titleLabel" alignment="CENTER" prefHeight="206.0" prefWidth="752.0" styleClass="textStartTitle" text="Save the Animals" textAlignment="CENTER" textFill="#010600" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
     <Button fx:id="startButton" alignment="CENTER" minWidth="130" onAction="#startButtonClicked" styleClass="invisibleButtonBig" text="Start" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
