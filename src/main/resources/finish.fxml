@@ -25,7 +25,7 @@
 
     <Button fx:id="retryButton" onAction="#tryAgain" styleClass="invisibleButtonSmall" text="Play again" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
 
-    <Button fx:id="endButton" onAction="#endGame" styleClass="invisibleButtonSmall" text="End game" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+    <Button fx:id="endButton" onAction="#endGame" styleClass="invisibleButtonSmall" text="Exit" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
 
     <columnConstraints>
         <ColumnConstraints />
