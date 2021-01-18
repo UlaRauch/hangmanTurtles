@@ -44,6 +44,13 @@ public class ChooseFighters implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         imageFrog.setImage(new Image("images/frog-choose-fighters.png"));
         imageTurtle.setImage(new Image("images/turtle-choose-fighters.png"));
+        if (GameSettings.chosenAnimal != null) {
+            if (GameSettings.chosenAnimal.equals("Tina")){
+                GameSettings.updateSelectedButtons(turtleButton, frogButton);
+            } else if (GameSettings.chosenAnimal.equals("Franklin")) {
+                GameSettings.updateSelectedButtons(frogButton, turtleButton);
+            }
+        }
     }
 
 

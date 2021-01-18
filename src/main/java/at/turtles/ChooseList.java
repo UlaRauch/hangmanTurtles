@@ -2,6 +2,7 @@ package at.turtles;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,11 +12,13 @@ import javafx.stage.Stage;
 import javafx.scene.control.Alert.AlertType;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * Controller for chooseList.fxml
  */
-public class ChooseList {
+public class ChooseList implements Initializable {
 
     public final static int WIDTH = 1000;
     public final static int HEIGHT = 500;
@@ -37,6 +40,22 @@ public class ChooseList {
     @FXML
     private Button userListButton;
 
+    /**
+     * is executed when loading window
+     * initializes default settings for the window
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if (GameSettings.listPathOfChoice != null) {
+            if (GameSettings.listPathOfChoice.equals(pathTurtleNames)) {
+                GameSettings.updateSelectedButtons(turtleNamesButton, frogNamesButton, userListButton);
+            } else if (GameSettings.listPathOfChoice.equals(pathFrogNames)) {
+                GameSettings.updateSelectedButtons(frogNamesButton, turtleNamesButton, userListButton);
+            } else {
+                GameSettings.updateSelectedButtons(userListButton, turtleNamesButton, frogNamesButton);
+            }
+        }
+    }
 
     /**
      * is executed when turtleNames button is clicked in GUI
