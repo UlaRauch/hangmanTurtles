@@ -14,6 +14,11 @@
     -fx-font-weight: bold;
 }
 
+.motto {
+    -fx-font-size: 24;
+    -fx-font-style: italic;
+}
+
 .textWindowTitle {
     -fx-font-size: 42px;
     -fx-font-family: "Berlin Sans FB";
