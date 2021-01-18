@@ -27,9 +27,9 @@
 
     <columnConstraints>
         <ColumnConstraints />
-        <ColumnConstraints maxWidth="284.0" minWidth="100.0" prefWidth="257.6" />
+        <ColumnConstraints maxWidth="284.0" minWidth="100.0" prefWidth="220.0" />
         <ColumnConstraints maxWidth="600.0" minWidth="500.0" prefWidth="556.0" />
-        <ColumnConstraints maxWidth="200.0" minWidth="100.0" prefWidth="186.60000000000002" />
+        <ColumnConstraints maxWidth="250.0" minWidth="100.0" prefWidth="220.0" />
         <ColumnConstraints />
     </columnConstraints>
 
