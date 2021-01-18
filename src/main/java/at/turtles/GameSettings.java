@@ -34,6 +34,7 @@ public class GameSettings {
         Scene scene = new Scene(root, width, height);
         GameSettings.stage.setScene(scene);
         GameSettings.stage.setTitle(windowTitle);
+        GameSettings.stage.setResizable(false);
         GameSettings.stage.show();
     }
 
