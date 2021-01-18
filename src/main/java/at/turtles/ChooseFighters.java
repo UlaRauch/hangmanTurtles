@@ -49,10 +49,18 @@ public class ChooseFighters implements Initializable {
 
     /**
      * is executed when turtle button is clicked in GUI
+     * calls chooseTurtle
+     */
+    public void chooseTurtleButtonClicked(ActionEvent actionEvent) {
+        chooseTurtle();
+    }
+
+    /**
+     * automatically called when image is clicked
      * sets chosenAnimal to the turtles name
      * updates buttons to reflect choice
      */
-    public void chooseTurtle(ActionEvent actionEvent) {
+    public void chooseTurtle(){
         System.out.println("You chose Tina the Turtle");
         GameSettings.chosenAnimal = "Tina";
         GameSettings.updateSelectedButtons(turtleButton, frogButton);
@@ -61,15 +69,22 @@ public class ChooseFighters implements Initializable {
 
     /**
      * is executed when frog button is clicked in GUI
+     * calls chooseFrog
+     */
+    public void chooseFrogButtonClicked(ActionEvent actionEvent) {
+        chooseFrog();
+    }
+
+    /**
+     * automatically called when image is clicked
      * sets chosenAnimal to the frogs name
      * updates buttons to reflect choice
      */
-    public void chooseFrog(ActionEvent actionEvent) {
+    public void chooseFrog(){
         System.out.println("You chose Franklin the frog");
         GameSettings.chosenAnimal = "Franklin";
         GameSettings.updateSelectedButtons(frogButton, turtleButton);
     }
-
 
     /**
      * is executed when Continue Button is clicked in GUI
