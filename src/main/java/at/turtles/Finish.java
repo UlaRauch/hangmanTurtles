@@ -20,11 +20,12 @@ public class Finish implements Initializable {
     public final static String WINDOWTITLE = "Game";
 
     @FXML
-    public Label wordLabel;
-    @FXML
     public Text comment;
     @FXML
+    public Text yourWord;
+    @FXML
     public ImageView image;
+
 
     /**
      * is executed when loading window
@@ -34,7 +35,7 @@ public class Finish implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         comment.setText(Hangman.comments);
-        wordLabel.setText(String.valueOf(GameSettings.wordToGuess));
+        yourWord.setText("Your word was " + String.valueOf(GameSettings.wordToGuess));
 
 
 

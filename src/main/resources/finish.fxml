@@ -17,9 +17,7 @@
 
     <Text fx:id="comment" styleClass="textCommentLabel" textAlignment="CENTER" wrappingWidth="726.0000534057617" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
 
-    <Text fx:id="yourWord" styleClass="textCommentLabel" text="Your word was" wrappingWidth="188.00000309944153" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-
-    <Label fx:id="wordLabel" prefHeight="40.0" prefWidth="552.0" styleClass="wordLabel" text="" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+    <Text fx:id="yourWord" styleClass="textCommentLabel" wrappingWidth="188.00000309944153" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
 
     <Button fx:id="changeB" onAction="#animalChange" styleClass="invisibleButtonSmall" text="Change animal/list" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
 
