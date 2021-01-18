@@ -8,7 +8,7 @@
 
 <GridPane prefHeight="500.0" prefWidth="1000.0" styleClass="FighterGridPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.Finish">
 
-    <gridLinesVisible>false</gridLinesVisible>
+    <gridLinesVisible>true</gridLinesVisible>
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
@@ -17,7 +17,7 @@
 
     <Text fx:id="comment" styleClass="textCommentLabel" textAlignment="CENTER" wrappingWidth="726.0000534057617" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
 
-    <Text fx:id="yourWord" styleClass="textCommentLabel" wrappingWidth="188.00000309944153" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+    <Text fx:id="yourWord" styleClass="textCommentLabel" textAlignment="CENTER" wrappingWidth="554.0000336170197" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
 
     <Button fx:id="changeB" onAction="#animalChange" styleClass="invisibleButtonSmall" text="Change animal/list" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
 
