@@ -8,10 +8,20 @@
     src: url("/Fonts/BerlinSansFBBold.ttf");
 }
 
+@font-face {
+    font-family: "Amalia";
+    src: url("/Fonts/Amalia.ttf");
+}
+
 .textStartTitle {
     -fx-font-size: 72px;
     -fx-font-family: "Berlin Sans FB";
     -fx-font-weight: bold;
+}
+
+.motto {
+    -fx-font-size: 18;
+    -fx-font-family: "Amalia";
 }
 
 .textWindowTitle {
