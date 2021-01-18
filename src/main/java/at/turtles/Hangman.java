@@ -20,12 +20,6 @@ public class Hangman {
     public static String comments;
     public int positiveCounter = 0;
 
-    //default constructor
-    public Hangman() {
-        this("C:\\Users\\urauc\\Documents\\Ausbildung\\FH\\Programmieren\\testList.txt");
-        //wenn das auf git landet, hat Ula was falsch gemacht, sorry!
-    }
-
 
     /**
      * Constructor for Hangman
