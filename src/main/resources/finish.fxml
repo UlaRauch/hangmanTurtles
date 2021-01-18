@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane prefHeight="500.0" prefWidth="1000.0" styleClass="FighterGridPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.Finish">
+<GridPane prefHeight="500.0" prefWidth="1000.0" styleClass="FighterGridPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.FinishController">
 
     <gridLinesVisible>true</gridLinesVisible>
     <stylesheets>

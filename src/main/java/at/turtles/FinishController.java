@@ -4,7 +4,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -12,7 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Finish implements Initializable {
+public class FinishController implements Initializable {
 
     private static Hangman game;
     public final static int WIDTH = 1000;
@@ -71,7 +70,7 @@ public class Finish implements Initializable {
     public void animalChange(ActionEvent actionEvent) throws IOException {
         System.out.println("Back to Choose your fighter");
         GameSettings.showWindow("/choosefighters.fxml",
-                ChooseFighters.WIDTH, ChooseFighters.HEIGHT, ChooseFighters.WINDOWTITLE);
+                ChooseFightersController.WIDTH, ChooseFightersController.HEIGHT, ChooseFightersController.WINDOWTITLE);
     }
 
     /**

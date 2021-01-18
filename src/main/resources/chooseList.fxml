@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane hgap="10" prefHeight="500.0" prefWidth="1000.0" styleClass="FighterGridPane" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.ChooseList">
+<GridPane hgap="10" prefHeight="500.0" prefWidth="1000.0" styleClass="FighterGridPane" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.turtles.ChooseListController">
 
     <gridLinesVisible>false</gridLinesVisible>
     <stylesheets>

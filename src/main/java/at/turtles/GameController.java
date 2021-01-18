@@ -107,11 +107,11 @@ public class GameController implements Initializable {
             if (game.checkIfWon()) {
                 game.finalReaction(game.checkIfWon());//comment will be used in next window
                 GameSettings.won = true;
-                GameSettings.showWindow("/finish.fxml", Finish.WIDTH, Finish.HEIGHT, Finish.WINDOWTITLE);
+                GameSettings.showWindow("/finish.fxml", FinishController.WIDTH, FinishController.HEIGHT, FinishController.WINDOWTITLE);
             } else if (game.wrongGuesses == game.MAXNUMBEROFGUESSES) {
                 game.finalReaction(game.checkIfWon());//comment will be used in next window
                 GameSettings.won = false;
-                GameSettings.showWindow("/finish.fxml", Finish.WIDTH, Finish.HEIGHT, Finish.WINDOWTITLE);
+                GameSettings.showWindow("/finish.fxml", FinishController.WIDTH, FinishController.HEIGHT, FinishController.WINDOWTITLE);
             }
         } else { //if letter has already been clicked before - just for fun
             game.sameLetterComments(game.existsInTheWord(letter));
@@ -124,7 +124,7 @@ public class GameController implements Initializable {
      * Switches back to Choose List Window
      */
     public void backButtonClicked(ActionEvent actionEvent) throws IOException {
-        GameSettings.showWindow("/chooseList.fxml", ChooseList.WIDTH, ChooseList.HEIGHT, ChooseList.WINDOWTITLE);
+        GameSettings.showWindow("/chooseList.fxml", ChooseListController.WIDTH, ChooseListController.HEIGHT, ChooseListController.WINDOWTITLE);
     }
 
 

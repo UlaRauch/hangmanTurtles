@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,7 +15,7 @@ import java.util.ResourceBundle;
 /**
  * Controller for chooseFighters.fxml
  */
-public class ChooseFighters implements Initializable {
+public class ChooseFightersController implements Initializable {
 
     public final static int WIDTH = 1000;
     public final static int HEIGHT = 500;
@@ -103,7 +102,7 @@ public class ChooseFighters implements Initializable {
         if (GameSettings.chosenAnimal != null) {
             System.out.println("clicked continue");
             GameSettings.showWindow("/chooseList.fxml",
-                    ChooseList.WIDTH, ChooseList.HEIGHT, ChooseList.WINDOWTITLE);
+                    ChooseListController.WIDTH, ChooseListController.HEIGHT, ChooseListController.WINDOWTITLE);
 
         } else {                 //alert window
             Alert NoAnimalChosen = new Alert(AlertType.ERROR);

@@ -5,10 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
-import javafx.stage.Stage;
 import javafx.scene.control.Alert.AlertType;
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +16,7 @@ import java.util.ResourceBundle;
 /**
  * Controller for chooseList.fxml
  */
-public class ChooseList implements Initializable {
+public class ChooseListController implements Initializable {
 
     public final static int WIDTH = 1000;
     public final static int HEIGHT = 500;
@@ -169,7 +167,7 @@ public class ChooseList implements Initializable {
     public void goBack(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked back");
         GameSettings.showWindow("/choosefighters.fxml",
-                ChooseFighters.WIDTH, ChooseFighters.HEIGHT, ChooseFighters.WINDOWTITLE);
+                ChooseFightersController.WIDTH, ChooseFightersController.HEIGHT, ChooseFightersController.WINDOWTITLE);
     }
 
 }

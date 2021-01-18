@@ -2,9 +2,6 @@ package at.turtles;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 
 import java.io.IOException;
 
@@ -23,7 +20,7 @@ public class StartController {
      */
     public void startButtonClicked(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked 'Start'");
-        GameSettings.showWindow("/choosefighters.fxml", ChooseFighters.WIDTH, ChooseFighters.HEIGHT, ChooseFighters.WINDOWTITLE);
+        GameSettings.showWindow("/choosefighters.fxml", ChooseFightersController.WIDTH, ChooseFightersController.HEIGHT, ChooseFightersController.WINDOWTITLE);
     }
 
     /**
