@@ -3,6 +3,8 @@ package at.turtles;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 /**
@@ -45,13 +47,9 @@ public class Hangman {
      * @return random word from file
      */
     public String getRandomWordFromFile(String filename) {
-        ArrayList<String> wordList = new ArrayList<>();
+        List<String> wordList = new ArrayList<>();
         try {
-            BufferedReader br = new BufferedReader(new FileReader(filename));
-            String line;
-            while ((line = br.readLine()) != null) {
-                wordList.add(line);
-            }
+            wordList = Files.readAllLines(Paths.get(filename));
         } catch (IOException e) {
             e.printStackTrace();
         }
