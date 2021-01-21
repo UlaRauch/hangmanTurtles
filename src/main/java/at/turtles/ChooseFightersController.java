@@ -42,9 +42,9 @@ public class ChooseFightersController implements Initializable {
         imageFrog.setImage(new Image("franklin/frog-choose-fighters.png"));
         imageTurtle.setImage(new Image("tina/turtle-choose-fighters.png"));
         if (GameSettings.chosenAnimal != null) {
-            if (GameSettings.chosenAnimal.equals("tina")) {
+            if (GameSettings.chosenAnimal.equals("Tina")) {
                 GameSettings.updateSelectedButtons(turtleButton, frogButton);
-            } else if (GameSettings.chosenAnimal.equals("franklin")) {
+            } else if (GameSettings.chosenAnimal.equals("Franklin")) {
                 GameSettings.updateSelectedButtons(frogButton, turtleButton);
             }
         }
@@ -66,7 +66,7 @@ public class ChooseFightersController implements Initializable {
      */
     public void chooseTurtle() {
         System.out.println("You chose Tina the Turtle");
-        GameSettings.chosenAnimal = "tina";
+        GameSettings.chosenAnimal = "Tina";
         GameSettings.updateSelectedButtons(turtleButton, frogButton);
     }
 
@@ -86,7 +86,7 @@ public class ChooseFightersController implements Initializable {
      */
     public void chooseFrog() {
         System.out.println("You chose Franklin the frog");
-        GameSettings.chosenAnimal = "franklin";
+        GameSettings.chosenAnimal = "Franklin";
         GameSettings.updateSelectedButtons(frogButton, turtleButton);
     }
 

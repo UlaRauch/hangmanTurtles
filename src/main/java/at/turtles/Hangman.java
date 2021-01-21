@@ -129,7 +129,7 @@ public class Hangman {
         switch (wrongGuesses) {
             case 2 -> comments = "This doesn't work either.";
             case 3 -> {
-                if (GameSettings.chosenAnimal.equals("tina")) {
+                if (GameSettings.chosenAnimal.equals("Tina")) {
                     comments = "If you go on like this, you will be reborn as a turtle!";
                 } else {
                     comments = "That was disappointing.";
@@ -166,7 +166,7 @@ public class Hangman {
             switch (lettersLeft) {
                 case 3 -> {
                     comments = String.format("You can do it! The god of %s is with you now!",
-                            GameSettings.chosenAnimal.equals("tina") ? "turtles" : "frogs");
+                            GameSettings.chosenAnimal.equals("Tina") ? "turtles" : "frogs");
                 }
                 case 2 -> comments = GameSettings.chosenAnimal + " believes in you!";
                 case 1 -> comments = "That was close!";

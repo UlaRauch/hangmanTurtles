@@ -32,8 +32,7 @@ public class FinishController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         comment.setText(Hangman.comments);
         yourWord.setText("Your word was " + String.valueOf(GameSettings.wordToGuess));
-
-        if(GameSettings.chosenAnimal.equals("tina")){
+        if(GameSettings.chosenAnimal.equals("Tina")){
             if(GameSettings.won){
                 image.setImage(new Image("tina/winningdance.gif"));
             }else {

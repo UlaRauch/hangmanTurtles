@@ -48,7 +48,7 @@ public class GameController implements Initializable {
         updateLabels();
         instructionLabel.setText("Animals can't read signs. \nFind the right letters to stop " + GameSettings.chosenAnimal + " from moving!");
         commentLabel.setText("Wrong guesses will scare " + GameSettings.chosenAnimal + "!");
-        if (GameSettings.chosenAnimal.equals("tina")) {
+        if (GameSettings.chosenAnimal.equals("Tina")) {
             image.setImage(new Image("tina/tina.001.png"));
         } else {
             image.setImage(new Image("franklin/franklin.001.png"));
@@ -88,11 +88,13 @@ public class GameController implements Initializable {
                 game.alreadyUsed.add(letter);
                 pressedButton.setStyle("-fx-background-color: red;");
 
-                if(GameSettings.chosenAnimal.equals("tina")){
-                    image.setImage(new Image(String.format("tina/tinastep%d.gif", game.wrongGuesses)));
+                if(GameSettings.chosenAnimal.equals("Tina")){
+                    if (game.wrongGuesses < 6){
+                        image.setImage(new Image(String.format("tina/tinastep%d.gif", game.wrongGuesses)));
+                    }
                 }else {
                     image.setImage(new Image("franklin/franklin.gif"));
-                    if(GameSettings.chosenAnimal.equals("franklin") && game.wrongGuesses % 2 == 0){
+                    if(GameSettings.chosenAnimal.equals("Franklin") && game.wrongGuesses % 2 == 0){
                         image.setImage(new Image("franklin/frogjump2.gif"));        //Zeile 94-96 wird wie Zeile 92 formuliert
                     }
                 }
