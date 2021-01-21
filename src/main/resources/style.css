@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Berlin Sans FB";
-    src: url("/Fonts/BerlinSansFBRegular.ttf");
+    src: url("/fonts/BerlinSansFBRegular.ttf");
 }
 
 @font-face {
     font-family: "Berlin Sans FB";
-    src: url("/Fonts/BerlinSansFBBold.ttf");
+    src: url("/fonts/BerlinSansFBBold.ttf");
 }
 
 @font-face {
     font-family: "Amalia";
-    src: url("/Fonts/Amalia.ttf");
+    src: url("/fonts/Amalia.ttf");
 }
 
 .textStartTitle {
@@ -20,7 +20,7 @@
 }
 
 .motto {
-    -fx-font-size: 18;
+    -fx-font-size: 18px;
     -fx-font-family: "Amalia";
 }
 
@@ -38,8 +38,6 @@
 .invisibleButtonBig {
     -fx-background-color: none;
     -fx-border-color: none;
-    /*-fx-text-fill: none;*/
-
     -fx-font-size: 36px;
     -fx-font-family: "Berlin Sans FB";
     -fx-font-weight: bold;
@@ -52,8 +50,6 @@
 .invisibleButtonSmall {
     -fx-background-color: none;
     -fx-border-color: none;
-    /*-fx-text-fill: none;*/
-
     -fx-font-size: 24px;
     -fx-font-family: "Berlin Sans FB";
     -fx-font-weight: bold;
@@ -67,8 +63,6 @@
 .listButton {
     -fx-background-color: none;
     -fx-border-color: none;
-    /*-fx-text-fill: none;*/
-
     -fx-font-size: 24px;
     -fx-font-family: "Berlin Sans FB";
 }
@@ -108,21 +102,21 @@
 }
 
 .StartGridPane{
-    -fx-background-image: url("/images/background-start.png");
+    -fx-background-image: url("/background/background-start.png");
     -fx-background-repeat: no-repeat;
 }
 
 .GameGridPane{
-    -fx-background-image: url("/images/bakcground.gif");
+    -fx-background-image: url("/background/background.gif");
     -fx-background-repeat: no-repeat;
 }
 
 .FighterGridPane{
-    -fx-background-image: url("/images/fightersback.png");
+    -fx-background-image: url("/background/fightersback.png");
     -fx-background-repeat: no-repeat;
 }
 
 .ListGridPane{
-    -fx-background-image: url("/images/back2.png");
+    -fx-background-image: url("/background/back2.png");
     -fx-background-repeat: no-repeat;
 }

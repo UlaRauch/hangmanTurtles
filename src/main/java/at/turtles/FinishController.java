@@ -13,9 +13,6 @@ import java.util.ResourceBundle;
 
 public class FinishController implements Initializable {
 
-    private static Hangman game;
-    public final static int WIDTH = 1000;
-    public final static int HEIGHT = 500;
     public final static String WINDOWTITLE = "Game";
 
     @FXML
@@ -36,19 +33,17 @@ public class FinishController implements Initializable {
         comment.setText(Hangman.comments);
         yourWord.setText("Your word was " + String.valueOf(GameSettings.wordToGuess));
 
-
-
-        if(GameSettings.chosenAnimal.equals("Tina")){
+        if(GameSettings.chosenAnimal.equals("tina")){
             if(GameSettings.won){
-                image.setImage(new Image("Tina/winningdance.gif"));
+                image.setImage(new Image("tina/winningdance.gif"));
             }else {
-                image.setImage(new Image("Tina/tinadeath.gif"));
+                image.setImage(new Image("tina/tinadeath.gif"));
             }
         }else {
-            if(!GameSettings.won) {
-                image.setImage(new Image("Franklin/franklindeath.gif"));
+            if(GameSettings.won) {
+                image.setImage(new Image("franklin/frog.png"));
             }else {
-                image.setImage(new Image("Franklin/frog.png"));
+                image.setImage(new Image("franklin/franklindeath.gif"));
             }
         }
     }
@@ -58,8 +53,9 @@ public class FinishController implements Initializable {
      * Switches back to Game Window
      * starts new game with the same animal and word list
      */
-    public void tryAgain(ActionEvent actionEvent) throws IOException {
-        GameSettings.showWindow("/game.fxml", GameController.WIDTH, GameController.HEIGHT, GameController.WINDOWTITLE);
+    public void playAgain(ActionEvent actionEvent) throws IOException {
+        System.out.println("Clicked Play Again");
+        GameSettings.showWindow("/game.fxml", GameController.WINDOWTITLE);
     }
 
 
@@ -69,8 +65,7 @@ public class FinishController implements Initializable {
      */
     public void animalChange(ActionEvent actionEvent) throws IOException {
         System.out.println("Back to Choose your fighter");
-        GameSettings.showWindow("/choosefighters.fxml",
-                ChooseFightersController.WIDTH, ChooseFightersController.HEIGHT, ChooseFightersController.WINDOWTITLE);
+        GameSettings.showWindow("/choosefighters.fxml", ChooseFightersController.WINDOWTITLE);
     }
 
     /**
@@ -78,6 +73,7 @@ public class FinishController implements Initializable {
      * exits the program
      */
     public void endGame(ActionEvent actionEvent) {
+        System.out.println("Clicked exit");
         Platform.exit();
     }
 

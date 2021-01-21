@@ -21,7 +21,7 @@
 
     <Button fx:id="changeB" onAction="#animalChange" prefHeight="26.0" prefWidth="259.0" styleClass="invisibleButtonSmall" text="Change animal/list" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
 
-    <Button fx:id="retryButton" onAction="#tryAgain" styleClass="invisibleButtonSmall" text="Play again" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+    <Button fx:id="retryButton" onAction="#playAgain" styleClass="invisibleButtonSmall" text="Play again" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
 
     <Button fx:id="endButton" onAction="#endGame" prefHeight="26.0" prefWidth="192.0" styleClass="invisibleButtonSmall" text="Exit" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
 

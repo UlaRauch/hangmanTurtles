@@ -2,7 +2,6 @@ package at.turtles;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-
 import java.io.IOException;
 
 /**
@@ -10,9 +9,8 @@ import java.io.IOException;
  */
 public class StartController {
 
-    public final static int WIDTH = 1000;
-    public final static int HEIGHT = 500;
     public final static String WINDOWTITLE = "Start";
+
 
     /**
      * is executed when Start Button is clicked in GUI
@@ -20,8 +18,9 @@ public class StartController {
      */
     public void startButtonClicked(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked 'Start'");
-        GameSettings.showWindow("/choosefighters.fxml", ChooseFightersController.WIDTH, ChooseFightersController.HEIGHT, ChooseFightersController.WINDOWTITLE);
+        GameSettings.showWindow("/choosefighters.fxml", ChooseFightersController.WINDOWTITLE);
     }
+
 
     /**
      * is executed when Exit Button is clicked in GUI

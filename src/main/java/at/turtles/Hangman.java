@@ -1,7 +1,5 @@
 package at.turtles;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -13,7 +11,7 @@ import java.util.*;
 public class Hangman {
 
     final char[] WORDTOGUESS;
-    HashSet<Character> alreadyGuessed = new HashSet<>(); //umbenennen in already used?
+    HashSet<Character> alreadyUsed = new HashSet<>();
     final int MAXNUMBEROFGUESSES = 6;
     int wrongGuesses = 0;
     char[] wordInProgress;
@@ -50,38 +48,6 @@ public class Hangman {
         return wordList.get(new Random().nextInt(wordList.size()));
     }
 
-    /**
-     * Scans System.in until a letter is entered
-     *
-     * @return first entered letter as uppercase
-     */
-    public char takeLetter() {
-        Scanner scanner = new Scanner(System.in);
-        char letter;
-        boolean enteredLetter = false;
-
-        do {
-            System.out.println("Enter letter: ");
-            String line = scanner.nextLine();
-            letter = line.toUpperCase().charAt(0);
-            if (letter >= 'A' && letter <= 'Z') {
-                enteredLetter = true;
-            } else {
-                System.out.println("Your entry was not a letter! ");
-            }
-        } while (!enteredLetter);
-
-        return letter;
-    }
-
-    /**
-     * Prints current progress of guessed letters and remaining wrong-guesses
-     */
-    public void printCurrentGameState() {
-        System.out.println(wordInProgress);
-        System.out.println("You have " + (MAXNUMBEROFGUESSES - wrongGuesses) + " guesses left");
-    }
-
 
     /**
      * Checks if letter has already been guessed
@@ -90,7 +56,7 @@ public class Hangman {
      * @return if letter was already guessed
      */
     public boolean checkIfAlreadyTyped(char letter) {
-        return alreadyGuessed.contains(letter);
+        return alreadyUsed.contains(letter);
     }
 
 
@@ -131,9 +97,9 @@ public class Hangman {
      */
     public boolean checkIfWon() {
         for (int i = 0; i < WORDTOGUESS.length; i++) {
-            if (WORDTOGUESS[i] != wordInProgress[i])
-
+            if (WORDTOGUESS[i] != wordInProgress[i]) {
                 return false;
+            }
         }
         return true;
     }
@@ -163,7 +129,7 @@ public class Hangman {
         switch (wrongGuesses) {
             case 2 -> comments = "This doesn't work either.";
             case 3 -> {
-                if (GameSettings.chosenAnimal.equals("Tina")) {
+                if (GameSettings.chosenAnimal.equals("tina")) {
                     comments = "If you go on like this, you will be reborn as a turtle!";
                 } else {
                     comments = "That was disappointing.";
@@ -184,13 +150,11 @@ public class Hangman {
 
         positiveCounter++;
 
-        HashSet<Character> lettersSet = new HashSet<>();
+        HashSet<Character> uniqueLetters = new HashSet<>();    //used to determine number of unique letters
         for (Character c : WORDTOGUESS) {
-            lettersSet.add(c);
+            uniqueLetters.add(c);
         }
-        int lettersLeft = lettersSet.size() - positiveCounter;
-        Random r = new Random();
-        int random = r.nextInt(8);
+        int lettersLeft = uniqueLetters.size() - positiveCounter;
 
         if (wrongGuesses == 0 && positiveCounter == 1) {
             comments = "Genius or beginner's luck?";
@@ -201,16 +165,15 @@ public class Hangman {
         } else if (wrongGuesses > 3 && lettersLeft < 4) {
             switch (lettersLeft) {
                 case 3 -> {
-                    if (GameSettings.chosenAnimal.equals("Tina")) {
-                        comments = "You can do it! The god of turtles is with you now!";
-                    } else {
-                        comments = "You can do it! The god of frogs is with you now!";
-                    }
+                    comments = String.format("You can do it! The god of %s is with you now!",
+                            GameSettings.chosenAnimal.equals("tina") ? "turtles" : "frogs");
                 }
                 case 2 -> comments = GameSettings.chosenAnimal + " believes in you!";
                 case 1 -> comments = "That was close!";
             }
         } else {
+            Random r = new Random();
+            int random = r.nextInt(9);
             switch (random) {
                 case 0 -> comments = "Are you cheating?";
                 case 1 -> comments = "Good, but don't get overexcited over a little success.";
@@ -241,9 +204,49 @@ public class Hangman {
         System.out.println(comments);
     }
 
+
+    /*
+    only used for game in console
+
+      /**
+     * Scans System.in until a letter is entered
+     * only used for game in console
+     *
+     * @return first entered letter as uppercase
+
+    public char takeLetter() {
+        Scanner scanner = new Scanner(System.in);
+        char letter;
+        boolean enteredLetter = false;
+
+        do {
+            System.out.println("Enter letter: ");
+            String line = scanner.nextLine();
+            letter = line.toUpperCase().charAt(0);
+            if (letter >= 'A' && letter <= 'Z') {
+                enteredLetter = true;
+            } else {
+                System.out.println("Your entry was not a letter! ");
+            }
+        } while (!enteredLetter);
+
+        return letter;
+    }
+
+
+    /**
+     * Prints current progress of guessed letters and remaining wrong-guesses
+     * only used for game in console
+
+    public void printCurrentGameState() {
+        System.out.println(wordInProgress);
+        System.out.println("You have " + (MAXNUMBEROFGUESSES - wrongGuesses) + " guesses left");
+    }
+
+
     /**
      * Hangman game logic for console version
-     */
+
     public void game() {
         // Willkommen zum Spiel!;
         boolean weWon = false;
@@ -261,7 +264,7 @@ public class Hangman {
             if (correctGuess) {
                 updateProgress(letter);
             } else {
-                alreadyGuessed.add(letter); //add letter to already used letters
+                alreadyUsed.add(letter); //add letter to already used letters
                 wrongGuesses += 1;
                 if (wrongGuesses < MAXNUMBEROFGUESSES) {
                     negativeComments();
@@ -273,6 +276,6 @@ public class Hangman {
         }
 
         finalReaction(weWon);
-    }
+    } */
 
 }

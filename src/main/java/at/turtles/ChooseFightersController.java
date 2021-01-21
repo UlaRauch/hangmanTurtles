@@ -17,8 +17,6 @@ import java.util.ResourceBundle;
  */
 public class ChooseFightersController implements Initializable {
 
-    public final static int WIDTH = 1000;
-    public final static int HEIGHT = 500;
     public final static String WINDOWTITLE = "Choose your Fighter";
 
 
@@ -41,12 +39,12 @@ public class ChooseFightersController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        imageFrog.setImage(new Image("images/frog-choose-fighters.png"));
-        imageTurtle.setImage(new Image("images/turtle-choose-fighters.png"));
+        imageFrog.setImage(new Image("franklin/frog-choose-fighters.png"));
+        imageTurtle.setImage(new Image("tina/turtle-choose-fighters.png"));
         if (GameSettings.chosenAnimal != null) {
-            if (GameSettings.chosenAnimal.equals("Tina")){
+            if (GameSettings.chosenAnimal.equals("tina")) {
                 GameSettings.updateSelectedButtons(turtleButton, frogButton);
-            } else if (GameSettings.chosenAnimal.equals("Franklin")) {
+            } else if (GameSettings.chosenAnimal.equals("franklin")) {
                 GameSettings.updateSelectedButtons(frogButton, turtleButton);
             }
         }
@@ -66,9 +64,9 @@ public class ChooseFightersController implements Initializable {
      * sets chosenAnimal to the turtles name
      * updates buttons to reflect choice
      */
-    public void chooseTurtle(){
+    public void chooseTurtle() {
         System.out.println("You chose Tina the Turtle");
-        GameSettings.chosenAnimal = "Tina";
+        GameSettings.chosenAnimal = "tina";
         GameSettings.updateSelectedButtons(turtleButton, frogButton);
     }
 
@@ -86,9 +84,9 @@ public class ChooseFightersController implements Initializable {
      * sets chosenAnimal to the frogs name
      * updates buttons to reflect choice
      */
-    public void chooseFrog(){
+    public void chooseFrog() {
         System.out.println("You chose Franklin the frog");
-        GameSettings.chosenAnimal = "Franklin";
+        GameSettings.chosenAnimal = "franklin";
         GameSettings.updateSelectedButtons(frogButton, turtleButton);
     }
 
@@ -99,21 +97,18 @@ public class ChooseFightersController implements Initializable {
      * otherwise shows error message
      */
     public void goToNextScene(ActionEvent actionEvent) throws IOException {
+        System.out.println("Clicked continue");
         if (GameSettings.chosenAnimal != null) {
-            System.out.println("clicked continue");
-            GameSettings.showWindow("/chooseList.fxml",
-                    ChooseListController.WIDTH, ChooseListController.HEIGHT, ChooseListController.WINDOWTITLE);
-
-        } else {                 //alert window
-            Alert NoAnimalChosen = new Alert(AlertType.ERROR);
-            NoAnimalChosen.setResizable(true);
-            NoAnimalChosen.setWidth(600);
-            NoAnimalChosen.setHeight(300);
-            NoAnimalChosen.setTitle("Choose Tina or Franklin");
-            NoAnimalChosen.setHeaderText("You have to choose a character");
-            NoAnimalChosen.setContentText
-                    ("You have to choose an animal or you can't play. Save at least on animal today!"); //;-) normalerweise würde hier natürlich kein Roman stehen.
-            NoAnimalChosen.showAndWait();
+            GameSettings.showWindow("/chooseList.fxml", ChooseListController.WINDOWTITLE);
+        } else {
+            Alert noAnimalChosen = new Alert(AlertType.ERROR);
+            noAnimalChosen.setWidth(600);
+            noAnimalChosen.setHeight(300);
+            noAnimalChosen.setTitle("Choose Tina or Franklin");
+            noAnimalChosen.setHeaderText("You have to choose a character");
+            noAnimalChosen.setContentText
+                    ("You have to choose an animal or you can't play. Save at least one animal today!");
+            noAnimalChosen.showAndWait();
             System.out.println("You can't move forward without an animal");
         }
     }
@@ -125,8 +120,7 @@ public class ChooseFightersController implements Initializable {
      */
     public void goBack(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked back");
-        GameSettings.showWindow("/start.fxml",
-                StartController.WIDTH, StartController.HEIGHT, StartController.WINDOWTITLE);
+        GameSettings.showWindow("/start.fxml", StartController.WINDOWTITLE);
     }
 }
 

@@ -18,8 +18,6 @@ import java.util.ResourceBundle;
  */
 public class ChooseListController implements Initializable {
 
-    public final static int WIDTH = 1000;
-    public final static int HEIGHT = 500;
     public final static String WINDOWTITLE = "Choose List";
     public final String pathFrogNames = "build/resources/main/wordLists/frogNames.txt";
     public final String pathTurtleNames = "build/resources/main/wordLists/turtleNames.txt";
@@ -27,7 +25,6 @@ public class ChooseListController implements Initializable {
     turtle names: https://www.schildkroetenwelt.com/schildkroeten-arten/
     frog names: http://www.lexikon-froesche.de/froesche_a.shtml
     */
-
 
     @FXML
     private Button turtleNamesButton;
@@ -37,6 +34,7 @@ public class ChooseListController implements Initializable {
 
     @FXML
     private Button userListButton;
+
 
     /**
      * is executed when loading window
@@ -95,7 +93,7 @@ public class ChooseListController implements Initializable {
         alert.setTitle("File requirements");
         alert.setHeaderText("Choose your words wisely!");
         alert.setContentText("- .txt only\n" +
-                "- each word in a seperate line\n" +
+                "- each word in a separate line\n" +
                 "- no line without words\n" +
                 "- semicolons etc. won't be removed\n\n" +
                 "Like this:\n" +
@@ -107,11 +105,9 @@ public class ChooseListController implements Initializable {
                 "- case doesn't matter");
         alert.showAndWait();
 
-        //offne Browser für Fileauswahl
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Where are your words?");
 
-        //nur files mit Dateiendung ".txt" anzeigen
         fileChooser.getExtensionFilters()
                 .add(new ExtensionFilter("Text Files", "*.txt"));
 
@@ -151,11 +147,9 @@ public class ChooseListController implements Initializable {
         //check if path variable for word list is already set
         if (GameSettings.listPathOfChoice != null) {
             System.out.println("continues");
-            GameSettings.showWindow("/game.fxml", GameController.WIDTH,
-                    GameController.HEIGHT, GameController.WINDOWTITLE);
+            GameSettings.showWindow("/game.fxml", GameController.WINDOWTITLE);
         } else {
             Alert noListAlert = new Alert(AlertType.ERROR);
-            noListAlert.setResizable(true);
             noListAlert.setWidth(800);
             noListAlert.setHeight(400);
             noListAlert.setTitle("No game without words!");
@@ -178,9 +172,7 @@ public class ChooseListController implements Initializable {
      */
     public void goBack(ActionEvent actionEvent) throws IOException {
         System.out.println("Clicked back");
-        GameSettings.showWindow("/choosefighters.fxml",
-                ChooseFightersController.WIDTH, ChooseFightersController.HEIGHT,
-                ChooseFightersController.WINDOWTITLE);
+        GameSettings.showWindow("/choosefighters.fxml", ChooseFightersController.WINDOWTITLE);
     }
 
 }

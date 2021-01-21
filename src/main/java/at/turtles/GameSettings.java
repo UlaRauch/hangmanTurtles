@@ -5,7 +5,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 /**
@@ -13,25 +12,22 @@ import java.io.IOException;
  *              provides methods used in different windows
  */
 public class GameSettings {
-    //TODO: check if correctly set variables
 
     public static String listPathOfChoice;
     public static char[] wordToGuess;
     public static String chosenAnimal;
     public static Stage stage;
-    public static boolean won;
+    public static boolean won; //used in Finish when game object doesn't exist anymore
 
     /**
      * Shows window from specified .fxml file
      * @param filename     path to the .fxml file
-     * @param width        width of the window
-     * @param height       height of the window
      * @param windowTitle  title of the window
      * @throws IOException when filename doesn't exist
      */
-    public static void showWindow(String filename, int width, int height, String windowTitle) throws IOException {
+    public static void showWindow(String filename, String windowTitle) throws IOException {
         Parent root = FXMLLoader.load(GameSettings.class.getResource(filename));
-        Scene scene = new Scene(root, width, height);
+        Scene scene = new Scene(root, 1000, 500);
         GameSettings.stage.setScene(scene);
         GameSettings.stage.setTitle(windowTitle);
         GameSettings.stage.setResizable(false);

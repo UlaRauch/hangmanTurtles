@@ -18,8 +18,6 @@ import java.util.ResourceBundle;
 public class GameController implements Initializable {
 
     private Hangman game;
-    public final static int WIDTH = 1000;
-    public final static int HEIGHT = 500;
     public final static String WINDOWTITLE = "Play";
 
     @FXML
@@ -46,14 +44,14 @@ public class GameController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         game = new Hangman(GameSettings.listPathOfChoice);
-        GameSettings.wordToGuess = game.WORDTOGUESS;
+        GameSettings.wordToGuess = game.WORDTOGUESS;    //for use in finish window
         updateLabels();
         instructionLabel.setText("Animals can't read signs. \nFind the right letters to stop " + GameSettings.chosenAnimal + " from moving!");
         commentLabel.setText("Wrong guesses will scare " + GameSettings.chosenAnimal + "!");
-        if (GameSettings.chosenAnimal.equals("Tina")) {
-            image.setImage(new Image("Tina/tina.001.png"));
+        if (GameSettings.chosenAnimal.equals("tina")) {
+            image.setImage(new Image("tina/tina.001.png"));
         } else {
-            image.setImage(new Image("Franklin/franklin.001.png"));
+            image.setImage(new Image("franklin/franklin.001.png"));
         }
     }
 
@@ -82,36 +80,32 @@ public class GameController implements Initializable {
             if (game.existsInTheWord(letter)) {
                 game.updateProgress(letter);
                 pressedButton.setStyle("-fx-background-color: green;");
-                game.alreadyGuessed.add(letter); //add letter to already used letters
+                game.alreadyUsed.add(letter);
                 game.positiveComments();
             } else {
                 game.wrongGuesses++;
                 game.negativeComments();
-                game.alreadyGuessed.add(letter); //add letter to already used letters
-                pressedButton.setStyle("-fx-background-color: #ff0001;");
+                game.alreadyUsed.add(letter);
+                pressedButton.setStyle("-fx-background-color: red;");
 
-                if(GameSettings.chosenAnimal.equals("Tina")){
-                    if(game.wrongGuesses == 1){ image.setImage(new Image("Tina/tina.gif"));}
-                    if(game.wrongGuesses == 2){ image.setImage(new Image("Tina/tinastep2.gif")); }
-                    if(game.wrongGuesses == 3){ image.setImage(new Image("Tina/tinastep3.gif")); }
-                    if(game.wrongGuesses == 4){ image.setImage(new Image("Tina/tinastep4.gif")); }
-                    if(game.wrongGuesses == 5){ image.setImage(new Image("Tina/tinastep5.gif")); }
-                }else if (game.wrongGuesses < game.MAXNUMBEROFGUESSES){
-                    image.setImage(new Image("Franklin/franklin.gif"));
-                    if(GameSettings.chosenAnimal.equals("Franklin") && game.wrongGuesses % 2 == 0){
-                        image.setImage(new Image("Franklin/frogjump2.gif"));
+                if(GameSettings.chosenAnimal.equals("tina")){
+                    image.setImage(new Image(String.format("tina/tinastep%d.gif", game.wrongGuesses)));
+                }else {
+                    image.setImage(new Image("franklin/franklin.gif"));
+                    if(GameSettings.chosenAnimal.equals("franklin") && game.wrongGuesses % 2 == 0){
+                        image.setImage(new Image("franklin/frogjump2.gif"));        //Zeile 94-96 wird wie Zeile 92 formuliert
                     }
                 }
             }
             //pressedButton.setDisable(true);//prevents nasty comments (sameLetterComments)
             if (game.checkIfWon()) {
-                game.finalReaction(game.checkIfWon());//comment will be used in next window
+                game.finalReaction(true);//comment will be used in next window
                 GameSettings.won = true;
-                GameSettings.showWindow("/finish.fxml", FinishController.WIDTH, FinishController.HEIGHT, FinishController.WINDOWTITLE);
+                GameSettings.showWindow("/finish.fxml", FinishController.WINDOWTITLE);
             } else if (game.wrongGuesses == game.MAXNUMBEROFGUESSES) {
-                game.finalReaction(game.checkIfWon());//comment will be used in next window
+                game.finalReaction(false);//comment will be used in next window
                 GameSettings.won = false;
-                GameSettings.showWindow("/finish.fxml", FinishController.WIDTH, FinishController.HEIGHT, FinishController.WINDOWTITLE);
+                GameSettings.showWindow("/finish.fxml", FinishController.WINDOWTITLE);
             }
         } else { //if letter has already been clicked before - just for fun
             game.sameLetterComments(game.existsInTheWord(letter));
@@ -124,7 +118,8 @@ public class GameController implements Initializable {
      * Switches back to Choose List Window
      */
     public void backButtonClicked(ActionEvent actionEvent) throws IOException {
-        GameSettings.showWindow("/chooseList.fxml", ChooseListController.WIDTH, ChooseListController.HEIGHT, ChooseListController.WINDOWTITLE);
+        System.out.println("Clicked back");
+        GameSettings.showWindow("/chooseList.fxml", ChooseListController.WINDOWTITLE);
     }
 
 
