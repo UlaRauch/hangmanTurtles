@@ -14,15 +14,9 @@
 
     <Label fx:id="titleLabel" alignment="CENTER" prefHeight="241.0" prefWidth="670.0" styleClass="textStartTitle" text="Save the Animals" textAlignment="CENTER" textFill="#010600" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP" />
 
-    <Label fx:id="mottoLabel" alignment="CENTER" prefHeight="190.0" prefWidth="614.0" styleClass="motto" text="'&quot;Let's fetz&quot; sprach der Frosch und sprang in den Mixer.'&#10;Franklin the Frog." textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
-      <font>
-         <Font name="Arial" size="12.0" />
-      </font></Label>
+    <Label fx:id="mottoLabel" alignment="CENTER" prefHeight="190.0" prefWidth="614.0" styleClass="motto" text="'&quot;Let's fetz&quot; sprach der Frosch und sprang in den Mixer.'&#10;Franklin the Frog." textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM"/>
 
-    <Label fx:id="authorsLAbel" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="40.0" prefWidth="525.0" text="Brought To You By The Teenage Mutant Ninja Turtles" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-      <font>
-         <Font name="System Bold" size="14.0" />
-      </font></Label>
+    <Label fx:id="authorsLAbel" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="40.0" prefWidth="525.0" text="Brought To You By The Teenage Mutant Ninja Turtles" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
 
     <Button fx:id="startButton" alignment="CENTER" minWidth="130" onAction="#startButtonClicked" styleClass="invisibleButtonBig" text="Start" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
 
