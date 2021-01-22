@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 
 public class FinishController implements Initializable {
 
-    public final static String WINDOWTITLE = "Game";
+    public final static String WINDOWTITLE = "FinishController";
 
     @FXML
     public Text comment;
@@ -40,7 +40,7 @@ public class FinishController implements Initializable {
             }
         }else {
             if(GameSettings.won) {
-                image.setImage(new Image("franklin/frog.png"));
+                image.setImage(new Image("franklin/winfrog.gif"));
             }else {
                 image.setImage(new Image("franklin/franklindeath.gif"));
             }

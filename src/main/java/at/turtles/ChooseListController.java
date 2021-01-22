@@ -134,7 +134,6 @@ public class ChooseListController implements Initializable {
         }
     }
 
-
     /**
      * is executed when Continue Button is clicked in GUI
      * switches to Game Window
@@ -150,6 +149,7 @@ public class ChooseListController implements Initializable {
             GameSettings.showWindow("/game.fxml", GameController.WINDOWTITLE);
         } else {
             Alert noListAlert = new Alert(AlertType.ERROR);
+            noListAlert.setResizable(true);
             noListAlert.setWidth(800);
             noListAlert.setHeight(400);
             noListAlert.setTitle("No game without words!");
@@ -165,7 +165,6 @@ public class ChooseListController implements Initializable {
         }
     }
 
-
     /**
      * is executed when Back Button is clicked in GUI
      * switches back to Choose Fighters Window
@@ -174,5 +173,6 @@ public class ChooseListController implements Initializable {
         System.out.println("Clicked back");
         GameSettings.showWindow("/choosefighters.fxml", ChooseFightersController.WINDOWTITLE);
     }
+
 
 }
