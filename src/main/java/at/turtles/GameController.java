@@ -88,7 +88,7 @@ public class GameController implements Initializable {
                 game.alreadyUsed.add(letter);
                 pressedButton.setStyle("-fx-background-color: red;");
 
-                if (game.wrongGuesses < 6) {
+                if (game.wrongGuesses < game.MAXNUMBEROFGUESSES) {
                     if (GameSettings.chosenAnimal.equals("Tina")) {
                         image.setImage(new Image(String.format("tina/tinastep%d.gif", game.wrongGuesses)));
                     } else {
