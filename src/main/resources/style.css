@@ -24,6 +24,11 @@
     -fx-font-family: "Amalia";
 }
 
+.authors {
+    -fx-font-size: 12px;
+    -fx-font-family: "Berlin Sans FB";
+}
+
 .textWindowTitle {
     -fx-font-size: 42px;
     -fx-font-family: "Berlin Sans FB";

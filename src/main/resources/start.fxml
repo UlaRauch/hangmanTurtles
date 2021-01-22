@@ -15,7 +15,7 @@
 
     <Label fx:id="mottoLabel" alignment="CENTER" prefHeight="190.0" prefWidth="614.0" styleClass="motto" text="'&quot;Let's fetz&quot; sprach der Frosch und sprang in den Mixer.'&#10;Franklin the Frog." textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM"/>
 
-    <Label fx:id="authorsLAbel" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="40.0" prefWidth="525.0" text="Brought To You By The Teenage Mutant Ninja Turtles" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
+    <Label fx:id="authorsLAbel" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="40.0" prefWidth="525.0" styleClass="authors" text="Brought To You By The Teenage Mutant Ninja Turtles" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
 
     <Button fx:id="startButton" alignment="CENTER" minWidth="130" onAction="#startButtonClicked" styleClass="invisibleButtonBig" text="Start" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
 
