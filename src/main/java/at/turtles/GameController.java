@@ -92,11 +92,8 @@ public class GameController implements Initializable {
                     if (game.wrongGuesses < 6){
                         image.setImage(new Image(String.format("tina/tinastep%d.gif", game.wrongGuesses)));
                     }
-                }else {
-                    image.setImage(new Image("franklin/franklin.gif"));
-                    if(GameSettings.chosenAnimal.equals("Franklin") && game.wrongGuesses % 2 == 0){
-                        image.setImage(new Image("franklin/frogjump2.gif"));        //Zeile 94-96 wird wie Zeile 92 formuliert
-                    }
+                }else if (game.wrongGuesses < 6){
+                    image.setImage(new Image(String.format("franklin/franklinjump%d.gif", game.wrongGuesses)));
                 }
             }
             //pressedButton.setDisable(true);//prevents nasty comments (sameLetterComments)
