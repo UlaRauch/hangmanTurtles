@@ -159,9 +159,9 @@ public class Hangman {
         if (wrongGuesses == 0 && positiveCounter == 1) {
             comments = "Genius or beginner's luck?";
         } else if (wrongGuesses > 0 && positiveCounter == 1) {
-            comments = "That's better";
+            comments = "That's better :)";
         } else if (wrongGuesses > 0 && positiveCounter == 2) {
-            comments = "There is hope.";
+            comments = "There is a new hope!";
         } else if (wrongGuesses > 3 && lettersLeft < 4) {
             switch (lettersLeft) {
                 case 3 -> {
