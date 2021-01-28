@@ -25,8 +25,6 @@ public class ChooseFightersController implements Initializable {
 
     @FXML
     public ImageView imageTurtle;
-    //public Button continueButton;
-  //  public Button backButton;
 
     @FXML
     private Button frogButton;
