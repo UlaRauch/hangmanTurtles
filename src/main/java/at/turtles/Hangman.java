@@ -25,8 +25,9 @@ public class Hangman {
      * @param filename path to wordlist to choose random word from
      */
     public Hangman(String filename) {
-        String word = getRandomWordFromFile(filename).toUpperCase().replaceAll("Ä", "AE")
-                .replaceAll("Ö", "OE").replaceAll("Ü", "UE").replaceAll("ß", "SS");
+        String word = getRandomWordFromFile(filename).toUpperCase().replaceAll("\u00c4", "AE")
+                .replaceAll("\u00d6", "OE").replaceAll("\u00dc", "UE").replaceAll("\u00df", "SS");
+        System.out.println(word);
         WORDTOGUESS = word.toCharArray();
         wordInProgress = word.replaceAll("[A-Z]", "_").toCharArray(); //turns letter to _
     }
